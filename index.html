@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOR SALE — How Money Bought Power, From the Pyramids to the Blockchain</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a28;--accent:#00d4ff;--accent2:#ff3366;--accent3:#ffaa00;--green:#00ff88;--purple:#aa66ff;--text:#e8e8f0;--dim:#8888a0;--bright:#ffffff;--red:#ff3366;--gold:#ffaa00;--blue:#00d4ff}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;overflow-x:hidden}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:2rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(255,51,102,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(0,212,255,.08) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(170,102,255,.05) 0%,transparent 50%)}
+.hero-content{position:relative;z-index:1}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(4rem,10vw,9rem);font-weight:700;line-height:1;margin-bottom:1rem;background:linear-gradient(135deg,var(--bright),var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .subtitle{font-size:clamp(1rem,2.5vw,1.4rem);color:var(--dim);font-weight:300;max-width:750px;margin:0 auto 2rem}
+.hero .bg-text{font-family:'JetBrains Mono',monospace;font-size:clamp(3rem,10vw,8rem);font-weight:700;color:var(--accent2);opacity:.07;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--dim);font-size:.85rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+/* SECTIONS */
+.section{max-width:1200px;margin:0 auto;padding:6rem 2rem}
+.narrow{max-width:800px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);margin-bottom:1rem;color:var(--bright)}
+.section-sub{font-size:1.1rem;color:var(--dim);margin-bottom:3rem;max-width:600px}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;margin:4rem auto;max-width:1200px}
+.stat{padding:1.5rem;text-align:center;background:var(--bg2);transition:background .3s}
+.stat:hover{background:var(--bg3)}
+.stat-num{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;line-height:1;margin-bottom:.4rem}
+.stat-label{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+
+/* DIVIDER */
+.divider{text-align:center;padding:4rem 2rem;position:relative}
+.divider::before{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,transparent,var(--accent),transparent)}
+.ch-num{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent);letter-spacing:.3em;text-transform:uppercase;position:relative;display:inline-block;background:var(--bg);padding:0 1rem}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:3rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--accent2),var(--purple),var(--gold))}
+.tl-event{position:relative;margin-bottom:2.5rem;padding-left:1.5rem;opacity:.7;transition:opacity .3s}
+.tl-event:hover{opacity:1}
+.tl-event::before{content:'';position:absolute;left:-3.55rem;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 10px rgba(0,212,255,.5)}
+.tl-event.crisis::before{background:var(--accent2);box-shadow:0 0 10px rgba(255,51,102,.5)}
+.tl-event.verdict::before{background:var(--gold);box-shadow:0 0 10px rgba(255,170,0,.5)}
+.tl-date{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:.3rem}
+.tl-event.crisis .tl-date{color:var(--accent2)}
+.tl-event.verdict .tl-date{color:var(--gold)}
+.tl-title{font-size:1.1rem;font-weight:600;color:var(--bright);margin-bottom:.3rem}
+.tl-desc{font-size:.9rem;color:var(--dim);line-height:1.5}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:2rem;transition:all .3s}
+.card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+.card h4{font-size:1rem;color:var(--bright);margin-bottom:.5rem}
+.card p{font-size:.85rem;color:var(--dim);line-height:1.5}
+
+/* QUOTE */
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:1.5rem}
+.quote{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:2rem;position:relative}
+.quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:4rem;position:absolute;top:.5rem;left:1rem;color:var(--accent);opacity:.2;line-height:1}
+.quote-text{font-size:1rem;font-style:italic;line-height:1.6;margin-bottom:1rem;padding-top:1rem}
+.quote-author{font-size:.8rem;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.quote-ctx{font-size:.75rem;color:var(--dim);opacity:.7;margin-top:.2rem}
+
+/* BARS */
+.bars{display:flex;flex-direction:column;gap:.8rem;margin:2rem 0}
+.bar-row{display:flex;align-items:center;gap:1rem}
+.bar-label{width:200px;text-align:right;font-size:.85rem;color:var(--dim);flex-shrink:0}
+.bar-track{flex:1;height:36px;background:rgba(255,255,255,.03);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:700;color:var(--bg);transition:width 1.5s ease-out;min-width:fit-content}
+.bar-amt{width:100px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--dim);flex-shrink:0}
+
+/* COMPARISON */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0}
+.compare-col{background:var(--bg2);border-radius:12px;padding:2rem;border:1px solid rgba(255,255,255,.06)}
+.compare-col h4{font-size:1rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:.85rem;color:var(--dim);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.03);padding-left:1.2rem;position:relative}
+.compare-col li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%}
+
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0}
+.data-table th{text-align:left;padding:1rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);border-bottom:2px solid rgba(255,255,255,.1)}
+.data-table td{padding:1rem;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+.data-table tr:hover td{background:rgba(255,255,255,.02)}
+.mono{font-family:'JetBrains Mono',monospace;color:var(--accent2);font-weight:700}
+
+/* NODE */
+.node{background:var(--bg3);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.2rem 1.5rem;transition:all .3s;cursor:default;margin-bottom:1rem}
+.node:hover{border-color:var(--accent);box-shadow:0 0 20px rgba(0,212,255,.15);transform:translateY(-2px)}
+.node h4{font-size:.95rem;color:var(--bright);margin-bottom:.3rem}
+.node p{font-size:.8rem;color:var(--dim);line-height:1.4}
+.node .amount{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.1rem}
+.flow-arrow{display:flex;justify-content:center;align-items:center;padding:.5rem 0;color:var(--accent2);font-size:1.5rem}
+.flow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+
+/* TAGS */
+.tag{display:inline-block;font-size:.65rem;padding:.2rem .6rem;border-radius:999px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-right:.3rem}
+.tag-red{background:rgba(255,51,102,.15);color:var(--accent2)}
+.tag-blue{background:rgba(0,212,255,.15);color:var(--accent)}
+.tag-gold{background:rgba(255,170,0,.15);color:var(--gold)}
+.tag-green{background:rgba(0,255,136,.15);color:var(--green)}
+.tag-purple{background:rgba(170,102,255,.15);color:var(--purple)}
+
+.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent2);margin-right:.5rem;animation:pulse-a 2s infinite}
+@keyframes pulse-a{0%{box-shadow:0 0 0 0 rgba(255,51,102,.7)}70%{box-shadow:0 0 0 10px rgba(255,51,102,0)}100%{box-shadow:0 0 0 0 rgba(255,51,102,0)}}
+
+/* VICTIM */
+.victim{background:var(--bg2);border-radius:12px;padding:1.5rem;border-left:3px solid var(--accent2)}
+.victim .name{font-weight:600;color:var(--bright);margin-bottom:.5rem}
+.victim .loss{font-family:'JetBrains Mono',monospace;color:var(--accent2);font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.victim .story{font-size:.85rem;color:var(--dim);line-height:1.5}
+
+/* ERA HEADER */
+.era{text-align:center;padding:6rem 2rem 2rem;position:relative}
+.era h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--bright);margin-bottom:.5rem}
+.era .era-sub{font-size:1.1rem;color:var(--dim);max-width:600px;margin:0 auto}
+.era .era-date{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent);letter-spacing:.2em;margin-bottom:1rem}
+
+/* FOOTER */
+.footer{text-align:center;padding:4rem 2rem;border-top:1px solid rgba(255,255,255,.05);margin-top:4rem}
+.footer p{font-size:.8rem;color:var(--dim);max-width:600px;margin:0 auto}
+.sources{margin-top:2rem;padding:2rem;background:var(--bg2);border-radius:12px;max-width:900px;margin-left:auto;margin-right:auto}
+.sources h4{font-size:.85rem;color:var(--dim);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.1em}
+.sources ul{list-style:none;padding:0;columns:2;column-gap:2rem}
+.sources li{font-size:.7rem;color:var(--dim);padding:.25rem 0;opacity:.6}
+
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+.callout{background:var(--bg2);border-radius:12px;padding:2rem;margin:2rem 0;border-left:3px solid var(--accent2);max-width:800px}
+
+/* CHAPTER NAV */
+.chapter-nav{position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:.6rem;opacity:0;transition:opacity .5s}
+.chapter-nav.visible{opacity:1}
+.chapter-nav a{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--dim);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;transition:color .3s}
+.chapter-nav a:hover,.chapter-nav a.active{color:var(--bright)}
+.chapter-nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);transition:all .3s;flex-shrink:0}
+.chapter-nav a.active .dot{background:var(--accent);box-shadow:0 0 8px rgba(0,212,255,.5)}
+.chapter-nav .label{opacity:0;transform:translateX(-5px);transition:all .3s;white-space:nowrap}
+.chapter-nav:hover .label{opacity:1;transform:translateX(0)}
+
+/* OVERALL PROGRESS BAR */
+.doc-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:150;background:rgba(255,255,255,.05)}
+.doc-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--gold));width:0%;transition:width .3s}
+
+/* ANIMATED COUNTERS */
+.counter{font-family:'JetBrains Mono',monospace;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* SOURCE BADGES */
+.src-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.55rem;padding:.15rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--dim);text-transform:uppercase;letter-spacing:.06em;margin:.2rem .15rem;vertical-align:middle}
+.src-badge::before{content:'';width:4px;height:4px;border-radius:50%;flex-shrink:0}
+.src-cspan::before{background:#e8c840}.src-cspan{border-color:rgba(232,200,64,.3)}
+.src-bbc::before{background:#bb1919}.src-bbc{border-color:rgba(187,25,25,.3)}
+.src-nyt::before{background:#999}.src-nyt{border-color:rgba(153,153,153,.3)}
+.src-wapo::before{background:#2a6496}.src-wapo{border-color:rgba(42,100,150,.3)}
+.src-reuters::before{background:#ff8800}.src-reuters{border-color:rgba(255,136,0,.3)}
+.src-doj::before{background:#fff}.src-doj{border-color:rgba(255,255,255,.2)}
+.src-court::before{background:#aa66ff}.src-court{border-color:rgba(170,102,255,.3)}
+.src-congress::before{background:#4488ff}.src-congress{border-color:rgba(68,136,255,.3)}
+.src-sec::before{background:#00ff88}.src-sec{border-color:rgba(0,255,136,.3)}
+
+/* HEARING QUOTE (special style for congressional/CSPAN quotes) */
+.hearing-quote{background:linear-gradient(135deg,rgba(232,200,64,.05),rgba(18,18,26,.95));border:1px solid rgba(232,200,64,.15);border-radius:12px;padding:2rem;margin:2rem 0;position:relative;max-width:800px}
+.hearing-quote::before{content:'HEARING TRANSCRIPT';position:absolute;top:-.5rem;left:1.5rem;font-size:.55rem;letter-spacing:.15em;color:rgba(232,200,64,.6);background:var(--bg);padding:0 .5rem}
+.hearing-quote .speaker{font-weight:700;color:var(--bright);margin-bottom:.3rem;font-size:.9rem}
+.hearing-quote .speaker-role{font-size:.7rem;color:var(--dim);margin-bottom:.8rem}
+.hearing-quote .testimony{color:var(--text);line-height:1.8;font-size:.95rem;font-style:italic}
+.hearing-quote .hearing-src{margin-top:1rem;font-size:.65rem;color:var(--dim)}
+
+/* BBC QUOTE */
+.bbc-quote{background:linear-gradient(135deg,rgba(187,25,25,.05),rgba(18,18,26,.95));border:1px solid rgba(187,25,25,.15);border-radius:12px;padding:2rem;margin:2rem 0;position:relative;max-width:800px}
+.bbc-quote::before{content:'BBC NEWS';position:absolute;top:-.5rem;left:1.5rem;font-size:.55rem;letter-spacing:.15em;color:rgba(187,25,25,.6);background:var(--bg);padding:0 .5rem;font-weight:700}
+.bbc-quote .bbc-text{color:var(--text);line-height:1.7;font-size:.95rem}
+.bbc-quote .bbc-src{margin-top:1rem;font-size:.65rem;color:var(--dim)}
+
+/* ANIMATED BG GRADIENTS */
+.era{position:relative;overflow:hidden}
+.era::before{content:'';position:absolute;inset:0;opacity:.15;transition:opacity 1s}
+.era:nth-child(odd)::before{background:radial-gradient(ellipse at 30% 50%,rgba(0,212,255,.12),transparent 60%)}
+.era:nth-child(even)::before{background:radial-gradient(ellipse at 70% 50%,rgba(255,51,102,.12),transparent 60%)}
+
+/* PARTICLE CANVAS */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+
+@media(max-width:768px){.compare{grid-template-columns:1fr}.quote-grid{grid-template-columns:1fr}.bar-label{width:120px;font-size:.75rem}.timeline{padding-left:2rem}.sources ul{columns:1}.card-grid{grid-template-columns:1fr}.chapter-nav{display:none}}
+
+/* VIDEO BACKGROUNDS */
+.video-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden;transition:opacity 1.5s ease}
+.video-bg video{width:100%;height:100%;object-fit:cover}
+.video-bg::after{content:'';position:absolute;inset:0;background:rgba(10,10,15,.75)}
+
+/* NARRATION CONTROLLER */
+.narration-ctrl{position:fixed;bottom:2rem;right:2rem;z-index:100;display:flex;align-items:center;gap:.8rem;background:rgba(18,18,26,.95);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.6rem 1.2rem;backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s}
+.narration-ctrl button{background:none;border:none;color:var(--bright);cursor:pointer;font-size:1.2rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.narration-ctrl button:hover{background:rgba(255,255,255,.1)}
+.narration-ctrl .progress{width:120px;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.narration-ctrl .progress-fill{height:100%;background:var(--accent);width:0%;transition:width .3s}
+.narration-ctrl .segment-name{font-size:.65rem;color:var(--dim);max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:uppercase;letter-spacing:.05em}
+.narration-ctrl .vol-icon{font-size:.9rem}
+
+/* PLAY OVERLAY (first interaction) */
+.play-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,15,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity .5s}
+.play-overlay.hidden{opacity:0;pointer-events:none}
+.play-overlay .play-btn{width:80px;height:80px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:all .3s}
+.play-overlay .play-btn:hover{background:rgba(0,212,255,.15);transform:scale(1.1)}
+.play-overlay .play-btn svg{fill:var(--accent);width:30px;height:30px;margin-left:4px}
+.play-overlay p{color:var(--dim);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<!-- OVERALL PROGRESS -->
+<div class="doc-progress"><div class="doc-progress-fill" id="docProgress"></div></div>
+
+<!-- PARTICLE BACKGROUND -->
+<canvas id="particles"></canvas>
+
+<!-- CHAPTER NAVIGATION -->
+<nav class="chapter-nav" id="chapterNav">
+  <a href="#hero" data-ch="0"><span class="dot"></span><span class="label">Intro</span></a>
+  <a href="#act1" data-ch="1"><span class="dot"></span><span class="label">Big Bang</span></a>
+  <a href="#act2" data-ch="2"><span class="dot"></span><span class="label">Dominance</span></a>
+  <a href="#act2b" data-ch="3"><span class="dot"></span><span class="label">The Promise</span></a>
+  <a href="#act3" data-ch="4"><span class="dot"></span><span class="label">The Fraud</span></a>
+  <a href="#act4" data-ch="5"><span class="dot"></span><span class="label">Revolving Door</span></a>
+  <a href="#act5" data-ch="6"><span class="dot"></span><span class="label">The Takeover</span></a>
+  <a href="#act6" data-ch="7"><span class="dot"></span><span class="label">Big Tech</span></a>
+  <a href="#act7" data-ch="8"><span class="dot"></span><span class="label">President Profits</span></a>
+  <a href="#closing" data-ch="9"><span class="dot"></span><span class="label">Closing</span></a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero" data-narration="00_intro" data-video="bg_space">
+  <div class="hero-content">
+    <h1>For Sale</h1>
+    <p class="subtitle">From the Big Bang to the blockchain, energy has always flowed toward whoever can concentrate it. The only thing that changes is the tool &mdash; and the speed.</p>
+    <div style="margin-top:2rem">
+      <span class="tag tag-gold">13.8 BILLION YEARS</span>
+      <span class="tag tag-red">$245M IN PAC SPENDING</span>
+      <span class="tag tag-blue">$11.6B PRESIDENTIAL CRYPTO</span>
+      <span class="tag tag-purple">3 PARDONS IN 10 MONTHS</span>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll to begin</div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT I: IN THE BEGINNING                   -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">13.8 BILLION YEARS AGO</div>
+  <h2 id="act1" data-narration="01_beginning" data-video="bg_explosion">Act I: In the Beginning</h2>
+  <p class="era-sub">Before corruption, before money, before life &mdash; there was only energy looking for structure.</p>
+</div>
+
+<section class="section narrow fade-in">
+  <p style="color:var(--dim);margin-bottom:2rem;font-size:1.1rem">In the beginning, there was nothing. Then there was everything.</p>
+
+  <p style="color:var(--dim);margin-bottom:2rem">13.8 billion years ago, all matter and energy in the universe existed in a point smaller than an atom. It exploded. Hydrogen formed. Gravity pulled it together. Stars ignited. Stars died. Their deaths created heavier elements &mdash; carbon, oxygen, iron. Those elements formed planets. On one planet, chemistry became biology.</p>
+
+  <p style="color:var(--dim);margin-bottom:2rem">For 4 billion years, life was simple. Single cells. Then multicellular organisms. Then something remarkable: <strong style="color:var(--bright)">competition</strong>. The moment two organisms wanted the same resource, the game began.</p>
+
+  <p style="color:var(--dim);margin-bottom:2rem">The rules were set by physics: <em>energy flows toward whoever can capture and concentrate it most efficiently.</em> Stars do it with gravity. Cells do it with membranes. Empires do it with armies. Corporations do it with lobbyists. The mechanism changes. The law never does.</p>
+
+  <p style="color:var(--dim)">The universe doesn't care about fairness. It rewards concentration of power. Everything that follows is just that law playing out, faster and faster, with increasingly clever tools.</p>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT II: DOMINANCE                         -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">252 MYA &ndash; 1945 CE</div>
+  <h2 id="act2" data-narration="02_dinosaurs" data-video="bg_volcano">Act II: Dominance</h2>
+  <p class="era-sub">Every dominant species believes its reign is permanent. None of them are right.</p>
+</div>
+
+<section class="section narrow fade-in">
+  <div class="timeline">
+    <div class="tl-event">
+      <div class="tl-date">252 MILLION YEARS AGO</div>
+      <div class="tl-title">The Great Dying</div>
+      <div class="tl-desc">96% of all species wiped out. The Permian extinction cleared the board. What filled the vacuum? Dinosaurs &mdash; the most successful large animals in Earth's history. They dominated for 165 million years. Unchallenged. Unchallengeable.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">66 MILLION YEARS AGO</div>
+      <div class="tl-title">The Asteroid</div>
+      <div class="tl-desc">A 7.5-mile rock hit the Yucat&aacute;n at 45,000 mph. 165 million years of dominance ended in a day. The lesson: <strong>no amount of power protects you from a force you didn't see coming.</strong> Small mammals survived in the margins. They inherited everything.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">~300,000 YEARS AGO</div>
+      <div class="tl-title">Homo Sapiens</div>
+      <div class="tl-desc">Not the strongest, fastest, or largest. But the species that could <strong>tell stories</strong>. Language let humans coordinate at scale. Myths, religions, laws, currencies &mdash; all stories that let strangers cooperate. The tool changed everything.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">~3000 BCE</div>
+      <div class="tl-title">The Pyramids</div>
+      <div class="tl-desc">The first megastructures, built by centralized power extracting labor and resources. The pharaohs didn't just rule &mdash; they controlled the economy, the religion, and the narrative. The original too-big-to-fail. The original story that justified taking from the many to enrich the few.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">753 BCE &ndash; 476 CE</div>
+      <div class="tl-title">Rome</div>
+      <div class="tl-desc">The greatest empire in the ancient world. At its peak, 70 million people under one government. The legions conquered with iron. The Senate was purchased with gold. Senators took bribes from provincial governors. Generals bought armies with treasury money. Julius Caesar crossed the Rubicon because the Senate tried to prosecute him for corruption. The empire fell when the currency was debased, the military was privatized, and the barbarians at the gates were better organized than the bureaucrats inside them.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1095&ndash;1291</div>
+      <div class="tl-title">The Crusades</div>
+      <div class="tl-desc">God wills it. The Pope promised salvation to anyone who fought. Kings promised land. Merchants financed the wars and took the trade routes. Venice and Genoa became the first financial superpowers by funding holy wars. The Knights Templar invented international banking &mdash; depositing money in one country, withdrawing in another. They became so wealthy that the King of France arrested them all on a Friday the 13th and seized their assets. The first hostile takeover of a bank.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1337&ndash;1453</div>
+      <div class="tl-title">The Hundred Years' War</div>
+      <div class="tl-desc">England versus France. 116 years of war over who owns what. The real innovation: permanent taxation. Before the Hundred Years' War, kings asked for money when they needed it. After it, taxes became permanent. War taught governments that once you start taxing, you never have to stop.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1618&ndash;1648</div>
+      <div class="tl-title">The Thirty Years' War</div>
+      <div class="tl-desc">Started as a religious war. Became a political war. Eight million dead &mdash; the most destructive European conflict before the 20th century. The Peace of Westphalia created the modern nation-state system. The lesson: every war starts with an ideology and ends with a treaty about money and territory.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1637</div>
+      <div class="tl-title">Tulip Mania</div>
+      <div class="tl-desc">A single tulip bulb traded for more than a house in Amsterdam. The first recorded speculative bubble. When it popped, the Dutch government refused to enforce futures contracts. Sound familiar?</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1720</div>
+      <div class="tl-title">The South Sea Bubble</div>
+      <div class="tl-desc">The South Sea Company bribed members of Parliament with stock to secure a monopoly on trade. Stock went from &pound;100 to &pound;1,000 in months, then collapsed. MPs who took the bribes? Most kept their seats. <strong>Isaac Newton lost &pound;20,000.</strong></div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1920</div>
+      <div class="tl-title">Charles Ponzi</div>
+      <div class="tl-desc">Promised 50% returns in 45 days. Paid early investors with new investors' money. The scheme collapsed in months but the name stuck forever. Every crypto fraud since follows the same blueprint.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1914&ndash;1918</div>
+      <div class="tl-title">World War I</div>
+      <div class="tl-desc">20 million dead. The war that ended empires: Ottoman, Austro-Hungarian, Russian, German. Arms manufacturers &mdash; Krupp, Vickers, Schneider &mdash; sold weapons to both sides before the war started. J.P. Morgan lent $2.3 billion to the Allies (over $50 billion in today's dollars). The Treaty of Versailles imposed $33 billion in reparations on Germany. The seeds of the next war were planted in the peace treaty of the last one.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1929</div>
+      <div class="tl-title">The Great Depression</div>
+      <div class="tl-desc">The stock market lost 89% of its value. 15 million Americans unemployed. Banks failed by the thousands. Congress passed Glass-Steagall to separate commercial and investment banking. It held for 66 years &mdash; until Wall Street spent $300 million lobbying to repeal it in 1999. Nine years later, the financial system collapsed again.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1939&ndash;1945</div>
+      <div class="tl-title">World War II</div>
+      <div class="tl-desc">75 million dead. The deadliest conflict in human history. IBM sold punch card systems to Nazi Germany. Standard Oil sold fuel additives. Ford built trucks. Coca-Cola invented Fanta for the German market. After the war, not one American corporation was prosecuted for trading with the enemy. Operation Paperclip recruited 1,600 Nazi scientists to work for the United States. The bomb that ended the war was built with $2 billion in taxpayer money by the same government that hired the scientists who helped start it.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">1945</div>
+      <div class="tl-title">The Computer</div>
+      <div class="tl-desc">ENIAC. The first general-purpose electronic computer. 30 tons, 18,000 vacuum tubes. Built for calculating artillery trajectories. The U.S. military funded it; the military always funds it first. Within a decade, computers would move from government labs to corporations to, eventually, every pocket on Earth.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1947&ndash;1991</div>
+      <div class="tl-title">The Cold War</div>
+      <div class="tl-desc">The arms race. Two superpowers spend $10 trillion building weapons capable of ending civilization. The military-industrial complex Eisenhower warned about becomes permanent. Defense contractors &mdash; Lockheed, Boeing, Raytheon &mdash; become some of the most powerful corporations on Earth. Every technological breakthrough of the 20th century &mdash; the internet, GPS, microchips, satellites &mdash; was first funded by military money.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1955&ndash;1975</div>
+      <div class="tl-title">Vietnam</div>
+      <div class="tl-desc">58,220 Americans dead. 2 million Vietnamese dead. The Pentagon Papers revealed the government lied about the war for years. Defense contractors' profits doubled. Agent Orange was manufactured by Dow Chemical and Monsanto. Decades later, both companies are still in business. The soldiers who fought the war got Agent Orange. The companies that made it got contracts.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1956</div>
+      <div class="tl-title">AI &mdash; The First Promise</div>
+      <div class="tl-desc">The Dartmouth Conference. John McCarthy coins "artificial intelligence." Researchers predict human-level AI within 20 years. Government funding pours in. The first AI hype cycle begins.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1958</div>
+      <div class="tl-title">The Microchip</div>
+      <div class="tl-desc">Jack Kilby at Texas Instruments and Robert Noyce at Fairchild Semiconductor independently invent the integrated circuit. A single chip replaces thousands of individual components. Noyce later co-founds Intel. Moore's Law begins: transistor density doubles every two years. The exponential curve that will reshape civilization.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1974&ndash;1993</div>
+      <div class="tl-title">AI Winter</div>
+      <div class="tl-desc">The promises don't deliver. Government funding dries up. The British Lighthill Report calls AI research a failure. DARPA cuts funding. Two decades of "AI Winter" follow. The pattern repeats: hype, funding, disappointment, collapse, repeat. Sound familiar?</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1971&ndash;1990s</div>
+      <div class="tl-title">Silicon Valley</div>
+      <div class="tl-desc">Intel's 4004 &mdash; the first commercial microprocessor. Four bits. 2,300 transistors. By 1993, the Pentium had 3.1 million. A semiconductor company founded in a garage becomes the center of the global economy. The Valley's culture: build fast, monetize faster, regulate never.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1990s</div>
+      <div class="tl-title">The Internet &amp; MySpace</div>
+      <div class="tl-desc">The internet was supposed to democratize information. For a brief moment, it did. GeoCities, MySpace, early forums &mdash; anyone could publish, anyone could connect. Then the platforms realized the real product was attention, and the real business was selling it.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">2012&ndash;2023</div>
+      <div class="tl-title">AI &mdash; The Second Coming</div>
+      <div class="tl-desc">Deep learning. AlexNet crushes an image recognition contest using GPUs &mdash; chips designed for video games. Google, Facebook, and Amazon realize neural networks can predict what you'll click, buy, and believe. By 2023, ChatGPT reaches 100 million users in two months. OpenAI lobbying spend increases 7x in one year. 500+ companies now lobby Congress on AI. The technology changes. The lobbying playbook doesn't.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">2001&ndash;2021</div>
+      <div class="tl-title">The War on Terror</div>
+      <div class="tl-desc">$8 trillion spent. 900,000+ dead (Brown University Costs of War Project). Iraq was invaded based on intelligence about WMDs that didn't exist. Halliburton, Dick Cheney's former company, received $39.5 billion in Iraq-related contracts. Blackwater (now Academi) built a private army. Palantir built the surveillance tools. Twenty years later, the Taliban controls Afghanistan. The defense contractors kept every dollar.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">2001</div>
+      <div class="tl-title">Enron</div>
+      <div class="tl-desc">$74 billion in shareholder value destroyed. Arthur Andersen shredded documents and collapsed. 20,000 employees lost everything. The man who cleaned up the mess: <strong>John Ray III</strong> &mdash; remember that name.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">2008</div>
+      <div class="tl-title">The Financial Crisis</div>
+      <div class="tl-desc">Banks sold garbage mortgages as gold-plated securities. $10 trillion in household wealth evaporated. The banks got $700 billion in bailouts. <strong>Zero executives went to prison.</strong> One person published a whitepaper in response.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT II: THE PROMISE                       -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">2008 &ndash; 2019</div>
+  <h2 id="act2b" data-narration="04_crypto_promise" data-video="bg_code">Act III: The Promise</h2>
+  <p class="era-sub">"A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution."</p>
+</div>
+
+<section class="section narrow fade-in">
+  <p style="color:var(--dim);margin-bottom:2rem">On October 31, 2008 &mdash; six weeks after Lehman Brothers collapsed &mdash; a pseudonymous figure called Satoshi Nakamoto published the Bitcoin whitepaper. The pitch was simple: money without banks, transactions without trust, a financial system that couldn't be corrupted because no one controlled it.</p>
+  <p style="color:var(--dim);margin-bottom:2rem">For a while, the dream held. Early Bitcoin was used by cypherpunks, libertarians, and people in countries with failed currencies. It was weird, idealistic, and mostly harmless.</p>
+  <p style="color:var(--dim);margin-bottom:2rem">Then the money showed up.</p>
+  <p style="color:var(--dim);margin-bottom:2rem">By 2017, Bitcoin hit $20,000. By 2021, $69,000. Total crypto market cap peaked at $3 trillion. And with the money came exactly the same people the technology was supposed to make obsolete: the fraudsters, the lobbyists, the politicians for hire.</p>
+  <p style="color:var(--dim)">The tool built to fight corruption became the most efficient corruption machine ever created.</p>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Sen. Elizabeth Warren (D-MA)</div>
+    <div class="speaker-role">Senate Banking Committee Hearing on Crypto</div>
+    <div class="testimony">"Crypto is the new shadow banking. It has no consumer protection, no regulation, and the biggest players are lobbying hard to keep it that way. This is a industry built to help people evade law enforcement."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Banking Committee, December 14, 2021</div>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"The cryptocurrency industry had promised to overthrow the financial establishment. Instead, it recreated every one of its worst features &mdash; the leverage, the opacity, the conflicts of interest &mdash; but without any of the guardrails built up over centuries of painful lessons."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC News</span> "Crypto's Broken Promise," November 2022</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Warren Buffett</div>
+    <div class="speaker-role">Berkshire Hathaway Annual Meeting, 2022</div>
+    <div class="testimony">"If you told me you own all of the Bitcoin in the world and you offered it to me for $25, I wouldn't take it. Because what would I do with it? I'd have to sell it back to you one way or another. It isn't going to do anything. Apartments are going to produce rent and farms are going to produce food."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN / CNBC</span> Berkshire Hathaway Annual Shareholders Meeting, April 30, 2022</div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- THE AI PATTERN                            -->
+<!-- ========================================= -->
+<div class="divider"><span class="ch-num">The Machine That Learns</span></div>
+
+<section class="section fade-in" data-narration="03b_ai_pattern">
+  <h2 class="section-title">AI Across the Decades</h2>
+  <p class="section-sub">Every generation promises artificial intelligence will change everything. Every generation is right &mdash; just not in the way they promised.</p>
+
+  <div class="timeline">
+    <div class="tl-event">
+      <div class="tl-date">1950</div>
+      <div class="tl-title">Turing's Question</div>
+      <div class="tl-desc">Alan Turing publishes "Computing Machinery and Intelligence." The first line: <em>"Can machines think?"</em> He proposes the Imitation Game &mdash; later called the Turing Test. The question that will haunt the next 75 years.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">1956</div>
+      <div class="tl-title">The Dartmouth Conference</div>
+      <div class="tl-desc">John McCarthy, Marvin Minsky, Claude Shannon, and Nathaniel Rochester gather for a summer workshop. They coin "artificial intelligence" and predict: <strong>"Every aspect of learning can in principle be so precisely described that a machine can be made to simulate it."</strong> They request two months and ten researchers. It will take 67 years and trillions of dollars.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1958&ndash;1969</div>
+      <div class="tl-title">The Golden Age</div>
+      <div class="tl-desc">The Perceptron &mdash; the first neural network. ELIZA &mdash; the first chatbot (a therapist that just repeated your questions back). SHAKEY &mdash; the first mobile robot. DARPA pours millions in. Minsky tells Life Magazine: "Within a generation, the problem of creating artificial intelligence will be substantially solved." It isn't.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1974&ndash;1980</div>
+      <div class="tl-title">First AI Winter</div>
+      <div class="tl-desc">The Lighthill Report in the UK calls AI research a failure. DARPA funding collapses. Minsky and Papert publish <em>Perceptrons</em>, mathematically proving neural networks can't solve XOR. An entire field goes dormant. Thousands of researchers move on.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1980&ndash;1987</div>
+      <div class="tl-title">Expert Systems Boom</div>
+      <div class="tl-desc">Japan announces the Fifth Generation Computer Project: $850 million to build thinking machines. The US panics. Corporations spend $1 billion/year on "expert systems" &mdash; rule-based AI. The Lisp machine market hits $400 million. <strong>The hype cycle repeats.</strong></div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1987&ndash;1993</div>
+      <div class="tl-title">Second AI Winter</div>
+      <div class="tl-desc">Expert systems can't handle real-world complexity. The Lisp machine market collapses overnight. Japan's Fifth Generation Project fails to meet a single goal. DARPA's new director cuts AI funding and says: "AI will not produce the next generation of weapons systems." Researchers learn to never use the words "artificial intelligence" in grant proposals.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">1997</div>
+      <div class="tl-title">Deep Blue Beats Kasparov</div>
+      <div class="tl-desc">IBM's chess machine defeats the world champion. Kasparov accuses IBM of cheating. He was wrong, but his instinct was right: the machine didn't think like he did. It just calculated faster. IBM's stock rises $18 billion. <strong>The real winner was always the shareholders.</strong></div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">2012</div>
+      <div class="tl-title">The Deep Learning Revolution</div>
+      <div class="tl-desc">AlexNet, a neural network running on video game GPUs, crushes the ImageNet competition by 10 percentage points. The technique &mdash; deep learning &mdash; had been around since the 1980s. What changed? Data (the internet) and compute (Moore's Law). Google, Facebook, and Amazon realize they can predict human behavior. The AI gold rush begins.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">2016</div>
+      <div class="tl-title">AlphaGo</div>
+      <div class="tl-desc">DeepMind's AI beats the world Go champion, Lee Sedol. Move 37 in Game 2 is a play no human would make &mdash; and it wins. Sedol says: "I thought AlphaGo was based on probability calculation and that it was merely a machine. But when I saw this move, I changed my mind." He retires from professional Go three years later.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">NOV 2022</div>
+      <div class="tl-title">ChatGPT</div>
+      <div class="tl-desc">100 million users in two months. The fastest-growing consumer application in history. OpenAI, a nonprofit founded to ensure AI benefits all humanity, pivots to a capped-profit structure, then tries to go fully for-profit. Sam Altman lobbies Congress for AI regulation &mdash; regulation that, conveniently, only the biggest companies can afford to comply with.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">2021</div>
+      <div class="tl-title">The AI Schism</div>
+      <div class="tl-desc">Dario Amodei, VP of Research at OpenAI, leaves with a dozen top researchers over disagreements about safety and commercialization. They found Anthropic &mdash; the "safety-first" AI lab. OpenAI had started as a nonprofit to benefit all of humanity. Then it created a capped-profit arm. Then it tried to go fully for-profit. Anthropic says safety-first but raises $7.6 billion from Google, Amazon, and others. <strong>Every idealistic tech venture follows the same arc: start with a mission, then the money shows up, and the mission bends toward the money.</strong> The pattern is older than the technology. It's older than electricity. It's older than money itself.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">2024&ndash;2026</div>
+      <div class="tl-title">The AI Arms Race</div>
+      <div class="tl-desc">NVIDIA becomes the most valuable company on Earth: $3 trillion. 500+ firms lobby Congress on AI. The "Stargate" project: $500 billion for AI data centers (Oracle, SoftBank, OpenAI). The president announces it from the White House. OpenAI lobbying spend increases 7x in one year. Anthropic, Google, Meta, and Microsoft all race to build the most powerful AI while simultaneously lobbying to regulate each other. Every major AI company has a former government official on the payroll. <strong>The tool built to simulate intelligence becomes the latest tool for concentrating power.</strong></div>
+    </div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Sen. Richard Blumenthal (D-CT)</div>
+    <div class="speaker-role">Senate Judiciary Subcommittee on Privacy, Technology and the Law</div>
+    <div class="testimony">"We have a choice right now. We can either seize this moment and regulate AI before the same forces that captured crypto regulation, captured social media regulation &mdash; before those same forces capture AI regulation. Or we can hold hearings, write concerned letters, and watch the same movie play out for the third time."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Judiciary Subcommittee, May 16, 2023 (Sam Altman testimony)</div>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"The pattern with artificial intelligence mirrors every transformative technology before it: military funding gives way to commercial hype, which gives way to disillusionment, which gives way to quiet progress, which gives way to an explosion of capability that catches regulators flat-footed. We are deep in the explosion phase. The regulators haven't even arrived yet."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC Future</span> "AI's Repeating History," 2024</div>
+  </div>
+
+  <div class="stats" style="margin:2rem auto">
+    <div class="stat"><div class="stat-num" style="color:var(--accent)">$3T</div><div class="stat-label">NVIDIA Market Cap (Peak)</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--gold)">$500B</div><div class="stat-label">Stargate AI Project</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--accent2)">500+</div><div class="stat-label">AI Lobbying Firms</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--green)">100M</div><div class="stat-label">ChatGPT Users (2 Months)</div></div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT IV: THE FRAUD                         -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">2019 &ndash; 2023</div>
+  <h2 id="act3" data-narration="05_ftx_machine" data-video="bg_digital">Act IV: The $8 Billion Lie</h2>
+  <p class="era-sub">Sam Bankman-Fried built a $32 billion empire on stolen customer funds and crashed it in six days.</p>
+</div>
+
+<div class="stats fade-in">
+  <div class="stat"><div class="stat-num" style="color:var(--accent2)">$8B</div><div class="stat-label">Customer Funds Stolen</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--accent)">134</div><div class="stat-label">Shell Entities</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--gold)">27</div><div class="stat-label">Jurisdictions</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--green)">6</div><div class="stat-label">Days to Collapse</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--purple)">25 yrs</div><div class="stat-label">Prison Sentence</div></div>
+</div>
+
+<!-- The Machine -->
+<section class="section fade-in">
+  <h2 class="section-title">The Machine</h2>
+  <p class="section-sub">134 companies. 27 countries. One line of code.</p>
+
+  <div style="max-width:700px;margin:0 auto 3rem">
+    <div class="node" style="border-color:var(--green);text-align:center">
+      <h4 style="color:var(--green)">Customer Deposits</h4>
+      <p>Customers wire USD to trade on FTX</p>
+    </div>
+    <div class="flow-arrow">&darr; routed to</div>
+    <div class="node" style="border-color:var(--gold);text-align:center">
+      <h4 style="color:var(--gold)">Alameda's Bank Accounts</h4>
+      <p>Silvergate Bank &bull; Signature Bank &bull; Deltec Bank (Bahamas)</p>
+      <p style="margin-top:.5rem;color:var(--accent2);font-size:.75rem">Banks wouldn't open accounts for FTX &mdash; so deposits went to Alameda instead</p>
+    </div>
+    <div class="flow-arrow">&darr; <span style="font-size:.7rem;margin-left:.5rem">$65B credit line hidden in code</span></div>
+    <div class="node" style="border-color:var(--accent2);text-align:center">
+      <h4 style="color:var(--accent2)">The Backdoor</h4>
+      <p>One line of code exempted Alameda from auto-liquidation. Every other user got liquidated at $0. Alameda could carry a <strong>negative balance up to $65 billion</strong>.</p>
+    </div>
+    <div class="flow-arrow">&darr; spent on</div>
+  </div>
+
+  <div class="bars" style="max-width:900px;margin:0 auto">
+    <div class="bar-row"><div class="bar-label">Celebrity Endorsements</div><div class="bar-track"><div class="bar-fill" style="width:90%;background:linear-gradient(90deg,var(--accent2),#ff6688)">$1.13B</div></div><div class="bar-amt">$1,130M</div></div>
+    <div class="bar-row"><div class="bar-label">Bahamas Real Estate</div><div class="bar-track"><div class="bar-fill" style="width:22%;background:linear-gradient(90deg,var(--gold),#ffcc44)">$256M</div></div><div class="bar-amt">$256M</div></div>
+    <div class="bar-row"><div class="bar-label">Political Donations</div><div class="bar-track"><div class="bar-fill" style="width:8%;background:linear-gradient(90deg,var(--purple),#cc88ff)">$100M</div></div><div class="bar-amt">$100M</div></div>
+    <div class="bar-row"><div class="bar-label">FTX Arena (Miami Heat)</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:linear-gradient(90deg,var(--accent),#44eeff)">$135M</div></div><div class="bar-amt">$135M</div></div>
+    <div class="bar-row"><div class="bar-label">Private Jets</div><div class="bar-track"><div class="bar-fill" style="width:2.5%;background:linear-gradient(90deg,var(--green),#44ff88);min-width:60px">$28M</div></div><div class="bar-amt">$28M</div></div>
+    <div class="bar-row"><div class="bar-label">Parents' Property + Cash</div><div class="bar-track"><div class="bar-fill" style="width:2%;background:linear-gradient(90deg,#888,#aaa);min-width:60px">$26M</div></div><div class="bar-amt">$26M</div></div>
+  </div>
+</section>
+
+<!-- Six Days -->
+<div class="divider" data-narration="06_six_days"><span class="ch-num">Six Days in November</span></div>
+
+<section class="section narrow fade-in">
+  <div class="timeline">
+    <div class="tl-event"><div class="tl-date">NOV 2, 2022</div><div class="tl-title">The CoinDesk Article</div><div class="tl-desc">Alameda's balance sheet leaks: $14.6B in assets, but the biggest holding is $3.66B of FTT &mdash; a token FTX created itself.</div></div>
+    <div class="tl-event crisis"><div class="tl-date">NOV 6</div><div class="tl-title">CZ Pulls the Pin</div><div class="tl-desc">Binance CEO dumps $529M in FTT. Caroline Ellison offers to buy it at $22. It signals desperation. <strong>$1B withdrawn in one day.</strong></div></div>
+    <div class="tl-event crisis"><div class="tl-date">NOV 7</div><div class="tl-title">"FTX is Fine. Assets are Fine."</div><div class="tl-desc">SBF tweets the lie. Behind the scenes: $4 billion more in withdrawals.</div></div>
+    <div class="tl-event crisis"><div class="tl-date">NOV 8</div><div class="tl-title">Withdrawals Halted</div><div class="tl-desc">FTX removes the withdrawal button. Hundreds of thousands locked out. Binance signs a non-binding LOI to acquire, then walks away in 24 hours.</div></div>
+    <div class="tl-event verdict"><div class="tl-date">NOV 11</div><div class="tl-title">Bankruptcy</div><div class="tl-desc">134 entities file Chapter 11. John Ray III &mdash; the Enron guy &mdash; takes over. That night, hackers drain <strong>$477 million</strong>. Messages in the transactions: "Rug Pull All."</div></div>
+  </div>
+
+  <div class="quote" style="margin:2rem 0;border-left:3px solid var(--gold)">
+    <p class="quote-text">Never in my career have I seen such a complete failure of corporate controls and such a complete absence of trustworthy financial information as occurred here.</p>
+    <p class="quote-author">John Ray III</p>
+    <p class="quote-ctx">The man who cleaned up Enron, saying FTX was worse <span class="src-badge src-court">Court Filing</span></p>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Rep. Maxine Waters (D-CA)</div>
+    <div class="speaker-role">Chair, House Financial Services Committee</div>
+    <div class="testimony">"Customers were told their deposits were safe, that they would be able to get their money back. That turned out to be a lie. FTX was using customer deposits as its own personal piggy bank."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> House Financial Services Committee Hearing on FTX Collapse, December 13, 2022</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Rep. Patrick McHenry (R-NC)</div>
+    <div class="speaker-role">Ranking Member, House Financial Services Committee</div>
+    <div class="testimony">"Sam Bankman-Fried's crypto empire was built on a foundation of deception, built on lies and built on the misuse of customer funds. We need to ask: where were the regulators?"</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> House Financial Services Committee Hearing, December 13, 2022</div>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"FTX's collapse has exposed the cryptocurrency industry's dirty secret: the same people who promised to disrupt traditional finance were running a scheme that would have been familiar to Charles Ponzi. The only difference was the technology &mdash; and the scale."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC News</span> "How Sam Bankman-Fried's Crypto Empire Collapsed," November 14, 2022</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Sen. Sherrod Brown (D-OH)</div>
+    <div class="speaker-role">Chair, Senate Banking Committee</div>
+    <div class="testimony">"This wasn't a failure of crypto technology. This was a failure of basic honesty. Sam Bankman-Fried took his customers' money and spent it on mansions and political donations. And the system we rely on to protect consumers failed at every level."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Banking Committee Hearing, December 14, 2022</div>
+  </div>
+</section>
+
+<!-- The Inner Circle -->
+<div class="divider"><span class="ch-num">The Inner Circle</span></div>
+<section class="section fade-in">
+  <table class="data-table">
+    <thead><tr><th>Name</th><th>Role</th><th>Take</th><th>Sentence</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--bright);font-weight:600">Sam Bankman-Fried</td><td>CEO, FTX</td><td class="mono">$8B+ controlled</td><td style="color:var(--accent2);font-weight:700">25 years</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Caroline Ellison</td><td>CEO, Alameda</td><td class="mono">$34.8M</td><td style="color:var(--gold);font-weight:700">2 years</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Nishad Singh</td><td>Engineering Dir.</td><td class="mono">$587M transferred</td><td style="color:var(--green);font-weight:700">Time served</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Ryan Salame</td><td>CEO, FTX Digital</td><td class="mono">$24M+</td><td style="color:var(--gold);font-weight:700">7.5 years</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Gary Wang</td><td>CTO, wrote the backdoor</td><td class="mono">&mdash;</td><td style="color:var(--green);font-weight:700">Time served</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT IV: THE REVOLVING DOOR                -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">2021 &ndash; 2022</div>
+  <h2 id="act4" data-narration="07_revolving_door" data-video="bg_capitol">Act V: The Revolving Door</h2>
+  <p class="era-sub">FTX hired 13 former CFTC officials. One in three members of Congress took FTX money. 73% never gave it back.</p>
+</div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Buying Both Sides</h2>
+  <p class="section-sub">$100 million in stolen customer funds, split across the aisle.</p>
+
+  <div class="compare">
+    <div class="compare-col" style="border-color:rgba(0,100,255,.3)">
+      <h4 style="color:#4488ff;border-color:#4488ff">Democratic Side (Public)</h4>
+      <ul>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span><strong>SBF personally:</strong> $40M+ &mdash; 2nd largest Dem donor after Soros</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span><strong>Nishad Singh:</strong> $9.7M to Democratic causes (straw donor)</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>Barbara Fried (SBF's mother) ran Mind the Gap PAC</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>$27M to Protect Our Future PAC</li>
+      </ul>
+    </div>
+    <div class="compare-col" style="border-color:rgba(255,50,50,.3)">
+      <h4 style="color:#ff4444;border-color:#ff4444">Republican Side (Dark)</h4>
+      <ul>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span><strong>Ryan Salame:</strong> $24.5M &mdash; 11th largest individual donor</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>$2.5M to Senate Leadership Fund (McConnell)</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>$2M to Congressional Leadership Fund (McCarthy)</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>$50M+ through dark money 501(c)(4)s</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote" style="max-width:700px;margin:2rem auto;border-left:3px solid var(--accent2)">
+    <p class="quote-text">All my Republican donations were dark. The reason was not for regulatory reasons, it's because reporters freak the f--- out if you donate to Republicans.</p>
+    <p class="quote-author">Sam Bankman-Fried</p>
+    <p class="quote-ctx">DealBook Summit, November 30, 2022</p>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <h2 class="section-title">13 Former CFTC Officials</h2>
+  <p class="section-sub">FTX didn't just lobby the regulator. It hired the regulator.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Name</th><th>FTX Role</th><th>Former Government Role</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--bright)">Mark Wetjen</td><td>Head of Policy</td><td>CFTC Acting Chair & Commissioner</td></tr>
+      <tr><td style="color:var(--bright)">Ryne Miller</td><td>FTX US General Counsel</td><td>Legal counsel to CFTC Chair Gensler</td></tr>
+      <tr><td style="color:var(--bright)">Chris Giancarlo</td><td>Consultant</td><td>Former CFTC Chair</td></tr>
+      <tr><td style="color:var(--bright)">Jill Sommers</td><td>Board member</td><td>Former CFTC Commissioner</td></tr>
+      <tr><td style="color:var(--bright)">Charlie Thornton</td><td>Lobbyist</td><td>Counselor to CFTC Chair</td></tr>
+      <tr><td colspan="3" style="color:var(--dim);font-size:.8rem;text-align:center">+ 8 more former CFTC officials across lobbying, legal, and risk roles</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin:2rem auto">
+    <p style="color:var(--text)"><strong style="color:var(--gold)">The Bahamas:</strong> SBF offered to pay off the country's entire <strong>$11.6 billion national debt</strong> to Prime Minister Philip Davis. The PM's son offered to be a "conduit" for FTX donations to the Bahamian community. FTX spent $256M on Bahamas real estate while operating under the country's "light touch" DARE Act &mdash; which had no requirement to segregate customer funds.</p>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Gary Gensler, SEC Chair</div>
+    <div class="speaker-role">Senate Banking Committee</div>
+    <div class="testimony">"Without prejudging any one token or platform, the vast majority of crypto tokens are securities under existing law. These platforms are operating as unregistered exchanges, unregistered broker-dealers, and unregistered clearing agencies, often all under one roof. That's a recipe for disaster, and that's exactly what we saw with FTX."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Banking Committee, September 12, 2023</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Rep. Brad Sherman (D-CA)</div>
+    <div class="speaker-role">House Financial Services Committee</div>
+    <div class="testimony">"We've got a billionaire pouring money into politics and the argument is we should just let the industry regulate itself. This is the most successful lobbying campaign in the history of financial services. They're not just buying access &mdash; they're buying legislation."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> House Financial Services Committee Markup, 2023</div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT V: THE TAKEOVER                       -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">2024 &ndash; 2026</div>
+  <h2 id="act5" data-narration="08_takeover" data-video="bg_wallst">Act VI: The Takeover</h2>
+  <p class="era-sub">SBF went to prison. The industry took notes &mdash; and did it better.</p>
+</div>
+
+<section class="section fade-in">
+  <h2 class="section-title">$245 Million Buys an Election</h2>
+  <p class="section-sub">Fairshake PAC: the most effective political weapon in crypto history.</p>
+
+  <div class="bars" style="max-width:900px;margin:0 auto 2rem">
+    <div class="bar-row"><div class="bar-label">Fairshake PAC (total)</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,var(--accent),var(--purple))">$260M raised</div></div><div class="bar-amt">$260M</div></div>
+    <div class="bar-row"><div class="bar-label">Deployed on races</div><div class="bar-track"><div class="bar-fill" style="width:54%;background:linear-gradient(90deg,var(--accent2),#ff6688)">$140M+</div></div><div class="bar-amt">$140M+</div></div>
+    <div class="bar-row"><div class="bar-label">Trump Inauguration (crypto)</div><div class="bar-track"><div class="bar-fill" style="width:7%;background:linear-gradient(90deg,var(--gold),#ffcc44);min-width:60px">$18M</div></div><div class="bar-amt">$18M</div></div>
+    <div class="bar-row"><div class="bar-label">Elon Musk (personal)</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#888,#bbb)">$288M</div></div><div class="bar-amt">$288M</div></div>
+  </div>
+
+  <h3 style="color:var(--accent2);margin:3rem 0 1.5rem;font-size:1.3rem">The Scalps</h3>
+  <p style="color:var(--dim);margin-bottom:1.5rem">Anti-crypto politicians targeted and unseated:</p>
+
+  <div class="card-grid">
+    <div class="card" style="border-left:3px solid var(--accent2)">
+      <h4>Sen. Sherrod Brown (D-OH)</h4>
+      <p>Chair of Senate Banking Committee. Crypto's biggest enemy. <strong style="color:var(--accent2)">$40 million</strong> spent to elect his opponent. The Ohio race drew more ad spending than any Senate race in history. <strong>Brown lost.</strong></p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--accent2)">
+      <h4>Rep. Jamaal Bowman (D-NY)</h4>
+      <p><strong style="color:var(--accent2)">$12 million</strong> from Fairshake opposing him. <strong>Lost his primary.</strong></p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--accent2)">
+      <h4>Rep. Katie Porter (D-CA)</h4>
+      <p><strong style="color:var(--accent2)">$10 million</strong> opposing her Senate primary bid. <strong>She lost.</strong></p>
+    </div>
+  </div>
+  <p style="color:var(--dim);margin-top:1.5rem;font-size:.9rem">Fairshake's win rate: <strong style="color:var(--green)">33 out of 35</strong> races entered. War chest for 2026: <strong>$116 million</strong> and growing.</p>
+</section>
+
+<!-- Pardons for Sale -->
+<div class="divider" data-narration="09_pardons"><span class="ch-num">Pardons for Sale</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Three Crypto Pardons in Ten Months</h2>
+  <p class="section-sub">The price of freedom, denominated in political support.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Who</th><th>Crime</th><th>Pardon Date</th><th>The Price</th></tr></thead>
+    <tbody>
+      <tr>
+        <td style="color:var(--bright);font-weight:600">Ross Ulbricht<br><span style="font-size:.75rem;color:var(--dim)">Silk Road</span></td>
+        <td>Drug trafficking conspiracy, computer hacking. Life without parole.</td>
+        <td class="mono">Jan 21, 2025<br><span style="font-size:.7rem;color:var(--dim)">Day 1 of presidency</span></td>
+        <td>Pledged at Libertarian convention in exchange for libertarian vote. Trump called Ulbricht's mother: "In honor of the Libertarian Movement, which supported me so strongly."</td>
+      </tr>
+      <tr>
+        <td style="color:var(--bright);font-weight:600">BitMEX Founders<br><span style="font-size:.75rem;color:var(--dim)">Hayes, Delo, Reed, Dwyer + the corporation</span></td>
+        <td>Bank Secrecy Act violations, enabling money laundering. $100M corporate fine.</td>
+        <td class="mono">Mar 27, 2025</td>
+        <td>First time a president pardoned a corporation. The Intercept called it unprecedented.</td>
+      </tr>
+      <tr>
+        <td style="color:var(--bright);font-weight:600">Changpeng "CZ" Zhao<br><span style="font-size:.75rem;color:var(--dim)">Binance</span></td>
+        <td>Enabling money laundering. $50M fine, 4 months served.</td>
+        <td class="mono">Oct 23, 2025</td>
+        <td>Binance paid lobbyist <strong>Charles McDowell</strong> (friend of Trump Jr.) <strong>$450K/month</strong> for "executive relief" from the White House. Binance administered Trump's World Liberty Financial trading platform. $2B investment from Abu Dhabi firm MGX used Trump's USD1 stablecoin. Trump on 60 Minutes: "I don't know him."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quote" style="margin:2rem auto;max-width:700px;border-left:3px solid var(--accent2)">
+    <p class="quote-text">This is corruption.</p>
+    <p class="quote-author">Margaret Love, Former U.S. Pardon Attorney (1990&ndash;1997)</p>
+    <p class="quote-ctx">On the CZ pardon <span class="src-badge src-nyt">Newsweek</span></p>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"The pardon of Changpeng Zhao completes what critics call a transactional pattern: an industry under criminal investigation donates heavily to a presidential campaign, and within months, its most prominent convict walks free. The speed of the exchange &mdash; conviction to pardon in under a year &mdash; is without precedent in the history of presidential clemency."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC News</span> "Trump's Crypto Pardons: What's Behind the Clemency Spree," October 2025</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Sen. Elizabeth Warren (D-MA)</div>
+    <div class="speaker-role">Senate Banking Committee</div>
+    <div class="testimony">"Let me get this straight: Binance pleads guilty to money laundering. Its CEO goes to prison. Then its lobbyist &mdash; a friend of the president's son &mdash; gets paid four hundred and fifty thousand dollars a month for 'executive relief from the White House.' And then the president pardons him. If that's not corruption, what is?"</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Banking Committee, November 2025</div>
+  </div>
+
+  <div class="callout" style="margin:2rem auto">
+    <p style="color:var(--text)"><strong style="color:var(--gold)">Historical precedent:</strong> Clinton pardoned fugitive commodities trader Marc Rich on his last day in office (2001). Rich's ex-wife had donated $1M+ to Democrats and $450K to the Clinton Library. It was considered the most corrupt pardon in modern history. The crypto pardons make it look quaint.</p>
+    <p style="color:var(--dim);margin-top:.5rem;font-size:.8rem"><span class="src-badge src-reuters">Reuters</span> <span class="src-badge src-nyt">NYT</span> <span class="src-badge src-wapo">Washington Post</span></p>
+  </div>
+</section>
+
+<!-- The Regulator Swap -->
+<div class="divider"><span class="ch-num">Gutting the Watchdog</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">The SEC: From Enforcer to Enabler</h2>
+
+  <div class="compare">
+    <div class="compare-col" style="border-color:rgba(255,51,102,.3)">
+      <h4 style="color:var(--accent2);border-color:var(--accent2)">Gary Gensler (2021&ndash;2025)</h4>
+      <ul>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--accent2)"></span>Sued Coinbase, Binance, Kraken, Gemini</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--accent2)"></span>Called most crypto tokens unregistered securities</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--accent2)"></span>Crypto industry spent $245M to remove him</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--accent2)"></span>Left on Inauguration Day, January 20, 2025</li>
+      </ul>
+    </div>
+    <div class="compare-col" style="border-color:rgba(0,255,136,.3)">
+      <h4 style="color:var(--green);border-color:var(--green)">Paul Atkins (2025&ndash;present)</h4>
+      <ul>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--green)"></span>Net worth: <strong>$327 million</strong>, substantial crypto holdings</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--green)"></span>Up to $1M in Securitize, Anchorage Digital</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--green)"></span>Co-chaired Token Alliance (crypto advocacy)</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--green)"></span>Dropped Coinbase, Binance, Kraken, Gemini cases</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--green)"></span>Enforcement actions fell 27% &mdash; lowest in a decade</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="color:var(--dim);margin-top:2rem;font-size:.9rem;max-width:800px">Every crypto company that donated to Trump's inauguration or invested in his ventures &mdash; Coinbase, Gemini, Robinhood, Ripple, Crypto.com, Kraken &mdash; had their SEC cases dropped.</p>
+</section>
+
+<!-- ========================================= -->
+<!-- THE RISE AND FALL OF META                 -->
+<!-- ========================================= -->
+<div class="divider"><span class="ch-num">The Rise and Fall of Facebook</span></div>
+
+<section class="section fade-in" data-narration="09b_facebook">
+  <h2 class="section-title">From Dorm Room to Democracy's Dilemma</h2>
+  <p class="section-sub">Mark Zuckerberg built the most powerful communication platform in human history. Then he learned what power costs.</p>
+
+  <div class="timeline">
+    <div class="tl-event">
+      <div class="tl-date">2004</div>
+      <div class="tl-title">TheFacebook.com</div>
+      <div class="tl-desc">A Harvard sophomore launches a website to rate his classmates' faces. Within two weeks, half the campus is on it. Within two years, it's open to the world. "Move fast and break things" becomes Silicon Valley gospel.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">2006&ndash;2012</div>
+      <div class="tl-title">The Growth Machine</div>
+      <div class="tl-desc">Facebook hits 1 billion users. IPO at $104 billion &mdash; the largest tech IPO in history. Revenue model crystallizes: <strong>the product is attention, the customer is the advertiser, the user is the supply.</strong> News Feed algorithm optimizes for engagement. Engagement means outrage. Outrage means addiction.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">2016</div>
+      <div class="tl-title">The Election</div>
+      <div class="tl-desc">Russian operatives run disinformation campaigns reaching 126 million Americans on Facebook. Cambridge Analytica harvests 87 million users' data without consent. Zuckerberg initially calls it "pretty crazy" to think Facebook influenced the election. He later calls that "one of the biggest mistakes I've made."</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">APRIL 2018</div>
+      <div class="tl-title">"Senator, we run ads."</div>
+      <div class="tl-desc">Zuckerberg testifies before Congress for 10 hours over two days. When Sen. Orrin Hatch asks how Facebook makes money, Zuckerberg smirks: "Senator, we run ads." The moment captures the gap between the people writing the rules and the people breaking them.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">2019</div>
+      <div class="tl-title">$5 Billion FTC Fine</div>
+      <div class="tl-desc">The largest privacy fine in history. Facebook's stock went <em>up</em> on the news &mdash; Wall Street had expected worse. The fine represented roughly one month of revenue. Cost of doing business.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">OCT 2021</div>
+      <div class="tl-title">The Facebook Papers</div>
+      <div class="tl-desc">Whistleblower Frances Haugen leaks thousands of internal documents to the SEC, Congress, and journalists. The documents show Facebook knew Instagram was toxic for teen girls, that its algorithm amplified hate speech, and that it was used to organize ethnic violence in Ethiopia and Myanmar. Internal researchers had flagged these problems. Management chose growth.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">OCT 2021</div>
+      <div class="tl-title">Meta</div>
+      <div class="tl-desc">Zuckerberg renames the company to Meta and bets $46 billion on the metaverse. A rebrand to escape the brand. By 2023, Reality Labs has lost $58 billion. The metaverse is empty.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">JAN 2025</div>
+      <div class="tl-title">The Capitulation</div>
+      <div class="tl-desc">Zuckerberg writes $1M inauguration check. Eliminates fact-checking. Moves moderation to Texas. Calls Trump's election "a cultural tipping point." Visits Mar-a-Lago. FTC antitrust case dismissed the same year. <strong>The man who was once hauled before Congress now pays tribute to it.</strong></div>
+    </div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Frances Haugen</div>
+    <div class="speaker-role">Former Facebook Product Manager / Whistleblower</div>
+    <div class="testimony">"The thing I saw at Facebook over and over again was there were conflicts of interest between what was good for the public and what was good for Facebook. And Facebook, over and over again, chose to optimize for its own interests, like making more money."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Commerce Committee, October 5, 2021</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Sen. Richard Blumenthal (D-CT)</div>
+    <div class="speaker-role">Chair, Senate Commerce Subcommittee on Consumer Protection</div>
+    <div class="testimony">"Facebook's own research says, and I quote, 'We make body image issues worse for one in three teen girls.' They know their product is addictive and harmful to children, and they keep pushing it on them. Big Tobacco all over again."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Commerce Committee hearing on "Protecting Kids Online," September 30, 2021</div>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"Mark Zuckerberg's journey from idealistic Harvard dropout to political supplicant is the defining arc of Silicon Valley's relationship with power. He once believed technology would inherently democratize the world. Now he writes million-dollar checks to the inauguration and dismantles the safeguards his own employees begged him to keep. The platform that was supposed to connect humanity became the tool that helped tear it apart."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC News</span> "Meta's Transformation: From Campus Project to Political Player," January 2025</div>
+  </div>
+
+  <div class="stats" style="margin:2rem auto">
+    <div class="stat"><div class="stat-num" style="color:var(--accent)">3.07B</div><div class="stat-label">Daily Active Users</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--accent2)">$5B</div><div class="stat-label">FTC Privacy Fine</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--gold)">$58B</div><div class="stat-label">Metaverse Losses</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--purple)">87M</div><div class="stat-label">Users' Data Harvested</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--green)">126M</div><div class="stat-label">Americans Reached by Disinfo</div></div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT VII: BIG TECH BUYS IN                 -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">JANUARY 2025</div>
+  <h2 id="act6" data-narration="10_big_tech" data-video="bg_servers">Act VII: Big Tech Pays Tribute</h2>
+  <p class="era-sub">Every major tech CEO wrote a $1 million check to the inauguration. Then the favors started flowing.</p>
+</div>
+
+<section class="section fade-in">
+  <h2 class="section-title">The Inauguration Payments</h2>
+
+  <div class="card-grid">
+    <div class="card"><h4>Mark Zuckerberg / Meta</h4><p><span class="mono">$1M</span> to inauguration. Then: eliminated fact-checking, moved moderation to Texas, cited Trump's election as "a cultural tipping point." FTC antitrust case dismissed Nov 2025.</p></div>
+    <div class="card"><h4>Jeff Bezos / Amazon</h4><p><span class="mono">$1M</span> to inauguration. Streamed ceremony on Prime Video. Amazon Web Services powers government cloud.</p></div>
+    <div class="card"><h4>Tim Cook / Apple</h4><p><span class="mono">$1M</span> personal donation after Mar-a-Lago meeting on tariffs. Google ruling preserved Apple's billion-dollar search deal.</p></div>
+    <div class="card"><h4>Sundar Pichai / Google</h4><p><span class="mono">$1M</span> to inauguration. Streamed on YouTube. Google antitrust: judge ruled monopoly but spared breakup. Pichai thanked Trump the next day.</p></div>
+    <div class="card"><h4>Sam Altman / OpenAI</h4><p><span class="mono">$1M</span> personal donation. OpenAI lobbying up 7x from 2023. 500+ firms now lobby on AI.</p></div>
+    <div class="card"><h4>Elon Musk</h4><p><span class="mono">$288M</span> on the election itself &mdash; largest individual donor in US history. In return: runs DOGE with access to every federal agency.</p></div>
+  </div>
+</section>
+
+<!-- DOGE -->
+<div class="divider"><span class="ch-num">The Fox Guarding the Henhouse</span></div>
+
+<section class="section narrow fade-in">
+  <h2 class="section-title">Musk's DOGE</h2>
+  <p class="section-sub">$38 billion in government contracts. Zero recusals.</p>
+
+  <p style="color:var(--dim);margin-bottom:1.5rem">Elon Musk's companies &mdash; Tesla, SpaceX, Starlink, Boring Company, Neuralink &mdash; have received at least <strong style="color:var(--bright)">$38 billion</strong> in government contracts, loans, subsidies, and tax credits (Washington Post investigation).</p>
+
+  <p style="color:var(--dim);margin-bottom:1.5rem">As head of DOGE, Musk has cut staff, budgets, or contracts at <strong>all 7 federal agencies</strong> where his companies hold contracts. He has terminated contracts for countless vendors. <strong style="color:var(--accent2)">None of his own companies' contracts have been touched.</strong></p>
+
+  <p style="color:var(--dim);margin-bottom:2rem">The White House says Musk decides for himself when he has a conflict of interest.</p>
+
+  <div class="bars" style="max-width:700px">
+    <div class="bar-row"><div class="bar-label">SpaceX (defense)</div><div class="bar-track"><div class="bar-fill" style="width:50%;background:linear-gradient(90deg,var(--accent),#44eeff)">$9.5B</div></div><div class="bar-amt">$9,500M</div></div>
+    <div class="bar-row"><div class="bar-label">SpaceX (total historic)</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,var(--accent),var(--purple))">$20B+</div></div><div class="bar-amt">$20,000M+</div></div>
+    <div class="bar-row"><div class="bar-label">Musk election spending</div><div class="bar-track"><div class="bar-fill" style="width:1.5%;background:linear-gradient(90deg,var(--gold),#ffcc44);min-width:60px">$288M</div></div><div class="bar-amt">$288M</div></div>
+  </div>
+  <p style="color:var(--dim);font-size:.8rem;margin-top:1rem">ROI on $288M in election spending: access to cut competitors' contracts while protecting $38B in your own.</p>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Sen. Elizabeth Warren (D-MA)</div>
+    <div class="speaker-role">Senate Floor Speech</div>
+    <div class="testimony">"Elon Musk is the richest man in the world. He has $38 billion in government contracts. And now he's been given the power to cut the budgets and staff of the very agencies that oversee those contracts. He is literally the fox guarding the henhouse."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> Senate Floor, February 2025</div>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"The appointment of the world's richest man to oversee government efficiency while his own companies hold billions in federal contracts represents, according to ethics experts, the most extraordinary conflict of interest in modern American governance. No prior administration has given a private citizen with active government contracts this level of access to the machinery of federal spending."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC News</span> "Musk's DOGE: Efficiency or Conflict?", March 2025</div>
+  </div>
+</section>
+
+<!-- Thiel Network -->
+<div class="divider"><span class="ch-num">The Thiel Network</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Peter Thiel's Shadow Government</h2>
+  <p class="section-sub">12+ proteges placed across the administration. Palantir contracts doubled.</p>
+
+  <div class="card-grid">
+    <div class="card"><h4>JD Vance &mdash; Vice President</h4><p>Thiel's mentee since law school. Thiel gave him his first VC job, donated <strong>$15M</strong> to his 2022 Senate campaign, brokered his introduction to Trump.</p></div>
+    <div class="card"><h4>David Sacks &mdash; AI & Crypto Czar</h4><p>PayPal Mafia, Thiel ally. Now sets policy for the two industries Thiel is most invested in.</p></div>
+    <div class="card"><h4>Palantir</h4><p>Federal contracts nearly doubled: $541M (2024) &rarr; $970M (2025). Army consolidated 75 contracts into a single 10-year deal worth up to <strong>$10B</strong>.</p></div>
+    <div class="card"><h4>The DOGE Pipeline</h4><p>Clark Minor (13 years at Palantir) &rarr; HHS CIO. Jim O'Neill (Thiel ally) &rarr; HHS Deputy Secretary. Multiple former Palantir staff embedded in DOGE.</p></div>
+  </div>
+
+  <div class="bars" style="max-width:800px;margin:2rem auto">
+    <div class="bar-row"><div class="bar-label">Palantir (federal)</div><div class="bar-track"><div class="bar-fill" style="width:48%;background:linear-gradient(90deg,var(--purple),#cc88ff)">$970M (2025)</div></div><div class="bar-amt">$970M</div></div>
+    <div class="bar-row"><div class="bar-label">Oracle (lobbying)</div><div class="bar-track"><div class="bar-fill" style="width:5%;background:linear-gradient(90deg,var(--gold),#ffcc44);min-width:60px">$11M/yr</div></div><div class="bar-amt">$11M/yr</div></div>
+    <div class="bar-row"><div class="bar-label">Larry Ellison (donations)</div><div class="bar-track"><div class="bar-fill" style="width:15%;background:linear-gradient(90deg,var(--accent2),#ff6688);min-width:60px">$30M+</div></div><div class="bar-amt">$30M+</div></div>
+    <div class="bar-row"><div class="bar-label">Oracle ("Stargate" AI deal)</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#888,#bbb)">$500B partnership</div></div><div class="bar-amt">$500B</div></div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACT VII: THE PRESIDENT PROFITS            -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">2025 &ndash; PRESENT</div>
+  <h2 id="act7" data-narration="11_president_profits" data-video="bg_capitol">Act VIII: The President Profits</h2>
+  <p class="era-sub">The president holds $11.6 billion in crypto while signing executive orders that boost its value.</p>
+</div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Trump's Crypto Empire</h2>
+
+  <div class="stats" style="margin-bottom:3rem">
+    <div class="stat"><div class="stat-num" style="color:var(--gold)">$11.6B</div><div class="stat-label">Family Crypto Holdings</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--green)">$800M+</div><div class="stat-label">Crypto Income (H1 2025)</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--accent)">75%</div><div class="stat-label">Of WLFI Token Revenue</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--accent2)">$74.27</div><div class="stat-label">$TRUMP Peak Price</div></div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-event">
+      <div class="tl-date">2019</div>
+      <div class="tl-title">"I am not a fan of Bitcoin"</div>
+      <div class="tl-desc">Trump tweets crypto is "not money" and "based on thin air."</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">2021</div>
+      <div class="tl-title">"It seems like a scam"</div>
+      <div class="tl-desc">Tells Fox Business Bitcoin is a scam competing with the dollar.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">JUNE 2024</div>
+      <div class="tl-title">The Pivot</div>
+      <div class="tl-desc">Begins courting crypto industry at fundraisers. Accepts crypto campaign donations. The $245M in crypto PAC money starts flowing.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">SEP 2024</div>
+      <div class="tl-title">World Liberty Financial</div>
+      <div class="tl-desc">Trump and sons launch WLFI on X Spaces. Family owns 60%, receives 75% of proceeds.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">JAN 17, 2025</div>
+      <div class="tl-title">The $TRUMP Memecoin</div>
+      <div class="tl-desc">Three days before inauguration. Launches at $6, peaks at $74.27. Market cap hits $13B in two days. 800M tokens retained by Trump-affiliated LLCs for gradual release.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">MAR 6, 2025</div>
+      <div class="tl-title">Strategic Bitcoin Reserve</div>
+      <div class="tl-desc">Executive order making the US government a permanent Bitcoin holder. Zero economists surveyed agreed this benefits the economy. The president's personal holdings go up.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">JUL 2025</div>
+      <div class="tl-title">GENIUS Act Signed</div>
+      <div class="tl-desc">The stablecoin bill. 18 Democrats switched their votes after crypto PAC threats. Rep. Maxine Waters: "Republicans are legitimizing Trump's efforts to enrich himself on the backs of average Americans."</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin:3rem auto">
+    <p style="color:var(--text);font-size:1rem"><strong style="color:var(--accent2)">The conflict:</strong> The president personally holds billions in crypto. His executive orders, regulatory appointments, and pardons all increase the value of his own holdings. A UAE national security adviser bought 49% of his crypto venture for half a billion dollars days before inauguration. Not a single economist supports his Strategic Bitcoin Reserve. But it makes his portfolio go up.</p>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- CONTENT MODERATION                        -->
+<!-- ========================================= -->
+<div class="divider"><span class="ch-num">The Price of Compliance</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">What $1 Million Buys</h2>
+  <p class="section-sub">After the inauguration checks cleared, Big Tech changed its tune.</p>
+
+  <div class="compare">
+    <div class="compare-col" style="border-color:rgba(0,100,255,.3)">
+      <h4 style="color:#4488ff;border-color:#4488ff">Meta (January 7, 2025)</h4>
+      <ul>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>Eliminated third-party fact-checking</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>Removed restrictions on immigration and gender content</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>Moved moderation team from California to Texas</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>Zuckerberg: Trump's election was "a cultural tipping point"</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#4488ff"></span>FTC antitrust case dismissed the same year</li>
+      </ul>
+    </div>
+    <div class="compare-col" style="border-color:rgba(255,50,50,.3)">
+      <h4 style="color:#ff4444;border-color:#ff4444">Google (September 2025)</h4>
+      <ul>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>Admitted Biden-era censorship was "unacceptable and wrong"</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>Reinstated creators banned for COVID/election content</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>Pledged never to use third-party fact-checkers again</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>Pulled out of EU Digital Services Act fact-checking</li>
+        <li><span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#ff4444"></span>Google antitrust: monopoly ruling but no breakup</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- THE PATTERN                               -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <h2>The Pattern</h2>
+  <p class="era-sub">Same playbook, every era. Just faster.</p>
+</div>
+
+<section class="section fade-in">
+  <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+    <div class="card" style="border-top:3px solid var(--gold)">
+      <h4 style="color:var(--gold)">1720: South Sea Bubble</h4>
+      <p>Bribed Parliament with stock. Got a trade monopoly. Took <strong>years</strong> to build. MPs kept their seats.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4 style="color:var(--accent)">2001: Enron</h4>
+      <p>Bought regulators and accountants. Hid debt in shell companies. Took <strong>a decade</strong> to build. CFO served 6 years.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent2)">
+      <h4 style="color:var(--accent2)">2008: Wall Street</h4>
+      <p>Captured the rating agencies. Lobbied to gut Glass-Steagall. Took <strong>decades</strong>. Got bailed out. Zero prison time.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--purple)">
+      <h4 style="color:var(--purple)">2022: FTX</h4>
+      <p>Hired 13 ex-regulators. Donated to 1 in 3 members of Congress. Took <strong>3 years</strong>. SBF got 25 years.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green)">
+      <h4 style="color:var(--green)">2025: Crypto Industry</h4>
+      <p>Spent $245M on elections. Installed a crypto advocate as SEC Chair. Got pardons, dropped cases, favorable laws. Took <strong>10 months</strong>. The president profits personally.</p>
+    </div>
+  </div>
+
+  <div class="quote" style="margin:3rem auto;max-width:700px;border-left:3px solid var(--gold)">
+    <p class="quote-text">A thief who takes his loot to Las Vegas and successfully bets the stolen money is not entitled to a discount on the sentence by using his Las Vegas winnings to pay back what he stole.</p>
+    <p class="quote-author">Judge Lewis Kaplan</p>
+    <p class="quote-ctx">Sentencing SBF to 25 years, March 28, 2024</p>
+  </div>
+
+  <div class="quote" style="margin:2rem auto;max-width:700px;border-left:3px solid var(--accent2)">
+    <p class="quote-text">This is really old-fashioned embezzlement. This is just taking money from customers and using it for your own purpose. Not sophisticated at all.</p>
+    <p class="quote-author">John Ray III</p>
+    <p class="quote-ctx">The man who cleaned up Enron, on FTX</p>
+  </div>
+
+  <div class="quote" style="margin:2rem auto;max-width:700px;border-left:3px solid var(--purple)">
+    <p class="quote-text">I'm sorry I wasn't brave.</p>
+    <p class="quote-author">Caroline Ellison</p>
+    <p class="quote-ctx">Sentencing hearing, September 2024</p>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ========================================= -->
+<!-- WARS FOR PROFIT                           -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <div class="era-date">ALL OF HUMAN HISTORY</div>
+  <h2>Follow the Money Through Every War</h2>
+  <p class="era-sub">Every war in history was funded by someone. Every one of them made someone rich. Here is the ledger.</p>
+</div>
+
+<div class="divider"><span class="ch-num">The Ancient Ledger</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Wars Before Nations</h2>
+
+  <div class="timeline">
+    <div class="tl-event">
+      <div class="tl-date">~2500 BCE</div>
+      <div class="tl-title">Sumerian Wars</div>
+      <div class="tl-desc">The first recorded wars. City-states fought over irrigation rights &mdash; water was the original oil. The temples funded the armies. The priests controlled the granaries. <strong>The first military-industrial complex: temples that lent grain to fund wars that seized more farmland that produced more grain for the temples.</strong> The circular logic of war profiteering, invented 4,500 years ago.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">~500 BCE</div>
+      <div class="tl-title">Persian Wars</div>
+      <div class="tl-desc">Darius I taxed 20 satrapies (provinces) to fund his army. Annual tribute: 14,560 talents of silver (~$4.5 billion today). The provinces that were conquered paid for the armies that conquered the next province. Athens built 200 warships with silver from the Laurion mines &mdash; mined by 20,000 slaves. <strong>The Greek victory at Salamis was funded by slave labor.</strong> Democracy's origin story has a footnote.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">264&ndash;146 BCE</div>
+      <div class="tl-title">Punic Wars</div>
+      <div class="tl-desc">Rome vs. Carthage. Three wars over 118 years. Carthage was the richest city in the Mediterranean &mdash; its merchant class funded Hannibal's army. Rome's senators invested in war contracts: supplying armor, food, ships. <strong>The publicani</strong> &mdash; private tax collectors and military contractors &mdash; became the wealthiest class in Rome. They bid on government contracts, skimmed profits, and used political connections to get more contracts. They were the original defense contractors.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1095&ndash;1291</div>
+      <div class="tl-title">The Crusades: Banking Was Born</div>
+      <div class="tl-desc"><strong>The Knights Templar</strong> invented international banking to fund holy wars. Deposit gold in Paris, withdraw in Jerusalem. They charged interest (forbidden by the Church) but called it "rent." By 1250, they were the largest financial institution in Europe. On <strong>Friday, October 13, 1307</strong>, King Philip IV of France arrested every Templar simultaneously, tortured confessions out of them, and seized their assets &mdash; he owed them too much money. The first bank bailout was a bank execution. <strong>The Medici family</strong> of Florence took over. They funded wars across Italy, produced four popes, and two queens of France. Their bank's ledger is the DNA of modern finance.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1337&ndash;1453</div>
+      <div class="tl-title">Hundred Years' War: Permanent Taxation</div>
+      <div class="tl-desc">England's Edward III borrowed from Italian bankers (the Bardi and Peruzzi families) to fight France. When he defaulted, both banks collapsed &mdash; triggering a financial crisis across Europe. The lesson: <strong>lending to governments that fight wars is the most dangerous and most profitable business in the world.</strong> The war's real innovation: permanent taxation. Before 1337, kings asked for money when they needed it. After, taxes became permanent. War taught governments that once you start taxing, you never stop.</div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">1400s&ndash;1600s</div>
+      <div class="tl-title">The Conquest of the Americas</div>
+      <div class="tl-desc">Spain's conquests were <strong>private ventures</strong>. Cort&eacute;s and Pizarro were entrepreneurs, not soldiers &mdash; they raised private capital, hired private armies, and kept a percentage of the loot. The Spanish Crown took the "Royal Fifth" &mdash; 20% of all gold and silver. Between 1500 and 1800, Spain extracted <strong>181 tons of gold</strong> and <strong>16,000 tons of silver</strong> from the Americas. 90% of the indigenous population died. The Potosi silver mines in Bolivia killed 8 million workers over 300 years. Spain used the silver to fund wars in Europe. The money flowed from indigenous mines to Spanish kings to European battlefields to Genoese bankers.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="ch-num">The Colonial Machine</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Corporations That Waged War</h2>
+  <p class="section-sub">Before nations had standing armies, corporations had private ones.</p>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid var(--gold)">
+      <h4 style="color:var(--gold)">Dutch East India Company (VOC)</h4>
+      <p>Founded 1602. The first publicly traded company. Peak valuation: <strong>$7.9 trillion</strong> in today's dollars (larger than Apple, Microsoft, Google, and Amazon combined). Had its own army (10,000 soldiers), navy (150 ships), the right to wage war, negotiate treaties, establish colonies, and mint currency. Controlled the spice trade by exterminating the population of the Banda Islands. <strong>Paid dividends of 18% annually for 200 years.</strong> The shareholders never saw the bodies. <span class="src-badge src-bbc">BBC</span></p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent2)">
+      <h4 style="color:var(--accent2)">British East India Company</h4>
+      <p>Founded 1600. At its peak, it ruled <strong>India</strong> &mdash; a subcontinent of 200 million people &mdash; as a private corporation. Had 260,000 soldiers (twice the size of the British army). Started the Opium Wars to force China to buy drugs. <strong>Revenue in 1800: half of all world trade.</strong> When the company finally collapsed after the Indian Rebellion of 1857, the British government took over. The corporation that ran a country became the country that ran the corporation's empire. <span class="src-badge src-bbc">BBC</span></p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--purple)">
+      <h4 style="color:var(--purple)">The Atlantic Slave Trade</h4>
+      <p>12.5 million Africans transported. 1.8 million died in transit. The Royal African Company (chartered by King Charles II, shareholders included the royal family and Parliament members) had a monopoly on the trade. Lloyd's of London insured slave ships. Barclays Bank's founders traded slaves. <strong>The profits built Liverpool, Bristol, London, New York, and Charleston.</strong> The financial infrastructure of modern banking was built on the slave trade. <span class="src-badge src-bbc">BBC</span> <span class="src-badge src-nyt">NYT</span></p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4 style="color:var(--accent)">The Opium Wars (1839&ndash;1860)</h4>
+      <p>Britain went to war with China &mdash; twice &mdash; to protect its right to sell opium. The East India Company grew opium in India, sold it in China, and used the silver to buy tea. When China tried to ban opium, Britain sent gunboats. <strong>Jardine Matheson</strong> and <strong>Dent &amp; Co</strong> &mdash; the drug dealers &mdash; lobbied Parliament directly for war. They won. Hong Kong was seized as payment. Jardine Matheson is still a Fortune 500 company today. <span class="src-badge src-bbc">BBC</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="ch-num">The Industrial Wars</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Who Funded the World Wars</h2>
+  <p class="section-sub">The same banks and corporations funded both sides. Then they funded the rebuilding.</p>
+
+  <div class="timeline">
+    <div class="tl-event crisis">
+      <div class="tl-date">1914&ndash;1918</div>
+      <div class="tl-title">World War I: The Bankers' War</div>
+      <div class="tl-desc"><strong>J.P. Morgan &amp; Co.</strong> lent $2.3 billion to the Allies ($50 billion today) &mdash; making the bank the single largest financier of the war. Morgan also served as the purchasing agent for Britain and France, buying American-made weapons and supplies. The bank took a commission on every transaction. <strong>Krupp</strong> (Germany) and <strong>Vickers</strong> (Britain) sold arms to multiple countries before the war. <strong>Bethlehem Steel</strong> produced weapons for the Allies; its CEO Charles Schwab became one of the richest men in America. Du Pont supplied 40% of all Allied explosives. <strong>War made Du Pont a chemical empire.</strong> The company's profits went from $6M to $82M in four years. After the war, a congressional investigation called them "Merchants of Death."</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1934</div>
+      <div class="tl-title">The Nye Committee</div>
+      <div class="tl-desc">Sen. Gerald Nye's congressional investigation found that <strong>arms manufacturers had deliberately promoted the war to increase profits.</strong> Du Pont, Bethlehem Steel, and others had lobbied against arms embargoes. Bankers had pushed for US entry to protect their loans. The committee concluded: "The profits of the munitions makers were a major factor in the decision to enter the war." Congress responded by passing the Neutrality Acts. <strong>Those acts lasted five years.</strong> <span class="src-badge src-congress">Congressional Record</span></div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1939&ndash;1945</div>
+      <div class="tl-title">World War II: The Corporations That Served Both Sides</div>
+      <div class="tl-desc"><strong>IBM</strong>: Supplied punch card systems to Nazi Germany through its subsidiary Dehomag. The machines were used to organize the census, track railroad logistics, and &mdash; according to historian Edwin Black &mdash; manage concentration camp prisoner processing. IBM serviced the machines throughout the war. CEO Thomas Watson received the Merit Cross of the German Eagle from Hitler in 1937. <strong>He returned the medal in 1940 but kept the contracts.</strong></div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1939&ndash;1945</div>
+      <div class="tl-title">More Corporate Connections</div>
+      <div class="tl-desc"><strong>Ford:</strong> Built trucks for the Wehrmacht through Ford-Werke AG. Henry Ford received the Grand Cross of the German Eagle (1938). <strong>Standard Oil (Exxon):</strong> Licensed fuel additive patents to I.G. Farben, which also manufactured Zyklon B for the gas chambers. <strong>Chase Bank</strong> (now JPMorgan Chase): Kept its Paris branch open under Nazi occupation, froze Jewish accounts on German orders. <strong>Coca-Cola:</strong> When it couldn't ship syrup to Nazi Germany, its German subsidiary invented Fanta. <strong>Hugo Boss:</strong> Manufactured Nazi uniforms. <strong>Bayer:</strong> Part of I.G. Farben, conducted medical experiments at Auschwitz. <span class="src-badge src-nyt">NYT</span> <span class="src-badge src-bbc">BBC</span></div>
+    </div>
+    <div class="tl-event verdict">
+      <div class="tl-date">1945&ndash;1946</div>
+      <div class="tl-title">The Reckoning That Wasn't</div>
+      <div class="tl-desc">I.G. Farben was broken up at Nuremberg into Bayer, BASF, and Hoechst &mdash; all still Fortune 500 companies. <strong>Not a single American corporation was prosecuted</strong> for trading with the enemy. Krupp's chairman was sentenced to 12 years, served 3. <strong>Operation Paperclip:</strong> 1,600 Nazi scientists recruited by the US government &mdash; including Wernher von Braun (V-2 rockets → NASA Saturn V). The man who built the rockets that killed thousands of slave laborers at Mittelbau-Dora became an American hero. He got a Disney TV special.</div>
+    </div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Maj. Gen. Smedley Butler, USMC (Ret.)</div>
+    <div class="speaker-role">Two-time Medal of Honor recipient, 1935</div>
+    <div class="testimony">"War is a racket. It always has been. It is possibly the oldest, easily the most profitable, surely the most vicious. It is the only one in which the profits are reckoned in dollars and the losses in lives. I spent 33 years in active military service, and during that period I spent most of my time being a high-class muscle man for Big Business, for Wall Street, and for the bankers."</div>
+    <div class="hearing-src"><span class="src-badge src-congress">Congressional Record</span> "War Is a Racket," 1935 &mdash; the most decorated Marine in US history at the time</div>
+  </div>
+</section>
+
+<div class="divider"><span class="ch-num">The Permanent War Economy</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Cold War to Forever Wars</h2>
+  <p class="section-sub">After 1945, war became permanent. So did the profits.</p>
+
+  <div class="timeline">
+    <div class="tl-event">
+      <div class="tl-date">1947&ndash;1991</div>
+      <div class="tl-title">The Cold War: $10 Trillion</div>
+      <div class="tl-desc">The US and USSR spent an estimated <strong>$10 trillion</strong> on weapons capable of ending civilization. The nuclear arsenal peaked at 70,000 warheads. <strong>Lockheed, Boeing, General Dynamics, Raytheon, Northrop Grumman</strong> became permanent fixtures of the economy. The "revolving door" between the Pentagon and defense contractors became institutionalized: serve in government, approve contracts, retire to the company you approved the contracts for.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1950&ndash;1953</div>
+      <div class="tl-title">Korean War</div>
+      <div class="tl-desc">36,574 Americans killed. Defense spending tripled from $13B to $50B. Never went back down. <strong>The war established the permanent peacetime defense budget.</strong> Before Korea, the US had always demobilized after wars. After Korea, the military-industrial complex became a permanent feature of the economy.</div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1955&ndash;1975</div>
+      <div class="tl-title">Vietnam: The Pentagon Papers</div>
+      <div class="tl-desc">58,220 Americans dead. 2&ndash;3 million Vietnamese dead. <strong>The Pentagon Papers</strong> (leaked by Daniel Ellsberg, 1971) revealed the government had systematically lied about the war for years. <strong>Dow Chemical:</strong> manufactured Agent Orange (80 million liters sprayed, 3 million Vietnamese exposed, birth defects for generations). <strong>Bell Helicopter:</strong> stock rose 400% during the war. <strong>General Electric:</strong> supplied engines for every major aircraft. Defense contractor profits doubled. The soldiers got Agent Orange. The companies got contracts.</div>
+    </div>
+    <div class="tl-event">
+      <div class="tl-date">1980s</div>
+      <div class="tl-title">Iran-Contra &amp; the Mujahideen</div>
+      <div class="tl-desc">The US sold weapons to Iran (under embargo) and used the profits to fund Contra rebels in Nicaragua (banned by Congress). <strong>The CIA funded the Afghan mujahideen</strong> against the Soviets through Pakistan's ISI &mdash; $3 billion in covert aid. Among those funded: <strong>Osama bin Laden's network.</strong> The Stinger missiles that brought down Soviet helicopters cost $38,000 each. The blowback would cost $8 trillion. <span class="src-badge src-congress">Congressional Record</span></div>
+    </div>
+    <div class="tl-event crisis">
+      <div class="tl-date">1990&ndash;1991</div>
+      <div class="tl-title">Gulf War I: The 100-Hour War</div>
+      <div class="tl-desc">Saddam Hussein invaded Kuwait. The US assembled a 700,000-person coalition. <strong>The war was televised live on CNN</strong> &mdash; the first war as entertainment. Saudi Arabia and Kuwait paid $36 billion of the $61 billion cost. Lockheed's F-117 Stealth Fighter became a celebrity. Defense stocks surged. <strong>Before the war, the US had sold Iraq $200 million in weapons.</strong> Including helicopters that would later be used against Iraqi Kurds. <span class="src-badge src-wapo">WaPo</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="ch-num">The Forever Wars</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">$8 Trillion and Counting</h2>
+  <p class="section-sub">The War on Terror made the defense industry the safest investment in America.</p>
+
+  <div class="stats" style="margin-bottom:2rem">
+    <div class="stat"><div class="stat-num" style="color:var(--accent2)">$8T</div><div class="stat-label">War on Terror (Total Cost)</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--gold)">900K+</div><div class="stat-label">People Killed</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--accent)">37M</div><div class="stat-label">Displaced</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--green)">$886B</div><div class="stat-label">US Defense Budget (2024)</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--purple)">674</div><div class="stat-label">Ex-Officials at Top 20 Contractors</div></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid var(--accent2)">
+      <h4 style="color:var(--accent2)">Iraq (2003&ndash;2011)</h4>
+      <p>Invaded based on WMD intelligence that didn't exist. <strong>Halliburton</strong> (Dick Cheney was CEO until 2000, received $34M in deferred compensation): $39.5 billion in Iraq contracts, much of it no-bid. KBR subsidiary overcharged $61M for fuel, $152M for meals never served. <strong>Blackwater</strong> (Erik Prince, brother of Education Secretary Betsy DeVos): earned $2 billion in contracts, its contractors killed 17 Iraqi civilians at Nisour Square. Prince later proposed privatizing the entire Afghanistan war. <span class="src-badge src-wapo">WaPo</span> <span class="src-badge src-congress">POGO</span></p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--gold)">
+      <h4 style="color:var(--gold)">Afghanistan (2001&ndash;2021)</h4>
+      <p>20 years. $2.3 trillion. The Taliban won anyway. The <strong>Afghanistan Papers</strong> (Washington Post, 2019) revealed senior officials knew the war was unwinnable and lied about it for years. $88 billion spent training the Afghan army &mdash; it collapsed in 11 days. <strong>The top 5 defense contractors' combined revenue during the war: $2.1 trillion.</strong> Their stock prices increased an average of 1,000% from 2001 to 2021. <span class="src-badge src-wapo">WaPo</span></p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4 style="color:var(--accent)">Ukraine (2022&ndash;present)</h4>
+      <p>Russia invades. The West responds with weapons, not soldiers. Lockheed Martin stock rises 37% in 2022. Raytheon (now RTX) stock rises 17%. The US sends $175 billion in aid. Javelin missiles cost $178,000 each &mdash; manufactured by a Lockheed-Raytheon joint venture. HIMARS rockets: $168,000 each (Lockheed). Patriot missiles: $4 million each (Raytheon). <strong>Every dollar of aid is a purchase order for a US defense contractor.</strong> <span class="src-badge src-congress">OpenSecrets</span></p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--purple)">
+      <h4 style="color:var(--purple)">Gaza (2023&ndash;present)</h4>
+      <p>$3.8 billion in annual US military aid to Israel. Boeing supplies F-15s. Lockheed supplies F-35s ($80M each). General Dynamics supplies MK-84 bombs ($3,100 each, 2,000 lbs). In March 2024, the US bypassed Congress to approve 1,800 MK-84 bombs and 500 MK-82 bombs. The ICJ rules a "plausible case" of genocide. Arms deliveries continue. <strong>The companies that make the bombs have never been asked to stop.</strong> <span class="src-badge src-bbc">BBC</span> <span class="src-badge src-reuters">Reuters</span></p>
+    </div>
+  </div>
+
+  <div class="bars" style="max-width:900px;margin:2rem auto">
+    <h3 style="color:var(--accent2);margin-bottom:1rem;font-size:1rem">Defense Contractor Stock Performance (2001&ndash;2024)</h3>
+    <div class="bar-row"><div class="bar-label">Lockheed Martin</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,var(--accent2),#ff6688)">+1,236%</div></div><div class="bar-amt">+1,236%</div></div>
+    <div class="bar-row"><div class="bar-label">Northrop Grumman</div><div class="bar-track"><div class="bar-fill" style="width:91%;background:linear-gradient(90deg,var(--gold),#ffcc44)">+1,126%</div></div><div class="bar-amt">+1,126%</div></div>
+    <div class="bar-row"><div class="bar-label">General Dynamics</div><div class="bar-track"><div class="bar-fill" style="width:68%;background:linear-gradient(90deg,var(--accent),#44eeff)">+843%</div></div><div class="bar-amt">+843%</div></div>
+    <div class="bar-row"><div class="bar-label">RTX (Raytheon)</div><div class="bar-track"><div class="bar-fill" style="width:42%;background:linear-gradient(90deg,var(--purple),#cc88ff)">+518%</div></div><div class="bar-amt">+518%</div></div>
+    <div class="bar-row"><div class="bar-label">Boeing</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:linear-gradient(90deg,var(--green),#44ff88)">+371%</div></div><div class="bar-amt">+371%</div></div>
+    <div class="bar-row"><div class="bar-label">S&amp;P 500 (comparison)</div><div class="bar-track"><div class="bar-fill" style="width:36%;background:linear-gradient(90deg,#888,#bbb)">+440%</div></div><div class="bar-amt">+440%</div></div>
+  </div>
+
+  <h3 style="color:var(--accent2);margin:3rem 0 1.5rem;font-size:1.1rem">The Revolving Door: Defense Edition</h3>
+
+  <table class="data-table">
+    <thead><tr><th>Name</th><th>Government Role</th><th>Defense Industry Role</th><th>Notable</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--bright);font-weight:600">Dick Cheney</td><td>Secretary of Defense (1989&ndash;93), VP (2001&ndash;09)</td><td>Halliburton CEO (1995&ndash;2000)</td><td class="mono">$39.5B in Iraq contracts to Halliburton</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Mark Esper</td><td>Secretary of Defense (2019&ndash;20)</td><td>Raytheon VP (2010&ndash;17)</td><td class="mono">Rejoined defense industry after firing</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Lloyd Austin</td><td>Secretary of Defense (2021&ndash;25)</td><td>Raytheon board member (2016&ndash;21)</td><td class="mono">$1.7M in Raytheon stock/compensation</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">James Mattis</td><td>Secretary of Defense (2017&ndash;19)</td><td>General Dynamics board (2013&ndash;17)</td><td class="mono">Returned to defense boards after</td></tr>
+      <tr><td style="color:var(--bright);font-weight:600">Leon Panetta</td><td>CIA Dir., SecDef</td><td>Oracle advisory board</td><td class="mono">Multiple defense consulting roles</td></tr>
+      <tr><td colspan="4" style="color:var(--dim);font-size:.8rem;text-align:center">+ 669 more former senior officials at the top 20 defense contractors (Project on Government Oversight, 2024)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">President Dwight D. Eisenhower</div>
+    <div class="speaker-role">Farewell Address, January 17, 1961</div>
+    <div class="testimony">"In the councils of government, we must guard against the acquisition of unwarranted influence, whether sought or unsought, by the military-industrial complex. The potential for the disastrous rise of misplaced power exists and will persist. We must never let the weight of this combination endanger our liberties or democratic processes."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN Archives</span> Presidential farewell address, broadcast nationally</div>
+  </div>
+
+  <div class="hearing-quote" style="margin:2rem auto">
+    <div class="speaker">Maj. Gen. Smedley Butler, USMC (Ret.)</div>
+    <div class="speaker-role">Two-time Medal of Honor recipient</div>
+    <div class="testimony">"I helped make Mexico safe for American oil interests. I helped make Haiti and Cuba a decent place for the National City Bank boys to collect revenues in. I helped in the raping of half a dozen Central American republics for the benefit of Wall Street. I helped purify Nicaragua for the international banking house of Brown Brothers. Looking back on it, I might have given Al Capone a few hints. The best he could do was to operate his racket in three districts. I operated on three continents."</div>
+    <div class="hearing-src"><span class="src-badge src-congress">Congressional Record</span> "War Is a Racket," 1935</div>
+  </div>
+
+  <div class="bbc-quote" style="margin:2rem auto">
+    <div class="bbc-text">"The economics of modern warfare are straightforward: governments borrow money to buy weapons from private companies, whose shareholders profit from the destruction those weapons cause, which creates the instability that justifies buying more weapons. It is the most reliable business model in human history. From the Sumerian temples to the Lockheed boardroom, the only thing that's changed is the scale."</div>
+    <div class="bbc-src"><span class="src-badge src-bbc">BBC World Service</span> "The Business of War," 2024</div>
+  </div>
+
+  <div class="callout" style="margin:2rem auto">
+    <p style="color:var(--text);font-size:1rem"><strong style="color:var(--gold)">The Thread:</strong> Sumerian temples lent grain to fund wars &rarr; Roman publicani bid on military contracts &rarr; Templars invented banking to fund Crusades &rarr; Medici funded Italian wars &rarr; East India Companies waged private wars for shareholders &rarr; Morgan financed WWI for commissions &rarr; IBM, Ford, Standard Oil served both sides of WWII &rarr; Cold War made defense contractors permanent &rarr; Vietnam's Pentagon Papers proved the government lied &rarr; Iraq's WMDs didn't exist but Halliburton got $39.5B &rarr; Afghanistan lasted 20 years, the Taliban won, defense stocks rose 1,000%. <strong>The mechanism changes. The law never does.</strong></p>
+  </div>
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section class="section narrow fade-in" id="closing" data-narration="12_closing" style="text-align:center;padding-top:4rem">
+  <p style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--bright);line-height:1.4;margin-bottom:2rem">The universe took 13.8 billion years to create life.<br>Dinosaurs dominated for 165 million years.<br>The pyramids took generations.<br>The microchip took a decade to change everything.<br>AI was promised in 20 years. It took 67.<br>Facebook connected 3 billion people. Then sold them.<br>Enron took a decade to build and a week to collapse.<br>Wall Street took decades. Got bailed out in days.<br>FTX took three years. Collapsed in six days.<br>The crypto takeover of the U.S. government took ten months.</p>
+  <p style="color:var(--dim);font-size:1.1rem;margin-bottom:2rem">The only thing that changes is the speed.<br>The game never changes.</p>
+
+  <div class="hearing-quote" style="margin:2rem auto;text-align:left">
+    <div class="speaker">Rep. Alexandria Ocasio-Cortez (D-NY)</div>
+    <div class="speaker-role">House Oversight Committee</div>
+    <div class="testimony">"We are watching, in real time, the merger of corporate power and government power. When the richest people in the world can buy elections, hire regulators, pardon criminals, and write the laws that govern their own industries &mdash; that's not democracy. That's oligarchy."</div>
+    <div class="hearing-src"><span class="src-badge src-cspan">C-SPAN</span> House Oversight Committee, 2025</div>
+  </div>
+</section>
+
+<!-- ===== CORRECTIONS ===== -->
+<div style="text-align:center;padding:4rem 2rem 2rem;max-width:700px;margin:0 auto">
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--bright);margin-bottom:1rem">Got Something Wrong?</h3>
+  <p style="color:var(--dim);margin-bottom:1.5rem;line-height:1.7">This documentary is built on publicly available sources: court filings, congressional records, SEC/CFTC filings, FEC disclosures, and investigative journalism. Every claim is sourced. But nobody's perfect. If you find an error &mdash; a wrong number, a misattributed quote, a date that's off &mdash; tell us. We'll fix it and credit you.</p>
+  <a href="mailto:forsale.documentary@protonmail.com" style="display:inline-block;padding:.8rem 2rem;background:linear-gradient(135deg,var(--accent),var(--purple));color:var(--bright);text-decoration:none;border-radius:50px;font-weight:600;font-size:.9rem;transition:transform .2s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">forsale.documentary@protonmail.com</a>
+  <p style="color:var(--dim);font-size:.7rem;margin-top:1rem">Corrections will be published in the next update with credit.</p>
+</div>
+
+<!-- ===== COMMENTS ===== -->
+<div style="max-width:800px;margin:2rem auto;padding:0 2rem">
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--bright);margin-bottom:1.5rem;text-align:center">Comments</h3>
+
+  <div id="commentForm" style="margin-bottom:2rem">
+    <input id="commentName" type="text" placeholder="Your name (optional)" style="width:100%;padding:.8rem 1rem;background:var(--bg2);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.5rem;outline:none" onfocus="this.style.borderColor='rgba(0,212,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.1)'">
+    <textarea id="commentText" placeholder="Share your thoughts..." rows="4" style="width:100%;padding:.8rem 1rem;background:var(--bg2);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;resize:vertical;outline:none" onfocus="this.style.borderColor='rgba(0,212,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.1)'"></textarea>
+    <button onclick="postComment()" style="margin-top:.5rem;padding:.6rem 1.5rem;background:var(--accent);color:var(--bg);border:none;border-radius:50px;font-weight:600;font-size:.85rem;cursor:pointer;transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Post Comment</button>
+  </div>
+
+  <div id="commentsList"></div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="text-align:center;padding:4rem 2rem;border-top:1px solid rgba(255,255,255,.05);margin-top:4rem">
+  <p style="font-size:1.3rem;color:var(--bright);margin-bottom:.5rem;font-family:'Playfair Display',serif">For Sale</p>
+  <p style="font-size:.8rem;color:var(--dim);max-width:600px;margin:0 auto 1rem">An interactive documentary. March 2026.<br>Price: $0.50</p>
+  <p style="font-size:.7rem;color:var(--dim);max-width:600px;margin:0 auto 2rem">All figures from court filings, DOJ press releases, CFTC/SEC filings, FEC disclosures, Congressional records, and investigative journalism. If we got something wrong, <a href="mailto:forsale.documentary@protonmail.com" style="color:var(--accent)">email us</a>.</p>
+
+  <div style="margin-top:2rem;padding:2rem;background:var(--bg2);border-radius:12px;max-width:1000px;margin-left:auto;margin-right:auto">
+    <h4 style="font-size:.85rem;color:var(--dim);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.1em">Sources &mdash; Click to Verify</h4>
+    <ul style="list-style:none;padding:0;columns:2;column-gap:2rem">
+      <li style="padding:.4rem 0"><a href="https://www.c-span.org/search/?query=crypto+hearing" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#e8c840'" onmouseout="this.style.color=''"><span class="src-badge src-cspan">C-SPAN</span> Congressional hearings: Senate Banking, House Financial Services, Senate Commerce</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.bbc.com/news/topics/cz4pr2gd85qt" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#bb1919'" onmouseout="this.style.color=''"><span class="src-badge src-bbc">BBC</span> FTX, Meta, DOGE, AI, crypto pardons, war economics</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.reuters.com/technology/crypto-currencies/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ff8800'" onmouseout="this.style.color=''"><span class="src-badge src-reuters">Reuters</span> Clemency history, tech lobbying, arms trade</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.washingtonpost.com/technology/2023/12/14/ftx-political-donations/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#2a6496'" onmouseout="this.style.color=''"><span class="src-badge src-wapo">WaPo</span> FTX donations, CFTC revolving door, Musk contracts, Facebook Papers, Afghanistan Papers</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.nytimes.com/topic/subject/cryptocurrency" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#999'" onmouseout="this.style.color=''"><span class="src-badge src-nyt">NYT</span> Cambridge Analytica, Fairshake PAC, AI lobbying, IBM &amp; Nazi Germany</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.justice.gov/usao-sdny/pr/samuel-bankman-fried-sentenced-25-years" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''"><span class="src-badge src-doj">DOJ</span> SBF sentencing, BitMEX plea, CZ conviction</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.sec.gov/litigation" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#00ff88'" onmouseout="this.style.color=''"><span class="src-badge src-sec">SEC/CFTC</span> Enforcement actions, $12.7B judgment, Atkins disclosure</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.fec.gov/data/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#4488ff'" onmouseout="this.style.color=''"><span class="src-badge src-congress">FEC</span> Campaign finance data, PAC filings, individual contributions</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.opensecrets.org/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#4488ff'" onmouseout="this.style.color=''"><span class="src-badge src-congress">OpenSecrets</span> Lobbying data, defense contractor spending, crypto PACs</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.coindesk.com/policy/2022/11/02/divisions-in-sam-bankman-frieds-crypto-empire-blur-on-his-trading-titan-alamedas-balance-sheet/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">CoinDesk &mdash; Alameda balance sheet leak (the article that started the collapse)</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.pogo.org/database/pentagon-revolving-door" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">POGO &mdash; Pentagon revolving door database (674 officials)</a></li>
+      <li style="padding:.4rem 0"><a href="https://watson.brown.edu/costsofwar/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Brown University &mdash; Costs of War Project ($8T, 900K+ killed)</a></li>
+      <li style="padding:.4rem 0"><a href="https://bettermarkets.org/analysis/the-ftx-revolving-door/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Better Markets &mdash; FTX revolving door (13 CFTC officials)</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.citizen.org/article/crypto-industry-2024-election-spending/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Public Citizen &mdash; Fairshake PAC analysis, corporate conflicts</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.npr.org/sections/money/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">NPR &mdash; SBF sentencing, CZ pardon, GENIUS Act, Ulbricht</a></li>
+      <li style="padding:.4rem 0"><a href="https://fortune.com/crypto/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Fortune &mdash; Trump crypto empire, DOGE conflicts</a></li>
+      <li style="padding:.4rem 0"><a href="https://theintercept.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">The Intercept &mdash; BitMEX corporate pardon (unprecedented)</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.technologyreview.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">MIT Technology Review &mdash; OpenAI lobbying, AI history</a></li>
+      <li style="padding:.4rem 0"><a href="https://computerhistory.org/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Computer History Museum &mdash; ENIAC, Dartmouth, AI winters</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.gutenberg.org/ebooks/49966" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Gen. Smedley Butler &mdash; "War Is a Racket" (1935, full text, public domain)</a></li>
+      <li style="padding:.4rem 0"><a href="https://www.eisenhowerlibrary.gov/eisenhowers/speeches" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Eisenhower Library &mdash; Military-Industrial Complex farewell address</a></li>
+    </ul>
+  </div>
+
+  <p style="font-size:.6rem;color:rgba(255,255,255,.2);margin-top:2rem">&copy; 2026. All rights reserved. Corrections: forsale.documentary@protonmail.com</p>
+</div>
+
+<!-- PLAY OVERLAY (needed for browser autoplay policy) -->
+<div class="play-overlay" id="playOverlay">
+  <div class="play-btn">
+    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+  </div>
+  <p>Click to start the documentary</p>
+</div>
+
+<!-- VIDEO BACKGROUND -->
+<div class="video-bg" id="videoBg"></div>
+
+<!-- NARRATION CONTROLLER -->
+<div class="narration-ctrl" id="narrationCtrl" style="opacity:0">
+  <button id="btnPrev" title="Previous">&#9198;</button>
+  <button id="btnPlayPause" title="Play/Pause">&#9654;</button>
+  <button id="btnNext" title="Next">&#9197;</button>
+  <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="segment-name" id="segName">Ready</span>
+  <button id="btnMute" class="vol-icon" title="Mute">&#128266;</button>
+</div>
+
+<script>
+// ===== PARTICLE BACKGROUND =====
+(function(){
+  const c=document.getElementById('particles'),ctx=c.getContext('2d');
+  let W,H;const particles=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+  for(let i=0;i<60;i++)particles.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,a:Math.random()*.3+.05});
+  function draw(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.x+=p.dx;p.y+=p.dy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,212,255,${p.a})`;ctx.fill()});
+  // Draw connections
+  for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(0,212,255,${.06*(1-d/120)})`;ctx.stroke()}}
+  requestAnimationFrame(draw)}draw()
+})();
+
+// ===== DOCUMENT PROGRESS BAR =====
+const docProgressFill=document.getElementById('docProgress');
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;const pct=h>0?(window.scrollY/h)*100:0;docProgressFill.style.width=pct+'%'});
+
+// ===== CHAPTER NAV =====
+(function(){
+  const nav=document.getElementById('chapterNav');
+  const links=nav.querySelectorAll('a');
+  const sections=Array.from(links).map(l=>{const t=document.querySelector(l.getAttribute('href'));return{link:l,target:t}}).filter(s=>s.target);
+  const chObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=sections.find(s=>s.target===e.target);if(s){links.forEach(l=>l.classList.remove('active'));s.link.classList.add('active')}}})},{threshold:.3,rootMargin:'-20% 0px -60% 0px'});
+  sections.forEach(s=>chObs.observe(s.target));
+  // Show nav after overlay dismissed
+  const showNav=()=>{nav.classList.add('visible')};
+  document.getElementById('playOverlay').addEventListener('click',()=>setTimeout(showNav,500));
+})();
+
+// ===== FADE-IN OBSERVER =====
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const barObs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.querySelectorAll('.bar-fill').forEach((b,i)=>{const w=b.style.width;b.style.width='0%';setTimeout(()=>{b.style.width=w},i*150)});barObs.unobserve(el.target)}})},{threshold:.3});
+document.querySelectorAll('.bars').forEach(el=>barObs.observe(el));
+
+// ===== ANIMATED STAT COUNTERS =====
+(function(){
+  const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.stat-num').forEach(el=>{const text=el.textContent;const match=text.match(/[\d,.]+/);if(!match)return;const target=parseFloat(match[0].replace(/,/g,''));const prefix=text.substring(0,text.indexOf(match[0]));const suffix=text.substring(text.indexOf(match[0])+match[0].length);const isDecimal=match[0].includes('.');const decimals=isDecimal?(match[0].split('.')[1]||'').length:0;let start=0;const duration=1200;const startTime=performance.now();function animate(now){const elapsed=now-startTime;const progress=Math.min(elapsed/duration,1);const eased=1-Math.pow(1-progress,3);const current=eased*target;el.textContent=prefix+(decimals?current.toFixed(decimals):Math.round(current).toLocaleString())+suffix;if(progress<1)requestAnimationFrame(animate)}requestAnimationFrame(animate)});cObs.unobserve(e.target)}})},{threshold:.3});
+  document.querySelectorAll('.stats').forEach(el=>cObs.observe(el));
+})();
+
+// ===== NARRATION ENGINE =====
+(function() {
+  const segments = [];
+  const audioCache = {};
+  let currentAudio = null;
+  let currentIdx = -1;
+  let isPlaying = false;
+  let started = false;
+
+  // Gather all narrated sections
+  document.querySelectorAll('[data-narration]').forEach(el => {
+    segments.push({
+      el: el,
+      name: el.dataset.narration,
+      video: el.dataset.video || null
+    });
+  });
+
+  const ctrl = document.getElementById('narrationCtrl');
+  const btnPlay = document.getElementById('btnPlayPause');
+  const btnMute = document.getElementById('btnMute');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const progressFill = document.getElementById('progressFill');
+  const segName = document.getElementById('segName');
+  const videoBg = document.getElementById('videoBg');
+  const overlay = document.getElementById('playOverlay');
+
+  function loadAudio(name) {
+    if (audioCache[name]) return audioCache[name];
+    const audio = new Audio(name + '.mp3');
+    audio.preload = 'auto';
+    audioCache[name] = audio;
+    return audio;
+  }
+
+  function playSegment(idx) {
+    if (idx < 0 || idx >= segments.length) return;
+
+    // Stop current
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    currentIdx = idx;
+    const seg = segments[idx];
+    currentAudio = loadAudio(seg.name);
+    segName.textContent = seg.name.replace(/^\d+_/, '').replace(/_/g, ' ');
+
+    // Update video background if available
+    if (seg.video) {
+      const videoPath = 'videos/' + seg.video + '.mp4';
+      // Check if video file exists by trying to load it
+      const existingVideo = videoBg.querySelector('video');
+      if (existingVideo) {
+        existingVideo.src = videoPath;
+        existingVideo.load();
+      } else {
+        const v = document.createElement('video');
+        v.src = videoPath;
+        v.autoplay = true;
+        v.muted = true;
+        v.loop = true;
+        v.playsInline = true;
+        v.style.cssText = 'width:100%;height:100%;object-fit:cover';
+        v.onerror = function() { this.style.display = 'none'; };
+        videoBg.appendChild(v);
+      }
+    }
+
+    // Play audio
+    currentAudio.play().catch(() => {});
+    isPlaying = true;
+    btnPlay.innerHTML = '&#9646;&#9646;';
+
+    // On end, auto-advance
+    currentAudio.onended = () => {
+      if (currentIdx < segments.length - 1) {
+        // Scroll to next section
+        const next = segments[currentIdx + 1];
+        next.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => playSegment(currentIdx + 1), 1500);
+      } else {
+        isPlaying = false;
+        btnPlay.innerHTML = '&#9654;';
+      }
+    };
+
+    // Progress bar update
+    const updateProgress = () => {
+      if (currentAudio && currentAudio.duration) {
+        progressFill.style.width = (currentAudio.currentTime / currentAudio.duration * 100) + '%';
+      }
+      if (isPlaying) requestAnimationFrame(updateProgress);
+    };
+    updateProgress();
+  }
+
+  // Controls
+  btnPlay.onclick = () => {
+    if (!currentAudio || currentIdx === -1) {
+      playSegment(0);
+      return;
+    }
+    if (isPlaying) {
+      currentAudio.pause();
+      isPlaying = false;
+      btnPlay.innerHTML = '&#9654;';
+    } else {
+      currentAudio.play();
+      isPlaying = true;
+      btnPlay.innerHTML = '&#9646;&#9646;';
+    }
+  };
+
+  btnMute.onclick = () => {
+    if (currentAudio) {
+      currentAudio.muted = !currentAudio.muted;
+      btnMute.innerHTML = currentAudio.muted ? '&#128263;' : '&#128266;';
+    }
+  };
+
+  btnPrev.onclick = () => {
+    if (currentIdx > 0) {
+      const prev = segments[currentIdx - 1];
+      prev.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => playSegment(currentIdx - 1), 500);
+    }
+  };
+
+  btnNext.onclick = () => {
+    if (currentIdx < segments.length - 1) {
+      const next = segments[currentIdx + 1];
+      next.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => playSegment(currentIdx + 1), 500);
+    }
+  };
+
+  // Scroll-triggered narration (play when section comes into view)
+  const narrationObs = new IntersectionObserver(entries => {
+    if (!started) return;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = segments.findIndex(s => s.el === entry.target);
+        if (idx !== -1 && idx !== currentIdx) {
+          playSegment(idx);
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  segments.forEach(s => narrationObs.observe(s.el));
+
+  // Preload first few segments
+  segments.slice(0, 3).forEach(s => loadAudio(s.name));
+
+  // Play overlay - start the documentary
+  overlay.onclick = () => {
+    overlay.classList.add('hidden');
+    ctrl.style.opacity = '1';
+    started = true;
+    playSegment(0);
+  };
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Space' && started) {
+      e.preventDefault();
+      btnPlay.click();
+    }
+    if (e.code === 'ArrowRight') btnNext.click();
+    if (e.code === 'ArrowLeft') btnPrev.click();
+    if (e.code === 'KeyM') btnMute.click();
+  });
+})();
+
+// ===== COMMENTS SYSTEM (localStorage) =====
+function postComment() {
+  const name = document.getElementById('commentName').value.trim() || 'Anonymous';
+  const text = document.getElementById('commentText').value.trim();
+  if (!text) return;
+
+  const comments = JSON.parse(localStorage.getItem('forsale_comments') || '[]');
+  comments.unshift({
+    name: name,
+    text: text,
+    date: new Date().toISOString(),
+    id: Date.now()
+  });
+  localStorage.setItem('forsale_comments', JSON.stringify(comments));
+
+  document.getElementById('commentName').value = '';
+  document.getElementById('commentText').value = '';
+  renderComments();
+}
+
+function renderComments() {
+  const comments = JSON.parse(localStorage.getItem('forsale_comments') || '[]');
+  const list = document.getElementById('commentsList');
+  if (comments.length === 0) {
+    list.innerHTML = '<p style="color:var(--dim);font-size:.85rem;text-align:center">No comments yet. Be the first.</p>';
+    return;
+  }
+  list.innerHTML = comments.map(c => {
+    const d = new Date(c.date);
+    const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    return `<div style="background:var(--bg2);border-radius:8px;padding:1.2rem;margin-bottom:.8rem;border-left:2px solid var(--accent)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <strong style="color:var(--bright);font-size:.85rem">${c.name.replace(/</g,'&lt;')}</strong>
+        <span style="font-size:.65rem;color:var(--dim)">${dateStr} ${timeStr}</span>
+      </div>
+      <p style="color:var(--text);font-size:.85rem;line-height:1.6">${c.text.replace(/</g,'&lt;').replace(/\n/g,'<br>')}</p>
+    </div>`;
+  }).join('');
+}
+renderComments();
+</script>
+</body>
+</html>
