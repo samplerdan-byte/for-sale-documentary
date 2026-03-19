@@ -137,6 +137,22 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 .callout{background:var(--bg2);border-radius:12px;padding:2rem;margin:2rem 0;border-left:3px solid var(--accent2);max-width:800px}
 
+/* CONNECTION WEB */
+.conn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin:2rem 0}
+.conn-person{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1.5rem;position:relative;transition:all .3s}
+.conn-person:hover{border-color:rgba(255,255,255,.2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.conn-person .cp-name{font-size:1.1rem;font-weight:700;color:var(--bright);margin-bottom:.2rem}
+.conn-person .cp-title{font-size:.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.8rem;padding-bottom:.8rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.conn-person .cp-links{list-style:none;padding:0;margin:0}
+.conn-person .cp-links li{font-size:.8rem;color:var(--dim);padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,.02);position:relative;padding-left:1rem}
+.conn-person .cp-links li::before{content:'\2192';position:absolute;left:0;color:var(--accent)}
+.conn-person .cp-links li strong{color:var(--bright)}
+.conn-person .cp-tag{position:absolute;top:1rem;right:1rem;font-size:.6rem;padding:.15rem .5rem;border-radius:999px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.conn-hub{border-color:var(--accent);border-width:2px}
+.conn-hub .cp-name{color:var(--accent)}
+.link-arrow{color:var(--accent);font-weight:700;margin:0 .2rem}
+.network-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;display:block}
+
 /* CHAPTER NAV */
 .chapter-nav{position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:.6rem;opacity:0;transition:opacity .5s}
 .chapter-nav.visible{opacity:1}
@@ -1158,6 +1174,374 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
     <p class="quote-text">I'm sorry I wasn't brave.</p>
     <p class="quote-author">Caroline Ellison</p>
     <p class="quote-ctx">Sentencing hearing, September 2024</p>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- THE WEB: NAMES & CONNECTIONS              -->
+<!-- ========================================= -->
+<div class="era fade-in">
+  <h2>The Web</h2>
+  <p class="era-sub">These aren't separate stories. They're the same people, connected by money, loyalty, and access. Here is who knows whom.</p>
+</div>
+
+<!-- PayPal Mafia -->
+<div class="divider"><span class="ch-num">The PayPal Mafia</span></div>
+
+<section class="section fade-in" data-narration="09e_ai_arms_race">
+  <h2 class="section-title">One Company. Six Billionaires. The Entire Power Structure.</h2>
+  <p class="section-sub">They built PayPal together in 1999. Then they built everything else.</p>
+
+  <div class="conn-grid">
+    <div class="conn-person conn-hub">
+      <span class="cp-tag" style="background:rgba(0,212,255,.15);color:var(--accent)">HUB</span>
+      <div class="cp-name">Peter Thiel</div>
+      <div class="cp-title">PayPal Co-Founder &bull; Palantir Co-Founder &bull; First Facebook Investor</div>
+      <ul class="cp-links">
+        <li><strong>JD Vance</strong> &mdash; gave him his first VC job at Mithril Capital, donated $15M to his Senate campaign, brokered introduction to Trump. Now Vice President.</li>
+        <li><strong>David Sacks</strong> &mdash; PayPal COO, now White House AI &amp; Crypto Czar. Sets policy for two industries Thiel is invested in.</li>
+        <li><strong>Elon Musk</strong> &mdash; PayPal co-founder. Largest individual political donor in US history ($288M). Runs DOGE.</li>
+        <li><strong>Keith Rabois</strong> &mdash; PayPal executive, now Khosla Ventures partner. Major Republican donor.</li>
+        <li><strong>Reid Hoffman</strong> &mdash; PayPal VP, LinkedIn founder. Major Democratic donor. Board of OpenAI (resigned 2023).</li>
+        <li><strong>Max Levchin</strong> &mdash; PayPal CTO, founded Affirm (buy-now-pay-later). Affirm lobbied to weaken CFPB oversight.</li>
+        <li><strong>Luke Nosek</strong> &mdash; PayPal co-founder, Founders Fund partner. Early investor in SpaceX and DeepMind.</li>
+        <li><strong>Ken Howery</strong> &mdash; PayPal CFO. Trump appointed him US Ambassador to Sweden.</li>
+        <li><strong>Palantir</strong> &mdash; federal contracts nearly doubled to $970M. Army gave 10-year sole-source deal worth up to $10B. Former Palantir staff embedded in DOGE and HHS.</li>
+        <li><strong>Facebook</strong> &mdash; Thiel's $500K investment in 2004 returned $1B+. Board member until 2022.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person conn-hub">
+      <span class="cp-tag" style="background:rgba(255,51,102,.15);color:var(--accent2)">HUB</span>
+      <div class="cp-name">Elon Musk</div>
+      <div class="cp-title">Tesla &bull; SpaceX &bull; Starlink &bull; xAI &bull; DOGE &bull; X (Twitter)</div>
+      <ul class="cp-links">
+        <li><strong>Peter Thiel</strong> &mdash; PayPal co-founder, merged X.com with Confinity</li>
+        <li><strong>Donald Trump</strong> &mdash; $288M in election support. In return: runs DOGE with access to every federal system</li>
+        <li><strong>Sam Altman</strong> &mdash; Co-founded OpenAI with Musk in 2015. Musk left in 2018, sued OpenAI in 2024 for abandoning nonprofit mission</li>
+        <li><strong>Gwynne Shotwell</strong> &mdash; SpaceX president. SpaceX holds $9.5B in defense contracts from agencies Musk now oversees via DOGE</li>
+        <li><strong>Vivek Ramaswamy</strong> &mdash; original DOGE co-lead, left to run for Ohio governor. Former pharma CEO.</li>
+        <li><strong>$38B</strong> in government contracts, loans, subsidies across Tesla, SpaceX, Starlink, Boring Company, Neuralink</li>
+        <li><strong>Jared Birchall</strong> &mdash; Musk's wealth manager who ran Neuralink, managed Twitter acquisition financing</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">David Sacks</div>
+      <div class="cp-title">PayPal COO &bull; Craft Ventures &bull; White House AI &amp; Crypto Czar</div>
+      <ul class="cp-links">
+        <li><strong>Peter Thiel</strong> &mdash; PayPal together, co-invested through Founders Fund</li>
+        <li><strong>Craft Ventures</strong> &mdash; VC firm with crypto portfolio. Now sets federal crypto policy for assets he's invested in</li>
+        <li><strong>Solana</strong> &mdash; Craft Ventures invested. Sacks now writes the rules for Solana's regulatory status</li>
+        <li><strong>Multicoin Capital</strong> &mdash; close VC relationship, Fairshake PAC donor</li>
+        <li>Called Bitcoin "digital gold" on All-In Podcast while holding crypto positions, then appointed to set national crypto policy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Goldman Sachs to Government -->
+<div class="divider"><span class="ch-num">The Goldman Pipeline</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Goldman Sachs: The Government's Farm Team</h2>
+  <p class="section-sub">More Goldman alumni have served in senior government roles than from any other private institution in history.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Name</th><th>Goldman Role</th><th>Government Role</th><th>What They Did</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--bright)">Robert Rubin</td><td>Co-Chairman</td><td>Treasury Secretary (Clinton)</td><td>Repealed Glass-Steagall. Then joined Citigroup. Citi needed $45B bailout in 2008.</td></tr>
+      <tr><td style="color:var(--bright)">Hank Paulson</td><td>CEO</td><td>Treasury Secretary (Bush)</td><td>Designed the $700B TARP bailout. Goldman received $12.9B. Paulson's former firm was first in line.</td></tr>
+      <tr><td style="color:var(--bright)">Gary Gensler</td><td>Partner, Co-Head of Finance</td><td>CFTC Chair, then SEC Chair</td><td>Tried to regulate crypto. Industry spent $245M to remove him. Left on Inauguration Day 2025.</td></tr>
+      <tr><td style="color:var(--bright)">Steven Mnuchin</td><td>Partner, 17 years</td><td>Treasury Secretary (Trump I)</td><td>Oversaw $2T in tax cuts. Top 1% received 83% of the benefit (Tax Policy Center).</td></tr>
+      <tr><td style="color:var(--bright)">Gary Cohn</td><td>President &amp; COO</td><td>NEC Director (Trump I)</td><td>Authored the Tax Cuts and Jobs Act. Resigned over tariff disagreements.</td></tr>
+      <tr><td style="color:var(--bright)">Neel Kashkari</td><td>VP</td><td>TARP Administrator, then Minneapolis Fed President</td><td>Ran the bailout. Later admitted "we broke the social contract."</td></tr>
+      <tr><td style="color:var(--bright)">Mario Draghi</td><td>VP, Int'l</td><td>ECB President, Italian PM</td><td>"Whatever it takes" &mdash; unlimited bond-buying to save the euro. Goldman structured the deals that hid Greece's debt.</td></tr>
+      <tr><td style="color:var(--bright)">Mark Carney</td><td>13 years</td><td>Bank of England Governor, Canadian PM candidate</td><td>Set monetary policy for two nations. Now running for Canadian PM.</td></tr>
+      <tr><td style="color:var(--bright)">Jim Donovan</td><td>Managing Director</td><td>Deputy Treasury Secretary (Trump II, nominated)</td><td>Goldman's government relations specialist returns to government.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin:2rem auto">
+    <p style="color:var(--text)"><strong style="color:var(--gold)">The Pattern:</strong> Goldman executives move to government, write rules that benefit Wall Street, then return to the private sector with insider knowledge and connections. The revolving door spins so fast it generates its own gravity.</p>
+  </div>
+</section>
+
+<!-- The Crypto-to-White House Pipeline -->
+<div class="divider"><span class="ch-num">The Crypto &rarr; White House Pipeline</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Who Paid, Who Got Appointed, Who Got Pardoned</h2>
+
+  <div class="conn-grid">
+    <div class="conn-person conn-hub">
+      <span class="cp-tag" style="background:rgba(255,170,0,.15);color:var(--gold)">DONOR</span>
+      <div class="cp-name">Brian Armstrong</div>
+      <div class="cp-title">CEO, Coinbase</div>
+      <ul class="cp-links">
+        <li><strong>Fairshake PAC</strong> &mdash; Coinbase was largest corporate donor ($75M+)</li>
+        <li><strong>Trump Inauguration</strong> &mdash; $1M donation</li>
+        <li><strong>SEC Case</strong> &mdash; sued by Gensler in 2023, case <strong>dropped</strong> by Atkins in 2025</li>
+        <li><strong>Base (L2 chain)</strong> &mdash; Coinbase's own blockchain, now unregulated thanks to appointees Coinbase helped install</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <span class="cp-tag" style="background:rgba(255,170,0,.15);color:var(--gold)">DONOR</span>
+      <div class="cp-name">Marc Andreessen &amp; Ben Horowitz</div>
+      <div class="cp-title">a16z (Andreessen Horowitz)</div>
+      <ul class="cp-links">
+        <li><strong>Fairshake PAC</strong> &mdash; a16z donated $47M, second largest contributor</li>
+        <li><strong>Trump</strong> &mdash; personally endorsed and donated after decades as Democrats</li>
+        <li><strong>David Sacks</strong> &mdash; close allies in Silicon Valley. Sacks now sets policy for a16z's crypto portfolio</li>
+        <li><strong>FTX</strong> &mdash; a16z did NOT invest (one of few major VCs to pass). Lucky.</li>
+        <li><strong>Solana, Uniswap, Maker</strong> &mdash; portfolio companies whose regulation Sacks now controls</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <span class="cp-tag" style="background:rgba(0,255,136,.15);color:var(--green)">APPOINTED</span>
+      <div class="cp-name">Paul Atkins</div>
+      <div class="cp-title">SEC Chair (2025&ndash;present)</div>
+      <ul class="cp-links">
+        <li><strong>Net worth:</strong> $327M, substantial crypto holdings</li>
+        <li><strong>Securitize, Anchorage Digital</strong> &mdash; up to $1M in crypto firms he now oversees</li>
+        <li><strong>Token Alliance</strong> &mdash; co-chaired crypto industry advocacy group</li>
+        <li><strong>Dropped cases</strong> against Coinbase, Binance, Kraken, Gemini, Robinhood &mdash; every company that donated to inauguration</li>
+        <li><strong>Enforcement down 27%</strong> &mdash; lowest in a decade</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <span class="cp-tag" style="background:rgba(255,51,102,.15);color:var(--accent2)">PARDONED</span>
+      <div class="cp-name">Changpeng "CZ" Zhao</div>
+      <div class="cp-title">Binance Founder</div>
+      <ul class="cp-links">
+        <li><strong>Charles McDowell</strong> &mdash; Binance hired him as lobbyist at $450K/month for "executive relief from the White House." McDowell is a friend of <strong>Donald Trump Jr.</strong></li>
+        <li><strong>Trump's WLFI</strong> &mdash; Binance administered the World Liberty Financial trading platform</li>
+        <li><strong>MGX (Abu Dhabi)</strong> &mdash; $2B investment in Binance used Trump's USD1 stablecoin</li>
+        <li><strong>Convicted</strong> of enabling money laundering. <strong>Pardoned</strong> October 2025. Served 4 months of a 4-month sentence.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <span class="cp-tag" style="background:rgba(170,102,255,.15);color:var(--purple)">BROKER</span>
+      <div class="cp-name">Justin Sun</div>
+      <div class="cp-title">TRON Founder &bull; SEC Charged</div>
+      <ul class="cp-links">
+        <li><strong>Trump</strong> &mdash; invested $75M in World Liberty Financial, largest single investor</li>
+        <li><strong>SEC</strong> &mdash; charged with fraud and market manipulation in 2023. Case pending while Sun donates to Trump.</li>
+        <li><strong>$TRUMP memecoin dinner</strong> &mdash; reportedly top buyer of $TRUMP tokens, attended exclusive dinner at Trump golf club</li>
+        <li><strong>HTX (Huobi)</strong> &mdash; acquired and rebranded. Under investigation in multiple jurisdictions.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <span class="cp-tag" style="background:rgba(255,170,0,.15);color:var(--gold)">FAMILY</span>
+      <div class="cp-name">Trump Family Crypto Portfolio</div>
+      <div class="cp-title">The President's Personal Financial Interest</div>
+      <ul class="cp-links">
+        <li><strong>$TRUMP memecoin</strong> &mdash; launched 3 days before inauguration. 80% of tokens held by Trump-affiliated LLCs. Peak value: $13B market cap.</li>
+        <li><strong>$MELANIA</strong> &mdash; First Lady's memecoin launched day before inauguration.</li>
+        <li><strong>World Liberty Financial</strong> &mdash; family owns 60%, receives 75% of token revenue. Eric Trump &amp; Donald Jr. listed as "Web3 Ambassadors."</li>
+        <li><strong>Trump NFTs</strong> &mdash; trading card collections. Revenue to Trump directly.</li>
+        <li><strong>DJT (Trump Media)</strong> &mdash; exploring Bitcoin treasury strategy per Eric Trump.</li>
+        <li><strong>Abu Dhabi (MGX)</strong> &mdash; $2B invested in Binance via Trump's stablecoin, days before inauguration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- The AI Power Web -->
+<div class="divider"><span class="ch-num">The AI Power Web</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Who Controls AI</h2>
+  <p class="section-sub">The same names keep appearing. The same money flows between the same nodes.</p>
+
+  <div class="conn-grid">
+    <div class="conn-person conn-hub">
+      <span class="cp-tag" style="background:rgba(0,212,255,.15);color:var(--accent)">HUB</span>
+      <div class="cp-name">Sam Altman</div>
+      <div class="cp-title">CEO, OpenAI</div>
+      <ul class="cp-links">
+        <li><strong>Elon Musk</strong> &mdash; co-founded OpenAI together (2015). Musk left board (2018), sued OpenAI (2024) for abandoning nonprofit mission</li>
+        <li><strong>Reid Hoffman</strong> &mdash; LinkedIn founder, PayPal Mafia. OpenAI board member, resigned 2023 over conflicts of interest with Microsoft</li>
+        <li><strong>Microsoft</strong> &mdash; $13B invested. Satya Nadella sits on no board but Microsoft gets 49% of OpenAI profits and exclusive cloud deal</li>
+        <li><strong>Trump Inauguration</strong> &mdash; $1M personal donation. OpenAI lobbying spend up 7x from 2023</li>
+        <li><strong>Dario Amodei</strong> &mdash; Altman's former VP of Research. Left to found Anthropic after disagreements over safety and commercialization</li>
+        <li><strong>Greg Brockman</strong> &mdash; OpenAI co-founder &amp; President. Left Nov 2024, returned 2025.</li>
+        <li><strong>Ilya Sutskever</strong> &mdash; co-founder &amp; chief scientist. Led the board coup against Altman (Nov 2023). Left to found SSI.</li>
+        <li><strong>The Coup</strong> &mdash; board fired Altman Nov 17, 2023. Microsoft offered him a job. 700 of 770 employees threatened to quit. Board reinstated Altman in 5 days. The nonprofit board was replaced with one friendly to commercialization.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Dario Amodei</div>
+      <div class="cp-title">CEO, Anthropic (makers of Claude)</div>
+      <ul class="cp-links">
+        <li><strong>Sam Altman</strong> &mdash; VP of Research at OpenAI. Left in 2021 with sister <strong>Daniela Amodei</strong> (VP Ops) and a team of safety researchers</li>
+        <li><strong>Google</strong> &mdash; $2B+ invested in Anthropic. Amazon invested $4B. Both compete for cloud hosting rights.</li>
+        <li><strong>The split</strong> &mdash; fundamental disagreement over whether OpenAI was moving too fast, prioritizing products over safety research</li>
+        <li><strong>Jaan Tallinn</strong> &mdash; Skype co-founder, early Anthropic backer. Also funds existential risk research.</li>
+        <li>Anthropic structured as a Public Benefit Corporation with a Long-Term Benefit Trust &mdash; a deliberate departure from OpenAI's structure</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Satya Nadella</div>
+      <div class="cp-title">CEO, Microsoft</div>
+      <ul class="cp-links">
+        <li><strong>OpenAI</strong> &mdash; $13B invested. Azure exclusive cloud provider. Microsoft integrates GPT across Office, Bing, Copilot, GitHub</li>
+        <li><strong>Trump Inauguration</strong> &mdash; Microsoft donated $1M</li>
+        <li><strong>LinkedIn (Hoffman)</strong> &mdash; Microsoft acquired LinkedIn for $26.2B. Hoffman on OpenAI board created conflict</li>
+        <li><strong>Defense</strong> &mdash; $22B IVAS contract with US Army. HoloLens for soldiers. Azure Government cloud for Pentagon.</li>
+        <li><strong>Mustafa Suleyman</strong> &mdash; DeepMind co-founder, now runs Microsoft AI. Hired after Inflection AI (his company) was effectively acquired by Microsoft.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Larry Ellison</div>
+      <div class="cp-title">Co-Founder, Oracle &bull; Net Worth: $200B+</div>
+      <ul class="cp-links">
+        <li><strong>Trump</strong> &mdash; $30M+ in donations. One of first tech billionaires to back Trump.</li>
+        <li><strong>Stargate</strong> &mdash; Oracle is partner in the $500B AI infrastructure joint venture with OpenAI and SoftBank</li>
+        <li><strong>Oracle lobbying</strong> &mdash; $11M/year. Pushed TikTok deal that would make Oracle its US data partner.</li>
+        <li><strong>Elon Musk</strong> &mdash; close personal friend. Ellison served on Tesla board.</li>
+        <li><strong>Lanai</strong> &mdash; owns 98% of the Hawaiian island. Built his own healthcare system there.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- The Defense Web -->
+<div class="divider"><span class="ch-num">The Defense Revolving Door</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">From the Pentagon to the Boardroom and Back</h2>
+  <p class="section-sub">The people who start the wars and the people who profit from them are the same people.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Name</th><th>Government Role</th><th>Private Sector Role</th><th>The Connection</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--bright)">Dick Cheney</td><td>VP &amp; Secretary of Defense</td><td>CEO, Halliburton</td><td>Left Halliburton for VP. Halliburton got $39.5B in Iraq contracts. Cheney's deferred comp and stock options paid out during the war.</td></tr>
+      <tr><td style="color:var(--bright)">Mark Esper</td><td>Secretary of Defense (Trump I)</td><td>VP, Raytheon</td><td>Raytheon's top lobbyist became Defense Secretary. Raytheon revenue went from $27B to $42B during his tenure.</td></tr>
+      <tr><td style="color:var(--bright)">Lloyd Austin</td><td>Secretary of Defense (Biden)</td><td>Board, Raytheon</td><td>Sat on Raytheon board, recused himself from Raytheon decisions but oversaw $145B annual defense budget.</td></tr>
+      <tr><td style="color:var(--bright)">James Mattis</td><td>Secretary of Defense (Trump I)</td><td>Board, General Dynamics</td><td>General Dynamics board before AND after SecDef. Also served on Theranos board.</td></tr>
+      <tr><td style="color:var(--bright)">Leon Panetta</td><td>CIA Director, SecDef (Obama)</td><td>Board, Oracle</td><td>CIA &rarr; Pentagon &rarr; Oracle. Now Oracle has $500B Stargate AI deal with government access.</td></tr>
+      <tr><td style="color:var(--bright)">Mike Pompeo</td><td>CIA Director, Sec. of State (Trump I)</td><td>Board, Hudson Institute</td><td>Led "maximum pressure" on Iran. Now advises defense firms on Middle East contracts.</td></tr>
+      <tr><td style="color:var(--bright)">John Bolton</td><td>National Security Advisor</td><td>PAC fundraiser, Fox News</td><td>Advocated for Iraq war, Iran strikes, North Korea strikes. Never served in military.</td></tr>
+      <tr><td style="color:var(--bright)">Erik Prince</td><td>Blackwater founder</td><td>Private military contractor</td><td>Sister <strong>Betsy DeVos</strong> was Trump's Education Secretary. Prince proposed privatizing the Afghanistan war. Blackwater (now Academi) renamed twice after scandals.</td></tr>
+      <tr><td style="color:var(--bright)">Pete Hegseth</td><td>Secretary of Defense (Trump II)</td><td>Fox News host</td><td>No defense industry experience. But: Fox News is owned by <strong>Rupert Murdoch</strong>, whose media empire has promoted every US military intervention since Iraq.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="stats" style="margin:2rem auto">
+    <div class="stat"><div class="stat-num" style="color:var(--accent2)">674</div><div class="stat-label">Lobbyists with Pentagon Connections (POGO)</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--gold)">$13.3M</div><div class="stat-label">Lockheed Martin Lobbying (2024)</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--accent)">80%</div><div class="stat-label">Of Top DOD Officials Come From Contractors</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--green)">$886B</div><div class="stat-label">FY2024 Defense Budget</div></div>
+  </div>
+</section>
+
+<!-- The SBF Web -->
+<div class="divider"><span class="ch-num">The SBF Web</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Everyone Who Touched FTX Money</h2>
+  <p class="section-sub">The donations, the meetings, the family connections, the investors who looked the other way.</p>
+
+  <div class="conn-grid">
+    <div class="conn-person">
+      <div class="cp-name">Barbara Fried &amp; Joe Bankman</div>
+      <div class="cp-title">SBF's Parents &bull; Stanford Law Professors</div>
+      <ul class="cp-links">
+        <li><strong>Barbara Fried</strong> &mdash; ran Mind the Gap PAC, a Democratic fundraising operation. Helped direct SBF's political donations.</li>
+        <li><strong>Joe Bankman</strong> &mdash; advised FTX on tax structuring. Received a $16.4M property in the Bahamas purchased with customer funds.</li>
+        <li><strong>Stanford</strong> &mdash; both professors at Stanford Law. FTX donated to Stanford. The university returned $5.5M.</li>
+        <li>Both sued by FTX bankruptcy estate for receiving $26M+ in customer funds.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Sequoia Capital</div>
+      <div class="cp-title">VC Firm &bull; $213M Invested in FTX</div>
+      <ul class="cp-links">
+        <li>Published a <strong>glowing profile</strong> of SBF on their website: described a Zoom call where SBF played League of Legends during the pitch. Sequoia invested anyway.</li>
+        <li><strong>Wrote down to $0</strong> &mdash; removed the profile, issued an apology letter. Largest VC loss on a single investment.</li>
+        <li><strong>Doug Leone, Alfred Lin</strong> &mdash; partners who approved the investment</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Paradigm</div>
+      <div class="cp-title">Crypto VC &bull; $278M Invested in FTX</div>
+      <ul class="cp-links">
+        <li><strong>Matt Huang</strong> &mdash; co-founder, former Sequoia partner</li>
+        <li><strong>Fred Ehrsam</strong> &mdash; co-founder, Coinbase co-founder. Paradigm and Coinbase share DNA.</li>
+        <li><strong>Fairshake PAC</strong> &mdash; Paradigm became one of the largest Fairshake donors AFTER losing $278M on FTX. Strategy: lose money to fraud, spend more money to change the laws.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Ontario Teachers' Pension Plan</div>
+      <div class="cp-title">$95M Invested in FTX</div>
+      <ul class="cp-links">
+        <li><strong>Canadian teachers' retirement savings</strong> invested in a Bahamas crypto exchange run by a 30-year-old playing video games during investor calls.</li>
+        <li><strong>SoftBank, Tiger Global, Temasek</strong> &mdash; all invested. All wrote down to zero. Combined institutional losses: $2B+.</li>
+        <li>None of these firms conducted proper due diligence. None noticed there was no CFO, no board, and no audited financials.</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Tom Brady &amp; Gisele B&uuml;ndchen</div>
+      <div class="cp-title">FTX Celebrity Ambassadors</div>
+      <ul class="cp-links">
+        <li><strong>$55M</strong> received in FTX equity for endorsement deals</li>
+        <li><strong>Larry David, Steph Curry, Shaquille O'Neal, Naomi Osaka</strong> &mdash; all received equity, all sued by FTX investors</li>
+        <li><strong>Super Bowl ad</strong> (2022) &mdash; Larry David mocks historical skeptics. "I don't think so, and I'm never wrong about this stuff." He was.</li>
+        <li>Combined celebrity endorsement budget: <strong>$1.13B</strong> in stolen customer funds</li>
+      </ul>
+    </div>
+
+    <div class="conn-person">
+      <div class="cp-name">Members of Congress</div>
+      <div class="cp-title">1 in 3 Took FTX Money</div>
+      <ul class="cp-links">
+        <li><strong>196 members</strong> of Congress received FTX/Alameda donations</li>
+        <li><strong>73% never returned</strong> the money, even after fraud convictions</li>
+        <li><strong>House Agriculture Committee</strong> &mdash; FTX specifically targeted members who oversaw CFTC. Mark Wetjen (ex-CFTC) was FTX's point man.</li>
+        <li><strong>Debbie Stabenow (D-MI)</strong> &mdash; authored the DCCPA bill, written largely by FTX lobbyists, that would have given CFTC (not SEC) jurisdiction over crypto. Exactly what FTX wanted &mdash; because they'd hired the CFTC.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- The Billionaire Dinner Table -->
+<div class="divider"><span class="ch-num">The Billionaire Dinner Table</span></div>
+
+<section class="section fade-in">
+  <h2 class="section-title">Everyone at the Table</h2>
+  <p class="section-sub">The 2025 inauguration wasn't a ceremony. It was a shareholder meeting.</p>
+
+  <table class="data-table">
+    <thead><tr><th>Name</th><th>Company</th><th>Paid</th><th>Got</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--bright)">Elon Musk</td><td>Tesla / SpaceX / xAI</td><td class="mono">$288M</td><td>DOGE access to every federal agency. $38B in contracts untouched. Competitor contracts cut.</td></tr>
+      <tr><td style="color:var(--bright)">Mark Zuckerberg</td><td>Meta</td><td class="mono">$1M</td><td>FTC antitrust case dismissed. Dropped fact-checking. Stock up 25%.</td></tr>
+      <tr><td style="color:var(--bright)">Jeff Bezos</td><td>Amazon</td><td class="mono">$1M</td><td>Streamed inauguration on Prime Video. AWS government cloud contracts.</td></tr>
+      <tr><td style="color:var(--bright)">Tim Cook</td><td>Apple</td><td class="mono">$1M</td><td>Google antitrust ruling preserved Apple's $20B/year search deal.</td></tr>
+      <tr><td style="color:var(--bright)">Sundar Pichai</td><td>Google</td><td class="mono">$1M</td><td>Antitrust: monopoly ruling but no breakup. Thanked Trump the next day.</td></tr>
+      <tr><td style="color:var(--bright)">Sam Altman</td><td>OpenAI</td><td class="mono">$1M</td><td>$500B Stargate AI deal announced Day 2 of presidency. Government partnership.</td></tr>
+      <tr><td style="color:var(--bright)">Larry Ellison</td><td>Oracle</td><td class="mono">$30M+</td><td>Oracle is Stargate partner. $500B in potential contracts. Close personal friend.</td></tr>
+      <tr><td style="color:var(--bright)">Brian Armstrong</td><td>Coinbase</td><td class="mono">$75M+</td><td>SEC case dropped. Crypto friendly regulation. Industry legitimized.</td></tr>
+      <tr><td style="color:var(--bright)">Cameron &amp; Tyler Winklevoss</td><td>Gemini</td><td class="mono">$2M+</td><td>SEC case dropped. First approved crypto futures ETF.</td></tr>
+      <tr><td style="color:var(--bright)">Jesse Powell</td><td>Kraken</td><td class="mono">$1M+</td><td>SEC case dropped. No enforcement action.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin:2rem auto">
+    <p style="color:var(--text)"><strong style="color:var(--accent2)">Total inauguration fundraising:</strong> <span class="mono" style="font-size:1.3rem">$239 million</span> &mdash; the most expensive inauguration in American history. More than double Obama's record. Every major donor received a specific, measurable return on investment within the first year.</p>
   </div>
 </section>
 
