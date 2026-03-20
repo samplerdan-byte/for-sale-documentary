@@ -56,6 +56,10 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .platform-btn.paypal::before{background:linear-gradient(135deg,rgba(0,156,222,.06),transparent)}
 .platform-btn.paypal:hover{border-color:rgba(0,156,222,.3);box-shadow:0 8px 32px rgba(0,156,222,.08)}
 .platform-btn.paypal .btn-icon{background:rgba(0,156,222,.12);color:#009cde}
+.platform-btn.whatever{--clr:#00ff88}
+.platform-btn.whatever::before{background:linear-gradient(135deg,rgba(0,255,136,.06),transparent)}
+.platform-btn.whatever:hover{border-color:rgba(0,255,136,.3);box-shadow:0 8px 32px rgba(0,255,136,.08)}
+.platform-btn.whatever .btn-icon{background:rgba(0,255,136,.12);color:#00ff88;font-size:1.5rem}
 
 .btn-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
 .btn-text{flex:1}
@@ -131,6 +135,15 @@ footer a:hover{text-decoration:underline}
       <div class="btn-text">
         <div class="btn-label">PayPal.me</div>
         <div class="btn-desc">Pay what you want — paypal.me/samplerdan</div>
+      </div>
+      <div class="btn-arrow">→</div>
+    </a>
+
+    <a href="https://paypal.me/samplerdan" target="_blank" rel="noopener" class="platform-btn whatever">
+      <div class="btn-icon">🤷</div>
+      <div class="btn-text">
+        <div class="btn-label">Donate Whatever</div>
+        <div class="btn-desc">$1, $5, $100, a kind word — literally whatever you want</div>
       </div>
       <div class="btn-arrow">→</div>
     </a>
