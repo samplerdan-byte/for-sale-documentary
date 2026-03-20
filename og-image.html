@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>FOR SALE — OG Image Generator</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  background: #0a0a0f;
+  font-family: 'Georgia', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 1200px;
+  height: 630px;
+  background: #0a0a0f;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  overflow: hidden;
+}
+
+/* Background glow effects */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(255,51,102,.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 50%, rgba(0,212,255,.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 85%, rgba(170,102,255,.07) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Background watermark text */
+.bg-text {
+  position: absolute;
+  font-family: 'Georgia', serif;
+  font-size: 220px;
+  font-weight: 700;
+  color: rgba(255,51,102,.04);
+  letter-spacing: -10px;
+  user-select: none;
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Top label */
+.label-top {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(0,212,255,.7);
+  margin-bottom: 28px;
+  position: relative;
+}
+
+/* Main title */
+.title {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 24px;
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #ff3366 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -3px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 22px;
+  color: rgba(232,232,240,.6);
+  font-weight: 400;
+  font-style: italic;
+  max-width: 780px;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Divider */
+.divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0,212,255,.6), transparent);
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+/* Stats row */
+.stats {
+  display: flex;
+  gap: 48px;
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Courier New', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: #00d4ff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-num.red { color: #ff3366; }
+.stat-num.gold { color: #ffaa00; }
+
+.stat-label {
+  font-size: 10px;
+  color: rgba(136,136,160,.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* URL bar at bottom */
+.url-bar {
+  position: absolute;
+  bottom: 32px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.url {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: rgba(136,136,160,.5);
+  letter-spacing: 1px;
+}
+
+.badge {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,170,0,.7);
+  border: 1px solid rgba(255,170,0,.3);
+  padding: 4px 12px;
+  border-radius: 3px;
+}
+
+/* Corner accent lines */
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+.corner.tl { top: 24px; left: 24px; border-top: 2px solid rgba(0,212,255,.3); border-left: 2px solid rgba(0,212,255,.3); }
+.corner.tr { top: 24px; right: 24px; border-top: 2px solid rgba(255,51,102,.3); border-right: 2px solid rgba(255,51,102,.3); }
+.corner.bl { bottom: 24px; left: 24px; border-bottom: 2px solid rgba(255,51,102,.3); border-left: 2px solid rgba(255,51,102,.3); }
+.corner.br { bottom: 24px; right: 24px; border-bottom: 2px solid rgba(0,212,255,.3); border-right: 2px solid rgba(0,212,255,.3); }
+
+/* Scan line effect */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,.03) 2px,
+    rgba(0,0,0,.03) 4px
+  );
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="scanlines"></div>
+  <div class="bg-text">$</div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="label-top">An Interactive Documentary &mdash; March 2026</div>
+  <div class="title">FOR SALE</div>
+  <div class="subtitle">How Money Bought Power, From the Pyramids to the Blockchain</div>
+  <div class="divider"></div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num red">10 Acts</div>
+      <div class="stat-label">of History</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">73 Episodes</div>
+      <div class="stat-label">of Audio</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num gold">14,000 Years</div>
+      <div class="stat-label">of Power</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num red">$0.00</div>
+      <div class="stat-label">Price</div>
+    </div>
+  </div>
+
+  <div class="url-bar">
+    <span class="url">samplerdan-byte.github.io/for-sale-documentary</span>
+    <span class="badge">Free &amp; Open</span>
+  </div>
+</div>
+
+<p style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#888;font-family:monospace;font-size:12px;padding:8px 16px;text-align:center">
+  Screenshot this page at 1200&times;630 to use as og:image / social preview card.
+  Best taken with browser zoom at 100%, window exactly 1200px wide.
+</p>
+</body>
+</html>
