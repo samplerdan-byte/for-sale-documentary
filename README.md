@@ -128,4 +128,34 @@ Every correction will be published with credit. The goal is accuracy, not narrat
 
 ---
 
+---
+
+## Support
+
+**For Sale is free. Always will be.** Donations fund the next investigation — research, hosting, audio production, and future open-source documentary projects.
+
+| Platform | Link |
+|----------|------|
+| Buy Me a Coffee | https://buymeacoffee.com/samplerdan |
+| Ko-fi | https://ko-fi.com/samplerdan |
+| PayPal.me | https://paypal.me/samplerdan |
+| Donate Page | https://samplerdan-byte.github.io/for-sale-documentary/donate.html |
+
+100% of donations go toward research, hosting, and future open-source documentary projects. Nothing goes to AI companies.
+
+---
+
+## Share
+
+Spread the documentary — links open in the relevant platform:
+
+| Platform | Share URL |
+|----------|-----------|
+| Twitter/X | https://twitter.com/intent/tweet?text=FOR+SALE%3A+How+money+bought+power%2C+from+the+Pyramids+to+the+Blockchain.+Free+interactive+documentary.&url=https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F |
+| Reddit | https://www.reddit.com/submit?url=https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F&title=FOR+SALE%3A+Free+interactive+documentary+%E2%80%94+how+money+bought+power+from+the+Big+Bang+to+the+blockchain |
+| Facebook | https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F |
+| All Platforms | https://samplerdan-byte.github.io/for-sale-documentary/links.html |
+
+---
+
 *An interactive documentary. March 2026. Price: $0.00.*

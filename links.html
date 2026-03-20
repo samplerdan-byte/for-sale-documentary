@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOR SALE — All Platforms</title>
+<meta name="description" content="FOR SALE — Free interactive documentary. Watch, listen, download, share.">
+<meta property="og:title" content="FOR SALE — How Money Bought Power">
+<meta property="og:description" content="Free interactive documentary tracing concentrated power from the Pyramids to the Blockchain.">
+<meta property="og:url" content="https://samplerdan-byte.github.io/for-sale-documentary/links.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a28;--accent:#00d4ff;--accent2:#ff3366;--accent3:#ffaa00;--green:#00ff88;--purple:#aa66ff;--text:#e8e8f0;--dim:#8888a0;--bright:#ffffff}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:3rem 1rem 5rem}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:2.5rem;max-width:520px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);letter-spacing:.35em;text-transform:uppercase;margin-bottom:1rem}
+.header h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,8vw,4rem);font-weight:700;line-height:1;color:var(--bright);margin-bottom:.8rem;background:linear-gradient(135deg,var(--bright),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header p{font-size:.95rem;color:var(--dim);font-weight:300;line-height:1.6}
+
+/* LINK CARD */
+.links{width:100%;max-width:480px;display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem}
+.link-card{display:flex;align-items:center;gap:1.2rem;background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.1rem 1.4rem;text-decoration:none;color:var(--text);transition:all .22s;position:relative;overflow:hidden}
+.link-card::after{content:'→';position:absolute;right:1.4rem;color:var(--dim);font-size:1rem;transition:all .22s}
+.link-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.18)}
+.link-card:hover::after{transform:translateX(4px);color:var(--text)}
+
+/* accent stripe on left */
+.link-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:14px 0 0 14px;opacity:0;transition:opacity .22s}
+.link-card:hover::before{opacity:1}
+
+.link-card.primary::before{background:var(--accent)}
+.link-card.primary:hover{border-color:rgba(0,212,255,.25);box-shadow:0 6px 28px rgba(0,212,255,.07)}
+
+.link-card.audio::before{background:var(--accent2)}
+.link-card.audio:hover{border-color:rgba(255,51,102,.25);box-shadow:0 6px 28px rgba(255,51,102,.07)}
+
+.link-card.podcast::before{background:var(--purple)}
+.link-card.podcast:hover{border-color:rgba(170,102,255,.25);box-shadow:0 6px 28px rgba(170,102,255,.07)}
+
+.link-card.github::before{background:#e5e7eb}
+.link-card.github:hover{border-color:rgba(229,231,235,.2);box-shadow:0 6px 28px rgba(229,231,235,.05)}
+
+.link-card.download::before{background:var(--accent3)}
+.link-card.download:hover{border-color:rgba(255,170,0,.25);box-shadow:0 6px 28px rgba(255,170,0,.07)}
+
+.link-card.donate::before{background:var(--green)}
+.link-card.donate:hover{border-color:rgba(0,255,136,.25);box-shadow:0 6px 28px rgba(0,255,136,.07)}
+
+.card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;background:rgba(255,255,255,.05)}
+.card-text{flex:1;padding-right:1.5rem}
+.card-label{font-weight:600;font-size:.95rem;color:var(--bright);margin-bottom:.15rem}
+.card-desc{font-size:.78rem;color:var(--dim)}
+
+/* SECTION LABEL */
+.section-label{width:100%;max-width:480px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--dim);letter-spacing:.2em;text-transform:uppercase;margin:1.5rem 0 .5rem;padding-left:.2rem}
+
+/* SHARE */
+.share-row{width:100%;max-width:480px;display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-bottom:.5rem}
+.share-btn{display:flex;flex-direction:column;align-items:center;gap:.4rem;background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.9rem .5rem;text-decoration:none;color:var(--dim);font-size:.7rem;text-align:center;transition:all .2s;cursor:pointer;font-family:inherit}
+.share-btn:hover{border-color:rgba(255,255,255,.18);color:var(--text);transform:translateY(-2px)}
+.share-btn .s-icon{font-size:1.3rem;line-height:1}
+
+.share-btn.twitter:hover{border-color:rgba(29,161,242,.3);box-shadow:0 4px 16px rgba(29,161,242,.08)}
+.share-btn.reddit:hover{border-color:rgba(255,87,0,.3);box-shadow:0 4px 16px rgba(255,87,0,.08)}
+.share-btn.facebook:hover{border-color:rgba(24,119,242,.3);box-shadow:0 4px 16px rgba(24,119,242,.08)}
+.share-btn.email:hover{border-color:rgba(0,212,255,.3);box-shadow:0 4px 16px rgba(0,212,255,.08)}
+
+/* FOOTER */
+.footer{margin-top:3rem;text-align:center;color:var(--dim);font-size:.78rem;max-width:480px}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Free Documentary</div>
+  <h1>FOR SALE</h1>
+  <p>How money bought power, from the Pyramids to the Blockchain. Free everywhere. Always.</p>
+</div>
+
+<div class="links">
+
+  <a href="https://samplerdan-byte.github.io/for-sale-documentary/" class="link-card primary">
+    <div class="card-icon">🎬</div>
+    <div class="card-text">
+      <div class="card-label">Interactive Documentary</div>
+      <div class="card-desc">Scroll-driven experience with synchronized narration</div>
+    </div>
+  </a>
+
+  <a href="https://samplerdan-byte.github.io/for-sale-documentary/player.html" class="link-card audio">
+    <div class="card-icon">🎧</div>
+    <div class="card-text">
+      <div class="card-label">Audio Player</div>
+      <div class="card-desc">73 episodes — play the full documentary as a playlist</div>
+    </div>
+  </a>
+
+  <a href="https://samplerdan-byte.github.io/for-sale-documentary/feed.xml" class="link-card podcast">
+    <div class="card-icon">📡</div>
+    <div class="card-text">
+      <div class="card-label">Podcast Feed</div>
+      <div class="card-desc">RSS — subscribe in any podcast app</div>
+    </div>
+  </a>
+
+  <a href="https://samplerdan-byte.github.io/for-sale-documentary/ForSale_eBook_2026-03-19.epub" class="link-card download">
+    <div class="card-icon">📖</div>
+    <div class="card-text">
+      <div class="card-label">Download ePub</div>
+      <div class="card-desc">eBook edition — read offline on any device</div>
+    </div>
+  </a>
+
+  <a href="https://github.com/samplerdan-byte/for-sale-documentary" class="link-card github" target="_blank" rel="noopener">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:#e5e7eb"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </div>
+    <div class="card-text">
+      <div class="card-label">Source Code — GitHub</div>
+      <div class="card-desc">Open-source. Fork it, improve it, share it.</div>
+    </div>
+  </a>
+
+  <a href="donate.html" class="link-card donate">
+    <div class="card-icon">💚</div>
+    <div class="card-text">
+      <div class="card-label">Support Future Projects</div>
+      <div class="card-desc">Free forever. Donations fund the next investigation.</div>
+    </div>
+  </a>
+
+</div>
+
+<div class="section-label">Share this documentary</div>
+
+<div class="share-row">
+  <a href="https://twitter.com/intent/tweet?text=FOR+SALE%3A+How+money+bought+power%2C+from+the+Pyramids+to+the+Blockchain.+Free+interactive+documentary.&url=https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F"
+     target="_blank" rel="noopener" class="share-btn twitter">
+    <span class="s-icon">𝕏</span>
+    <span>Twitter/X</span>
+  </a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F&title=FOR+SALE%3A+Free+interactive+documentary+%E2%80%94+how+money+bought+power+from+the+Big+Bang+to+the+blockchain"
+     target="_blank" rel="noopener" class="share-btn reddit">
+    <span class="s-icon">🔴</span>
+    <span>Reddit</span>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F"
+     target="_blank" rel="noopener" class="share-btn facebook">
+    <span class="s-icon">👤</span>
+    <span>Facebook</span>
+  </a>
+  <a href="mailto:?subject=FOR%20SALE%20%E2%80%94%20Free%20Documentary&body=Thought%20you%27d%20want%20to%20see%20this.%0A%0AFOR%20SALE%3A%20How%20Money%20Bought%20Power%2C%20From%20the%20Pyramids%20to%20the%20Blockchain.%0A%0AFree%20interactive%20documentary%3A%20https%3A%2F%2Fsamplerdan-byte.github.io%2Ffor-sale-documentary%2F"
+     class="share-btn email">
+    <span class="s-icon">✉️</span>
+    <span>Email</span>
+  </a>
+</div>
+
+<div class="footer">
+  <p>FOR SALE — March 2026 — Price: $0.00</p>
+  <p style="margin-top:.5rem">Corrections: <a href="mailto:forsale.documentary@protonmail.com">forsale.documentary@protonmail.com</a></p>
+</div>
+
+</body>
+</html>
