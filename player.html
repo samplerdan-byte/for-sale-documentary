@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Sale — Audio Player</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e8e8f0;font-family:'Segoe UI',sans-serif;padding:2rem}
+h1{font-size:2rem;margin-bottom:.5rem;color:#fff}
+.sub{color:#8888a0;margin-bottom:2rem;font-size:.9rem}
+.now-playing{background:#12121a;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.5rem;margin-bottom:2rem;position:sticky;top:1rem;z-index:10}
+.now-playing h3{color:#00d4ff;margin-bottom:.5rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+.now-playing .title{font-size:1.3rem;color:#fff;margin-bottom:1rem}
+audio{width:100%;border-radius:8px}
+.tracks{display:flex;flex-direction:column;gap:4px}
+.track{display:flex;align-items:center;gap:1rem;padding:.8rem 1rem;background:#12121a;border:1px solid rgba(255,255,255,.04);border-radius:8px;cursor:pointer;transition:all .2s}
+.track:hover{background:#1a1a28;border-color:rgba(0,212,255,.2)}
+.track.active{background:#1a1a28;border-color:#00d4ff;box-shadow:0 0 15px rgba(0,212,255,.1)}
+.track-num{font-family:monospace;color:#8888a0;font-size:.75rem;width:30px;text-align:right;flex-shrink:0}
+.track-title{font-size:.9rem;color:#e8e8f0;flex:1}
+.track.active .track-title{color:#00d4ff;font-weight:600}
+.track-dur{font-family:monospace;color:#8888a0;font-size:.75rem}
+.act-label{color:#ff3366;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;margin:1.5rem 0 .5rem;padding-left:3rem}
+</style>
+</head>
+<body>
+<h1>For Sale</h1>
+<p class="sub">How Money Bought Power, From the Pyramids to the Blockchain — 73 episodes</p>
+
+<div class="now-playing">
+  <h3>Now Playing</h3>
+  <div class="title" id="nowTitle">Click a track to begin</div>
+  <audio id="player" controls preload="none"></audio>
+</div>
+
+<div class="tracks" id="tracks"></div>
+
+<script>
+const tracks = [
+  {act:"Act I: In the Beginning", items:[
+    {f:"00_intro",t:"Intro"},
+    {f:"01_beginning",t:"Beginning"},
+    {f:"01a_bigbang",t:"Big Bang"},
+    {f:"01b_life",t:"Life"},
+    {f:"01c_extinction",t:"Extinction"},
+    {f:"01d_dinosaurs",t:"Dinosaurs"},
+    {f:"01e_asteroid",t:"Asteroid"},
+    {f:"01f_sapiens",t:"Sapiens"}
+  ]},
+  {act:"Act II: Dominance", items:[
+    {f:"02a_rome",t:"Rome"},
+    {f:"02b_crusades",t:"Crusades"},
+    {f:"02c_colonialism",t:"Colonialism"},
+    {f:"02d_tulips_southsea",t:"Tulips & South Sea"},
+    {f:"02e_wwi",t:"World War I"},
+    {f:"02f_depression",t:"The Depression"},
+    {f:"02g_wwii",t:"World War II"},
+    {f:"02h_coldwar_vietnam",t:"Cold War & Vietnam"}
+  ]},
+  {act:"Act III: The Machine Age", items:[
+    {f:"03a_computer",t:"The Computer"},
+    {f:"03b_microchip",t:"The Microchip"},
+    {f:"03c_ai_first",t:"AI First Wave"},
+    {f:"03d_ai_winter",t:"AI Winter"},
+    {f:"03e_internet",t:"The Internet"},
+    {f:"03f_dotcom",t:"Dotcom Bubble"},
+    {f:"03g_social",t:"Social Media"}
+  ]},
+  {act:"Act IV: The Promise", items:[
+    {f:"04a_2008crisis",t:"2008 Financial Crisis"},
+    {f:"04b_satoshi",t:"Satoshi Nakamoto"},
+    {f:"04c_silk_road",t:"Silk Road"},
+    {f:"04d_ico_boom",t:"ICO Boom"},
+    {f:"04e_defi_nft",t:"DeFi & NFTs"}
+  ]},
+  {act:"Act V: The $8 Billion Lie", items:[
+    {f:"05a_sbf_rise",t:"SBF Rise"},
+    {f:"05b_machine",t:"The Machine"},
+    {f:"05c_six_days",t:"Six Days"},
+    {f:"05d_trial",t:"The Trial"},
+    {f:"05e_trial",t:"Trial Continued"},
+    {f:"05f_victims",t:"The Victims"}
+  ]},
+  {act:"Act VI: Regulatory Capture", items:[
+    {f:"06a_cftc",t:"CFTC"},
+    {f:"06b_donations",t:"Donations"},
+    {f:"06c_bahamas",t:"Bahamas"},
+    {f:"06d_gensler",t:"Gensler"},
+    {f:"06e_congress",t:"Congress"}
+  ]},
+  {act:"Act VII: The Takeover", items:[
+    {f:"07a_fairshake",t:"Fairshake PAC"},
+    {f:"07b_scalps",t:"Scalps"},
+    {f:"07c_pardons",t:"Pardons"},
+    {f:"07d_sec_swap",t:"SEC Swap"},
+    {f:"07e_genius_act",t:"GENIUS Act"},
+    {f:"07f_war_on_terror",t:"War on Terror"}
+  ]},
+  {act:"Act VIII: Big Tech Pays", items:[
+    {f:"08a_facebook_rise",t:"Facebook Rise"},
+    {f:"08b_2016_election",t:"2016 Election"},
+    {f:"08c_haugen",t:"Frances Haugen"},
+    {f:"08d_meta",t:"Meta"},
+    {f:"08e_inauguration",t:"Inauguration"},
+    {f:"08f_doge_thiel",t:"DOGE & Thiel Network"}
+  ]},
+  {act:"Act IX: Presidential Crypto", items:[
+    {f:"09a_pivot",t:"The Pivot"},
+    {f:"09b_memecoin",t:"Memecoin"},
+    {f:"09c_wlfi",t:"World Liberty Financial"},
+    {f:"09d_bitcoin_reserve",t:"Bitcoin Reserve"},
+    {f:"09e_ai_arms_race",t:"AI Arms Race"}
+  ]},
+  {act:"Act X: The Pattern", items:[
+    {f:"10a_pattern",t:"The Pattern"},
+    {f:"10b_ai_future",t:"AI Future"},
+    {f:"10c_question",t:"The Question"},
+    {f:"10d_closing",t:"Closing"}
+  ]},
+  {act:"Bonus: Dossiers & Deep Dives", items:[
+    {f:"dossiers_intro",t:"Dossiers Intro"},
+    {f:"dossiers_money_trail",t:"Money Trail"},
+    {f:"dossiers_sbf_circle",t:"SBF Circle"},
+    {f:"dossiers_thiel",t:"Thiel"},
+    {f:"dossiers_musk",t:"Musk"},
+    {f:"dossiers_regulators",t:"Regulators"},
+    {f:"donors_2024",t:"2024 Donors"},
+    {f:"koch_network",t:"Koch Network"},
+    {f:"leonard_leo",t:"Leonard Leo"},
+    {f:"rothschilds",t:"Rothschilds"},
+    {f:"supreme_court_gifts",t:"Supreme Court Gifts"},
+    {f:"tether_mystery",t:"Tether Mystery"},
+    {f:"victims_stories",t:"Victims Stories"},
+    {f:"war_profiteers_names",t:"War Profiteers"},
+    {f:"money_flow",t:"Money Flow"},
+    {f:"revolving_door_full",t:"Revolving Door"}
+  ]}
+];
+
+const container = document.getElementById('tracks');
+const player = document.getElementById('player');
+const nowTitle = document.getElementById('nowTitle');
+let allItems = [];
+let currentIdx = -1;
+
+let num = 1;
+tracks.forEach(act => {
+  const label = document.createElement('div');
+  label.className = 'act-label';
+  label.textContent = act.act;
+  container.appendChild(label);
+  act.items.forEach(item => {
+    const idx = allItems.length;
+    allItems.push(item);
+    const div = document.createElement('div');
+    div.className = 'track';
+    div.dataset.idx = idx;
+    div.innerHTML = `<span class="track-num">${num++}</span><span class="track-title">${item.t}</span>`;
+    div.onclick = () => playTrack(idx);
+    container.appendChild(div);
+  });
+});
+
+function playTrack(idx) {
+  currentIdx = idx;
+  const item = allItems[idx];
+  player.src = item.f + '.mp3';
+  player.play();
+  nowTitle.textContent = item.t;
+  document.querySelectorAll('.track').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.track[data-idx="${idx}"]`).classList.add('active');
+  document.querySelector(`.track[data-idx="${idx}"]`).scrollIntoView({block:'center',behavior:'smooth'});
+}
+
+player.addEventListener('ended', () => {
+  if (currentIdx < allItems.length - 1) playTrack(currentIdx + 1);
+});
+</script>
+</body>
+</html>

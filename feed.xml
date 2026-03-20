@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<channel>
+  <title>For Sale — How Money Bought Power</title>
+  <description>From the Big Bang to the blockchain, energy has always flowed toward whoever can concentrate it. The only thing that changes is the tool — and the speed.</description>
+  <link>http://localhost:8080</link>
+  <language>en</language>
+  <itunes:author>Dan</itunes:author>
+  <itunes:category text="Society &amp; Culture"/>
+
+  <item>
+    <title>00 - Intro</title>
+    <enclosure url="http://localhost:8080/00_intro.mp3" type="audio/mpeg"/>
+    <guid>00_intro</guid>
+  </item>
+  <item>
+    <title>01 - Beginning</title>
+    <enclosure url="http://localhost:8080/01_beginning.mp3" type="audio/mpeg"/>
+    <guid>01_beginning</guid>
+  </item>
+  <item>
+    <title>01a - Big Bang</title>
+    <enclosure url="http://localhost:8080/01a_bigbang.mp3" type="audio/mpeg"/>
+    <guid>01a_bigbang</guid>
+  </item>
+  <item>
+    <title>01b - Life</title>
+    <enclosure url="http://localhost:8080/01b_life.mp3" type="audio/mpeg"/>
+    <guid>01b_life</guid>
+  </item>
+  <item>
+    <title>01c - Extinction</title>
+    <enclosure url="http://localhost:8080/01c_extinction.mp3" type="audio/mpeg"/>
+    <guid>01c_extinction</guid>
+  </item>
+  <item>
+    <title>01d - Dinosaurs</title>
+    <enclosure url="http://localhost:8080/01d_dinosaurs.mp3" type="audio/mpeg"/>
+    <guid>01d_dinosaurs</guid>
+  </item>
+  <item>
+    <title>01e - Asteroid</title>
+    <enclosure url="http://localhost:8080/01e_asteroid.mp3" type="audio/mpeg"/>
+    <guid>01e_asteroid</guid>
+  </item>
+  <item>
+    <title>01f - Sapiens</title>
+    <enclosure url="http://localhost:8080/01f_sapiens.mp3" type="audio/mpeg"/>
+    <guid>01f_sapiens</guid>
+  </item>
+  <item>
+    <title>02a - Rome</title>
+    <enclosure url="http://localhost:8080/02a_rome.mp3" type="audio/mpeg"/>
+    <guid>02a_rome</guid>
+  </item>
+  <item>
+    <title>02b - Crusades</title>
+    <enclosure url="http://localhost:8080/02b_crusades.mp3" type="audio/mpeg"/>
+    <guid>02b_crusades</guid>
+  </item>
+  <item>
+    <title>02c - Colonialism</title>
+    <enclosure url="http://localhost:8080/02c_colonialism.mp3" type="audio/mpeg"/>
+    <guid>02c_colonialism</guid>
+  </item>
+  <item>
+    <title>02d - Tulips &amp; South Sea</title>
+    <enclosure url="http://localhost:8080/02d_tulips_southsea.mp3" type="audio/mpeg"/>
+    <guid>02d_tulips_southsea</guid>
+  </item>
+  <item>
+    <title>02e - World War I</title>
+    <enclosure url="http://localhost:8080/02e_wwi.mp3" type="audio/mpeg"/>
+    <guid>02e_wwi</guid>
+  </item>
+  <item>
+    <title>02f - The Depression</title>
+    <enclosure url="http://localhost:8080/02f_depression.mp3" type="audio/mpeg"/>
+    <guid>02f_depression</guid>
+  </item>
+  <item>
+    <title>02g - World War II</title>
+    <enclosure url="http://localhost:8080/02g_wwii.mp3" type="audio/mpeg"/>
+    <guid>02g_wwii</guid>
+  </item>
+  <item>
+    <title>02h - Cold War &amp; Vietnam</title>
+    <enclosure url="http://localhost:8080/02h_coldwar_vietnam.mp3" type="audio/mpeg"/>
+    <guid>02h_coldwar_vietnam</guid>
+  </item>
+  <item>
+    <title>03a - The Computer</title>
+    <enclosure url="http://localhost:8080/03a_computer.mp3" type="audio/mpeg"/>
+    <guid>03a_computer</guid>
+  </item>
+  <item>
+    <title>03b - The Microchip</title>
+    <enclosure url="http://localhost:8080/03b_microchip.mp3" type="audio/mpeg"/>
+    <guid>03b_microchip</guid>
+  </item>
+  <item>
+    <title>03c - AI First Wave</title>
+    <enclosure url="http://localhost:8080/03c_ai_first.mp3" type="audio/mpeg"/>
+    <guid>03c_ai_first</guid>
+  </item>
+  <item>
+    <title>03d - AI Winter</title>
+    <enclosure url="http://localhost:8080/03d_ai_winter.mp3" type="audio/mpeg"/>
+    <guid>03d_ai_winter</guid>
+  </item>
+  <item>
+    <title>03e - The Internet</title>
+    <enclosure url="http://localhost:8080/03e_internet.mp3" type="audio/mpeg"/>
+    <guid>03e_internet</guid>
+  </item>
+  <item>
+    <title>03f - Dotcom Bubble</title>
+    <enclosure url="http://localhost:8080/03f_dotcom.mp3" type="audio/mpeg"/>
+    <guid>03f_dotcom</guid>
+  </item>
+  <item>
+    <title>03g - Social Media</title>
+    <enclosure url="http://localhost:8080/03g_social.mp3" type="audio/mpeg"/>
+    <guid>03g_social</guid>
+  </item>
+  <item>
+    <title>04a - 2008 Financial Crisis</title>
+    <enclosure url="http://localhost:8080/04a_2008crisis.mp3" type="audio/mpeg"/>
+    <guid>04a_2008crisis</guid>
+  </item>
+  <item>
+    <title>04b - Satoshi Nakamoto</title>
+    <enclosure url="http://localhost:8080/04b_satoshi.mp3" type="audio/mpeg"/>
+    <guid>04b_satoshi</guid>
+  </item>
+  <item>
+    <title>04c - Silk Road</title>
+    <enclosure url="http://localhost:8080/04c_silk_road.mp3" type="audio/mpeg"/>
+    <guid>04c_silk_road</guid>
+  </item>
+  <item>
+    <title>04d - ICO Boom</title>
+    <enclosure url="http://localhost:8080/04d_ico_boom.mp3" type="audio/mpeg"/>
+    <guid>04d_ico_boom</guid>
+  </item>
+  <item>
+    <title>04e - DeFi &amp; NFTs</title>
+    <enclosure url="http://localhost:8080/04e_defi_nft.mp3" type="audio/mpeg"/>
+    <guid>04e_defi_nft</guid>
+  </item>
+  <item>
+    <title>05a - SBF Rise</title>
+    <enclosure url="http://localhost:8080/05a_sbf_rise.mp3" type="audio/mpeg"/>
+    <guid>05a_sbf_rise</guid>
+  </item>
+  <item>
+    <title>05b - The Machine</title>
+    <enclosure url="http://localhost:8080/05b_machine.mp3" type="audio/mpeg"/>
+    <guid>05b_machine</guid>
+  </item>
+  <item>
+    <title>05c - Six Days</title>
+    <enclosure url="http://localhost:8080/05c_six_days.mp3" type="audio/mpeg"/>
+    <guid>05c_six_days</guid>
+  </item>
+  <item>
+    <title>05d - The Trial</title>
+    <enclosure url="http://localhost:8080/05d_trial.mp3" type="audio/mpeg"/>
+    <guid>05d_trial</guid>
+  </item>
+  <item>
+    <title>05e - Trial Continued</title>
+    <enclosure url="http://localhost:8080/05e_trial.mp3" type="audio/mpeg"/>
+    <guid>05e_trial</guid>
+  </item>
+  <item>
+    <title>05f - The Victims</title>
+    <enclosure url="http://localhost:8080/05f_victims.mp3" type="audio/mpeg"/>
+    <guid>05f_victims</guid>
+  </item>
+  <item>
+    <title>06a - CFTC</title>
+    <enclosure url="http://localhost:8080/06a_cftc.mp3" type="audio/mpeg"/>
+    <guid>06a_cftc</guid>
+  </item>
+  <item>
+    <title>06b - Donations</title>
+    <enclosure url="http://localhost:8080/06b_donations.mp3" type="audio/mpeg"/>
+    <guid>06b_donations</guid>
+  </item>
+  <item>
+    <title>06c - Bahamas</title>
+    <enclosure url="http://localhost:8080/06c_bahamas.mp3" type="audio/mpeg"/>
+    <guid>06c_bahamas</guid>
+  </item>
+  <item>
+    <title>06d - Gensler</title>
+    <enclosure url="http://localhost:8080/06d_gensler.mp3" type="audio/mpeg"/>
+    <guid>06d_gensler</guid>
+  </item>
+  <item>
+    <title>06e - Congress</title>
+    <enclosure url="http://localhost:8080/06e_congress.mp3" type="audio/mpeg"/>
+    <guid>06e_congress</guid>
+  </item>
+  <item>
+    <title>07a - Fairshake PAC</title>
+    <enclosure url="http://localhost:8080/07a_fairshake.mp3" type="audio/mpeg"/>
+    <guid>07a_fairshake</guid>
+  </item>
+  <item>
+    <title>07b - Scalps</title>
+    <enclosure url="http://localhost:8080/07b_scalps.mp3" type="audio/mpeg"/>
+    <guid>07b_scalps</guid>
+  </item>
+  <item>
+    <title>07c - Pardons</title>
+    <enclosure url="http://localhost:8080/07c_pardons.mp3" type="audio/mpeg"/>
+    <guid>07c_pardons</guid>
+  </item>
+  <item>
+    <title>07d - SEC Swap</title>
+    <enclosure url="http://localhost:8080/07d_sec_swap.mp3" type="audio/mpeg"/>
+    <guid>07d_sec_swap</guid>
+  </item>
+  <item>
+    <title>07e - GENIUS Act</title>
+    <enclosure url="http://localhost:8080/07e_genius_act.mp3" type="audio/mpeg"/>
+    <guid>07e_genius_act</guid>
+  </item>
+  <item>
+    <title>07f - War on Terror</title>
+    <enclosure url="http://localhost:8080/07f_war_on_terror.mp3" type="audio/mpeg"/>
+    <guid>07f_war_on_terror</guid>
+  </item>
+  <item>
+    <title>08a - Facebook Rise</title>
+    <enclosure url="http://localhost:8080/08a_facebook_rise.mp3" type="audio/mpeg"/>
+    <guid>08a_facebook_rise</guid>
+  </item>
+  <item>
+    <title>08b - 2016 Election</title>
+    <enclosure url="http://localhost:8080/08b_2016_election.mp3" type="audio/mpeg"/>
+    <guid>08b_2016_election</guid>
+  </item>
+  <item>
+    <title>08c - Frances Haugen</title>
+    <enclosure url="http://localhost:8080/08c_haugen.mp3" type="audio/mpeg"/>
+    <guid>08c_haugen</guid>
+  </item>
+  <item>
+    <title>08d - Meta</title>
+    <enclosure url="http://localhost:8080/08d_meta.mp3" type="audio/mpeg"/>
+    <guid>08d_meta</guid>
+  </item>
+  <item>
+    <title>08e - Inauguration</title>
+    <enclosure url="http://localhost:8080/08e_inauguration.mp3" type="audio/mpeg"/>
+    <guid>08e_inauguration</guid>
+  </item>
+  <item>
+    <title>08f - DOGE &amp; Thiel Network</title>
+    <enclosure url="http://localhost:8080/08f_doge_thiel.mp3" type="audio/mpeg"/>
+    <guid>08f_doge_thiel</guid>
+  </item>
+  <item>
+    <title>09a - The Pivot</title>
+    <enclosure url="http://localhost:8080/09a_pivot.mp3" type="audio/mpeg"/>
+    <guid>09a_pivot</guid>
+  </item>
+  <item>
+    <title>09b - Memecoin</title>
+    <enclosure url="http://localhost:8080/09b_memecoin.mp3" type="audio/mpeg"/>
+    <guid>09b_memecoin</guid>
+  </item>
+  <item>
+    <title>09c - World Liberty Financial</title>
+    <enclosure url="http://localhost:8080/09c_wlfi.mp3" type="audio/mpeg"/>
+    <guid>09c_wlfi</guid>
+  </item>
+  <item>
+    <title>09d - Bitcoin Reserve</title>
+    <enclosure url="http://localhost:8080/09d_bitcoin_reserve.mp3" type="audio/mpeg"/>
+    <guid>09d_bitcoin_reserve</guid>
+  </item>
+  <item>
+    <title>09e - AI Arms Race</title>
+    <enclosure url="http://localhost:8080/09e_ai_arms_race.mp3" type="audio/mpeg"/>
+    <guid>09e_ai_arms_race</guid>
+  </item>
+  <item>
+    <title>10a - The Pattern</title>
+    <enclosure url="http://localhost:8080/10a_pattern.mp3" type="audio/mpeg"/>
+    <guid>10a_pattern</guid>
+  </item>
+  <item>
+    <title>10b - AI Future</title>
+    <enclosure url="http://localhost:8080/10b_ai_future.mp3" type="audio/mpeg"/>
+    <guid>10b_ai_future</guid>
+  </item>
+  <item>
+    <title>10c - The Question</title>
+    <enclosure url="http://localhost:8080/10c_question.mp3" type="audio/mpeg"/>
+    <guid>10c_question</guid>
+  </item>
+  <item>
+    <title>10d - Closing</title>
+    <enclosure url="http://localhost:8080/10d_closing.mp3" type="audio/mpeg"/>
+    <guid>10d_closing</guid>
+  </item>
+  <item>
+    <title>Dossiers - Intro</title>
+    <enclosure url="http://localhost:8080/dossiers_intro.mp3" type="audio/mpeg"/>
+    <guid>dossiers_intro</guid>
+  </item>
+  <item>
+    <title>Dossiers - Money Trail</title>
+    <enclosure url="http://localhost:8080/dossiers_money_trail.mp3" type="audio/mpeg"/>
+    <guid>dossiers_money_trail</guid>
+  </item>
+  <item>
+    <title>Dossiers - SBF Circle</title>
+    <enclosure url="http://localhost:8080/dossiers_sbf_circle.mp3" type="audio/mpeg"/>
+    <guid>dossiers_sbf_circle</guid>
+  </item>
+  <item>
+    <title>Dossiers - Thiel</title>
+    <enclosure url="http://localhost:8080/dossiers_thiel.mp3" type="audio/mpeg"/>
+    <guid>dossiers_thiel</guid>
+  </item>
+  <item>
+    <title>Dossiers - Musk</title>
+    <enclosure url="http://localhost:8080/dossiers_musk.mp3" type="audio/mpeg"/>
+    <guid>dossiers_musk</guid>
+  </item>
+  <item>
+    <title>Dossiers - Regulators</title>
+    <enclosure url="http://localhost:8080/dossiers_regulators.mp3" type="audio/mpeg"/>
+    <guid>dossiers_regulators</guid>
+  </item>
+  <item>
+    <title>Donors 2024</title>
+    <enclosure url="http://localhost:8080/donors_2024.mp3" type="audio/mpeg"/>
+    <guid>donors_2024</guid>
+  </item>
+  <item>
+    <title>Koch Network</title>
+    <enclosure url="http://localhost:8080/koch_network.mp3" type="audio/mpeg"/>
+    <guid>koch_network</guid>
+  </item>
+  <item>
+    <title>Leonard Leo</title>
+    <enclosure url="http://localhost:8080/leonard_leo.mp3" type="audio/mpeg"/>
+    <guid>leonard_leo</guid>
+  </item>
+  <item>
+    <title>Rothschilds</title>
+    <enclosure url="http://localhost:8080/rothschilds.mp3" type="audio/mpeg"/>
+    <guid>rothschilds</guid>
+  </item>
+  <item>
+    <title>Supreme Court Gifts</title>
+    <enclosure url="http://localhost:8080/supreme_court_gifts.mp3" type="audio/mpeg"/>
+    <guid>supreme_court_gifts</guid>
+  </item>
+  <item>
+    <title>Tether Mystery</title>
+    <enclosure url="http://localhost:8080/tether_mystery.mp3" type="audio/mpeg"/>
+    <guid>tether_mystery</guid>
+  </item>
+  <item>
+    <title>Victims Stories</title>
+    <enclosure url="http://localhost:8080/victims_stories.mp3" type="audio/mpeg"/>
+    <guid>victims_stories</guid>
+  </item>
+  <item>
+    <title>War Profiteers</title>
+    <enclosure url="http://localhost:8080/war_profiteers_names.mp3" type="audio/mpeg"/>
+    <guid>war_profiteers_names</guid>
+  </item>
+  <item>
+    <title>Money Flow</title>
+    <enclosure url="http://localhost:8080/money_flow.mp3" type="audio/mpeg"/>
+    <guid>money_flow</guid>
+  </item>
+  <item>
+    <title>Revolving Door</title>
+    <enclosure url="http://localhost:8080/revolving_door_full.mp3" type="audio/mpeg"/>
+    <guid>revolving_door_full</guid>
+  </item>
+</channel>
+</rss>
