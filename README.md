@@ -136,9 +136,9 @@ Every correction will be published with credit. The goal is accuracy, not narrat
 
 | Platform | Link |
 |----------|------|
-| Buy Me a Coffee | https://buymeacoffee.com/samplerdan |
-| Ko-fi | https://ko-fi.com/samplerdan |
-| PayPal.me | https://paypal.me/samplerdan |
+| Buy Me a Coffee | https://buymeacoffee.com/forsaledoc |
+| Ko-fi | https://ko-fi.com/forsaledoc |
+| PayPal.me | https://paypal.me/forsaledoc |
 | Donate Page | https://samplerdan-byte.github.io/for-sale-documentary/donate.html |
 
 100% of donations go toward research, hosting, and future open-source documentary projects. Nothing goes to AI companies.
