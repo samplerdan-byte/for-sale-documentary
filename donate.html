@@ -61,6 +61,40 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .platform-btn.whatever:hover{border-color:rgba(0,255,136,.3);box-shadow:0 8px 32px rgba(0,255,136,.08)}
 .platform-btn.whatever .btn-icon{background:rgba(0,255,136,.12);color:#00ff88;font-size:1.5rem}
 
+.platform-btn.btc{--clr:#f7931a}
+.platform-btn.btc::before{background:linear-gradient(135deg,rgba(247,147,26,.06),transparent)}
+.platform-btn.btc:hover{border-color:rgba(247,147,26,.3);box-shadow:0 8px 32px rgba(247,147,26,.08)}
+.platform-btn.btc .btn-icon{background:rgba(247,147,26,.12);color:#f7931a}
+
+.platform-btn.eth{--clr:#627eea}
+.platform-btn.eth::before{background:linear-gradient(135deg,rgba(98,126,234,.06),transparent)}
+.platform-btn.eth:hover{border-color:rgba(98,126,234,.3);box-shadow:0 8px 32px rgba(98,126,234,.08)}
+.platform-btn.eth .btn-icon{background:rgba(98,126,234,.12);color:#627eea}
+
+.platform-btn.doge{--clr:#c3a634}
+.platform-btn.doge::before{background:linear-gradient(135deg,rgba(195,166,52,.06),transparent)}
+.platform-btn.doge:hover{border-color:rgba(195,166,52,.3);box-shadow:0 8px 32px rgba(195,166,52,.08)}
+.platform-btn.doge .btn-icon{background:rgba(195,166,52,.12);color:#c3a634}
+
+.platform-btn.venmo{--clr:#3d95ce}
+.platform-btn.venmo::before{background:linear-gradient(135deg,rgba(61,149,206,.06),transparent)}
+.platform-btn.venmo:hover{border-color:rgba(61,149,206,.3);box-shadow:0 8px 32px rgba(61,149,206,.08)}
+.platform-btn.venmo .btn-icon{background:rgba(61,149,206,.12);color:#3d95ce}
+
+.platform-btn.cashapp{--clr:#00d632}
+.platform-btn.cashapp::before{background:linear-gradient(135deg,rgba(0,214,50,.06),transparent)}
+.platform-btn.cashapp:hover{border-color:rgba(0,214,50,.3);box-shadow:0 8px 32px rgba(0,214,50,.08)}
+.platform-btn.cashapp .btn-icon{background:rgba(0,214,50,.12);color:#00d632}
+
+.platform-btn.sol{--clr:#9945ff}
+.platform-btn.sol::before{background:linear-gradient(135deg,rgba(153,69,255,.06),transparent)}
+.platform-btn.sol:hover{border-color:rgba(153,69,255,.3);box-shadow:0 8px 32px rgba(153,69,255,.08)}
+.platform-btn.sol .btn-icon{background:rgba(153,69,255,.12);color:#9945ff}
+
+.crypto-addr{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--dim);word-break:break-all;margin-top:.3rem;cursor:pointer}
+.crypto-addr:hover{color:var(--accent)}
+.copied{color:var(--green)!important}
+
 .btn-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
 .btn-text{flex:1}
 .btn-label{font-weight:600;font-size:1rem;color:var(--bright);margin-bottom:.2rem}
@@ -148,7 +182,77 @@ footer a:hover{text-decoration:underline}
       <div class="btn-arrow">→</div>
     </a>
 
+    <a href="https://venmo.com/forsaledoc" target="_blank" rel="noopener" class="platform-btn venmo">
+      <div class="btn-icon">📱</div>
+      <div class="btn-text">
+        <div class="btn-label">Venmo</div>
+        <div class="btn-desc">@forsaledoc</div>
+      </div>
+      <div class="btn-arrow">→</div>
+    </a>
+
+    <a href="https://cash.app/$forsaledoc" target="_blank" rel="noopener" class="platform-btn cashapp">
+      <div class="btn-icon">💵</div>
+      <div class="btn-text">
+        <div class="btn-label">Cash App</div>
+        <div class="btn-desc">$forsaledoc</div>
+      </div>
+      <div class="btn-arrow">→</div>
+    </a>
+
+    <div class="platform-btn btc" onclick="copyAddr('btc-addr',this)" style="cursor:pointer">
+      <div class="btn-icon">₿</div>
+      <div class="btn-text">
+        <div class="btn-label">Bitcoin (BTC)</div>
+        <div class="btn-desc">Click to copy address</div>
+        <div class="crypto-addr" id="btc-addr">bc1q_YOUR_BTC_ADDRESS_HERE</div>
+      </div>
+      <div class="btn-arrow">📋</div>
+    </div>
+
+    <div class="platform-btn eth" onclick="copyAddr('eth-addr',this)" style="cursor:pointer">
+      <div class="btn-icon">⟠</div>
+      <div class="btn-text">
+        <div class="btn-label">Ethereum (ETH)</div>
+        <div class="btn-desc">Click to copy address</div>
+        <div class="crypto-addr" id="eth-addr">0x_YOUR_ETH_ADDRESS_HERE</div>
+      </div>
+      <div class="btn-arrow">📋</div>
+    </div>
+
+    <div class="platform-btn doge" onclick="copyAddr('doge-addr',this)" style="cursor:pointer">
+      <div class="btn-icon">🐕</div>
+      <div class="btn-text">
+        <div class="btn-label">Dogecoin (DOGE)</div>
+        <div class="btn-desc">Click to copy address — much donate, very wow</div>
+        <div class="crypto-addr" id="doge-addr">D_YOUR_DOGE_ADDRESS_HERE</div>
+      </div>
+      <div class="btn-arrow">📋</div>
+    </div>
+
+    <div class="platform-btn sol" onclick="copyAddr('sol-addr',this)" style="cursor:pointer">
+      <div class="btn-icon">◎</div>
+      <div class="btn-text">
+        <div class="btn-label">Solana (SOL)</div>
+        <div class="btn-desc">Click to copy address</div>
+        <div class="crypto-addr" id="sol-addr">YOUR_SOL_ADDRESS_HERE</div>
+      </div>
+      <div class="btn-arrow">📋</div>
+    </div>
+
   </div>
+
+  <script>
+  function copyAddr(id, btn) {
+    const addr = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(addr).then(() => {
+      const arrow = btn.querySelector('.btn-arrow');
+      arrow.textContent = '✓';
+      btn.querySelector('.crypto-addr').classList.add('copied');
+      setTimeout(() => { arrow.textContent = '📋'; btn.querySelector('.crypto-addr').classList.remove('copied'); }, 2000);
+    });
+  }
+  </script>
 
   <div class="note">
     <p><strong>100% of donations go toward research, hosting, and future open-source documentary projects. Nothing goes to AI companies.</strong><br><br>Every cent funds primary source access, hosting costs, audio production, and the next story. When funds exceed costs, the surplus rolls into the next project.</p>
