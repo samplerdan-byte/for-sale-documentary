@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "forsale-doc",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "C:\\Users\\dan\\Desktop\\Claude Projects\\ForSale_Documentary", "-p", "8091", "-c-1"],
+      "port": 8091
+    }
+  ]
+}
