@@ -1,0 +1,70 @@
+{
+  "name": "FOR SALE Documentary",
+  "title": "FOR SALE — How Money Bought Power, From the Pyramids to the Blockchain",
+  "version": "3.0",
+  "updated": "2026-03-22",
+  "path": "C:\\Users\\dan\\Desktop\\Claude Projects\\ForSale_Documentary",
+  "mainFile": "index.html",
+  "devServer": {
+    "command": "npx http-server . -p 8091 -c-1",
+    "port": 8091
+  },
+  "acts": [
+    {"id": "intro", "title": "Intro", "video": "bg_space", "music": "music_ancient"},
+    {"id": "act1", "title": "Act I: In the Beginning", "video": "bg_explosion", "topics": ["Big Bang", "life", "ants", "competition"]},
+    {"id": "act2", "title": "Act II: Dominance", "video": "bg_volcano", "topics": ["pyramids", "Rome", "Crusades", "100-yr wars", "media barons", "telephone to iPhone"]},
+    {"id": "act3_wars", "title": "Act III: The World Wars", "video": "bg_volcano", "topics": ["Franz Ferdinand", "WWI", "Great Depression", "WWII", "civil wars"], "music": "music_war"},
+    {"id": "act4_tech", "title": "Act IV: The Digital Age", "video": "bg_code", "topics": ["computers", "AI", "internet", "2008 crisis", "Satoshi", "crypto"], "music": "music_digital"},
+    {"id": "act5_sbf", "title": "Act V: The $8 Billion Lie", "video": "bg_digital", "topics": ["SBF rise", "FTX", "Alameda", "trial"]},
+    {"id": "act6_revolving", "title": "Act VI: The Revolving Door", "video": "bg_capitol", "topics": ["CFTC", "donations", "regulatory capture"]},
+    {"id": "act7_takeover", "title": "Act VII: The Takeover", "video": "bg_wallst", "topics": ["Fairshake PAC", "The Scalps", "pardons"]},
+    {"id": "act8_bigtech", "title": "Act VIII: Big Tech Pays Tribute", "video": "bg_servers", "topics": ["Facebook to Meta", "$85B metaverse", "21K layoffs", "DOGE", "Thiel"]},
+    {"id": "act9_president", "title": "Act IX: The President Profits", "video": "bg_capitol", "topics": ["Trump crypto", "memecoin", "Bitcoin reserve", "AI arms race"]},
+    {"id": "political_prisoners", "title": "Political Prisoners", "topics": ["Snowden", "Assange", "Manning", "Reality Winner", "Mandela"]},
+    {"id": "closing", "title": "Closing", "topics": ["pattern recognition", "AI future", "the question"]},
+    {"id": "dossiers", "title": "Dossiers", "topics": ["SBF circle", "regulators", "Thiel", "Musk", "money trail"]},
+    {"id": "appendix", "title": "Appendix", "topics": ["network map", "money flow", "revolving door", "donors", "whistleblowers"]}
+  ],
+  "videos": {
+    "bg_space": "Pexels - stars/cosmic",
+    "bg_explosion": "Pexels - fire/explosion",
+    "bg_ants": "Pexels - ant colony",
+    "bg_pyramids": "Pexels - pyramids",
+    "bg_desert": "Pexels - desert sandstorm",
+    "bg_volcano": "Pexels - volcano/lava",
+    "bg_code": "Pexels - code/matrix",
+    "bg_digital": "Pexels - digital abstract",
+    "bg_capitol": "Pexels - US Capitol",
+    "bg_wallst": "Pexels - Wall Street",
+    "bg_servers": "Pexels - server room"
+  },
+  "music": {
+    "music_ancient": "Kevin MacLeod (CC-BY) - ancient era",
+    "music_medieval": "Kevin MacLeod (CC-BY) - medieval",
+    "music_renaissance": "Kevin MacLeod (CC-BY) - renaissance",
+    "music_empires": "Kevin MacLeod (CC-BY) - colonial",
+    "music_revolutions": "Kevin MacLeod (CC-BY) - revolutions",
+    "music_industrial": "Kevin MacLeod (CC-BY) - industrial",
+    "music_war": "Kevin MacLeod (CC-BY) - WWI/WWII era",
+    "music_digital": "Kevin MacLeod (CC-BY) - modern/digital"
+  },
+  "factCheckStatus": {
+    "date": "2026-03-22",
+    "errorsToFix": [
+      "Fairness Doctrine date: standardize to 1987",
+      "BitMEX pardon date: verify exact date (Jan 20, 2025)",
+      "Reality Winner sentence: fix inconsistency between sections"
+    ],
+    "overall": "Strong accuracy. ~10 claims need nuance but not corrections."
+  },
+  "pendingWork": [
+    "Fix 3 factual errors from fact-check",
+    "Add real SBF/congressional footage as video overlays",
+    "Expand media barons section (Murdoch rise/fall, Hearst, etc.)",
+    "Add telephone → Apple → iPhone → FaceTime timeline",
+    "Expand pyramids section (who built vs who found, buried by sand)",
+    "Break into 100-year chapters with era-specific music",
+    "Combine v1 and v2 HTML docs from Desktop",
+    "Add more political prisoner content"
+  ]
+}
