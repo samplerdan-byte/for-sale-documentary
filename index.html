@@ -230,6 +230,22 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .play-overlay .play-btn:hover{background:rgba(0,212,255,.15);transform:scale(1.1)}
 .play-overlay .play-btn svg{fill:var(--accent);width:30px;height:30px;margin-left:4px}
 .play-overlay p{color:var(--dim);font-size:.9rem}
+
+/* DISCUSS / CORRECTION BUTTONS */
+.section-actions{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+.btn-discuss,.btn-correct{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .8rem;border-radius:50px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(18,18,26,.8);color:var(--dim);text-decoration:none;transition:all .2s;backdrop-filter:blur(6px)}
+.btn-discuss:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,.08)}
+.btn-correct:hover{border-color:var(--gold);color:var(--gold);background:rgba(255,170,0,.08)}
+
+/* GISCUS SLIDE PANEL */
+.giscus-panel{position:fixed;top:0;right:-450px;width:440px;max-width:90vw;height:100vh;background:var(--bg2);border-left:1px solid rgba(255,255,255,.08);z-index:300;transition:right .3s ease;overflow-y:auto;padding:1.5rem;box-shadow:-4px 0 30px rgba(0,0,0,.5)}
+.giscus-panel.open{right:0}
+.giscus-panel-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--dim);font-size:1.5rem;cursor:pointer;z-index:1}
+.giscus-panel-close:hover{color:var(--bright)}
+.giscus-panel-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--bright);margin-bottom:.5rem;padding-right:2rem}
+.giscus-panel-section{font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.giscus-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:299;opacity:0;pointer-events:none;transition:opacity .3s}
+.giscus-overlay.open{opacity:1;pointer-events:auto}
 </style>
 </head>
 <body>
@@ -4563,17 +4579,38 @@ function filterDossiers(val){
   <p style="color:var(--dim);font-size:.7rem;margin-top:1rem">Corrections will be published in the next update with credit.</p>
 </div>
 
-<!-- ===== COMMENTS ===== -->
+<!-- ===== COMMUNITY DISCUSSION (Giscus) ===== -->
 <div style="max-width:800px;margin:2rem auto;padding:0 2rem">
-  <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--bright);margin-bottom:1.5rem;text-align:center">Comments</h3>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--bright);margin-bottom:.5rem;text-align:center">Community Discussion</h3>
+  <p style="color:var(--dim);font-size:.85rem;text-align:center;margin-bottom:1.5rem">Comment on any section using the buttons throughout the documentary, or discuss the whole thing below. Corrections with sources get upvoted to the top.</p>
+  <div class="giscus"></div>
+  <script src="https://giscus.app/client.js"
+    data-repo="samplerdan-byte/for-sale-documentary"
+    data-repo-id="R_kgDORrASqQ"
+    data-category="General"
+    data-category-id="DIC_kwDORrASqc4C5Dpq"
+    data-mapping="specific"
+    data-term="General Discussion"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark_dimmed"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
 
-  <div id="commentForm" style="margin-bottom:2rem">
-    <input id="commentName" type="text" placeholder="Your name (optional)" style="width:100%;padding:.8rem 1rem;background:var(--bg2);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.5rem;outline:none" onfocus="this.style.borderColor='rgba(0,212,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.1)'">
-    <textarea id="commentText" placeholder="Share your thoughts..." rows="4" style="width:100%;padding:.8rem 1rem;background:var(--bg2);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;resize:vertical;outline:none" onfocus="this.style.borderColor='rgba(0,212,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.1)'"></textarea>
-    <button onclick="postComment()" style="margin-top:.5rem;padding:.6rem 1.5rem;background:var(--accent);color:var(--bg);border:none;border-radius:50px;font-weight:600;font-size:.85rem;cursor:pointer;transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Post Comment</button>
-  </div>
-
-  <div id="commentsList"></div>
+<!-- GISCUS SLIDE PANEL (for per-section discussions) -->
+<div class="giscus-overlay" id="giscusOverlay"></div>
+<div class="giscus-panel" id="giscusPanel">
+  <button class="giscus-panel-close" id="giscusPanelClose">&times;</button>
+  <div class="giscus-panel-section" id="giscusPanelSection"></div>
+  <div class="giscus-panel-title" id="giscusPanelTitle"></div>
+  <p style="color:var(--dim);font-size:.75rem;margin-bottom:1rem">Suggest corrections with sources. Top-voted comments rise to the top.</p>
+  <div id="giscusPanelContent"></div>
 </div>
 
 <!-- ===== FOOTER ===== -->
@@ -4929,47 +4966,106 @@ document.querySelectorAll('.bars').forEach(el=>barObs.observe(el));
   });
 })();
 
-// ===== COMMENTS SYSTEM (localStorage) =====
-function postComment() {
-  const name = document.getElementById('commentName').value.trim() || 'Anonymous';
-  const text = document.getElementById('commentText').value.trim();
-  if (!text) return;
+// ===== GISCUS PER-SECTION DISCUSSION SYSTEM =====
+(function() {
+  const panel = document.getElementById('giscusPanel');
+  const overlay = document.getElementById('giscusOverlay');
+  const panelContent = document.getElementById('giscusPanelContent');
+  const panelTitle = document.getElementById('giscusPanelTitle');
+  const panelSection = document.getElementById('giscusPanelSection');
+  const closeBtn = document.getElementById('giscusPanelClose');
 
-  const comments = JSON.parse(localStorage.getItem('forsale_comments') || '[]');
-  comments.unshift({
-    name: name,
-    text: text,
-    date: new Date().toISOString(),
-    id: Date.now()
-  });
-  localStorage.setItem('forsale_comments', JSON.stringify(comments));
-
-  document.getElementById('commentName').value = '';
-  document.getElementById('commentText').value = '';
-  renderComments();
-}
-
-function renderComments() {
-  const comments = JSON.parse(localStorage.getItem('forsale_comments') || '[]');
-  const list = document.getElementById('commentsList');
-  if (comments.length === 0) {
-    list.innerHTML = '<p style="color:var(--dim);font-size:.85rem;text-align:center">No comments yet. Be the first.</p>';
-    return;
+  function closePanel() {
+    panel.classList.remove('open');
+    overlay.classList.remove('open');
+    panelContent.innerHTML = '';
   }
-  list.innerHTML = comments.map(c => {
-    const d = new Date(c.date);
-    const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    const timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    return `<div style="background:var(--bg2);border-radius:8px;padding:1.2rem;margin-bottom:.8rem;border-left:2px solid var(--accent)">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
-        <strong style="color:var(--bright);font-size:.85rem">${c.name.replace(/</g,'&lt;')}</strong>
-        <span style="font-size:.65rem;color:var(--dim)">${dateStr} ${timeStr}</span>
-      </div>
-      <p style="color:var(--text);font-size:.85rem;line-height:1.6">${c.text.replace(/</g,'&lt;').replace(/\n/g,'<br>')}</p>
-    </div>`;
-  }).join('');
-}
-renderComments();
+  closeBtn.onclick = closePanel;
+  overlay.onclick = closePanel;
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+  function openDiscussion(sectionTitle) {
+    panelTitle.textContent = sectionTitle;
+    panelSection.textContent = 'Section Discussion';
+    panelContent.innerHTML = '';
+
+    // Create giscus iframe for this section
+    const container = document.createElement('div');
+    container.className = 'giscus';
+    panelContent.appendChild(container);
+
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'samplerdan-byte/for-sale-documentary');
+    script.setAttribute('data-repo-id', 'R_kgDORrASqQ');
+    script.setAttribute('data-category', 'General');
+    script.setAttribute('data-category-id', 'DIC_kwDORrASqc4C5Dpq');
+    script.setAttribute('data-mapping', 'specific');
+    script.setAttribute('data-term', sectionTitle);
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'dark_dimmed');
+    script.setAttribute('data-lang', 'en');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+    panelContent.appendChild(script);
+
+    panel.classList.add('open');
+    overlay.classList.add('open');
+  }
+
+  // Add Discuss + Correction buttons to major act headings only (the ~10 main acts)
+  const actHeadings = document.querySelectorAll('.era h2[id^="act"]');
+  actHeadings.forEach(h2 => {
+    const title = h2.textContent.trim();
+    const actions = document.createElement('div');
+    actions.className = 'section-actions';
+
+    const discussBtn = document.createElement('a');
+    discussBtn.className = 'btn-discuss';
+    discussBtn.href = '#';
+    discussBtn.innerHTML = '&#128172; Discuss';
+    discussBtn.onclick = function(e) {
+      e.preventDefault();
+      openDiscussion(title);
+    };
+
+    const correctBtn = document.createElement('a');
+    correctBtn.className = 'btn-correct';
+    correctBtn.href = 'https://github.com/samplerdan-byte/for-sale-documentary/discussions/new?category=general&title=' + encodeURIComponent('Correction: ' + title) + '&body=' + encodeURIComponent('**Section:** ' + title + '\n\n**Claim:** [paste the text that needs correction]\n\n**Correction:** [what the correct info is]\n\n**Source:** [link to source]');
+    correctBtn.target = '_blank';
+    correctBtn.rel = 'noopener';
+    correctBtn.innerHTML = '&#128221; Correction?';
+
+    actions.appendChild(discussBtn);
+    actions.appendChild(correctBtn);
+    h2.parentElement.insertBefore(actions, h2.nextSibling);
+  });
+
+  // Also add to key divider sections (only ones with data-narration)
+  document.querySelectorAll('.divider[data-narration] .ch-num').forEach(span => {
+    const title = span.textContent.trim();
+    const divider = span.closest('.divider');
+    const actions = document.createElement('div');
+    actions.className = 'section-actions';
+    actions.style.justifyContent = 'center';
+    actions.style.marginTop = '.5rem';
+
+    const discussBtn = document.createElement('a');
+    discussBtn.className = 'btn-discuss';
+    discussBtn.href = '#';
+    discussBtn.innerHTML = '&#128172; Discuss';
+    discussBtn.onclick = function(e) {
+      e.preventDefault();
+      openDiscussion(title);
+    };
+
+    actions.appendChild(discussBtn);
+    divider.appendChild(actions);
+  });
+})();
 </script>
 </body>
 </html>
